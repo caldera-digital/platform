@@ -1,0 +1,27 @@
+{
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "version": {
+      "message": "chore(release): publish",
+      "conventionalCommits": true,
+      "noCommitHooks": true,
+      "changelogPreset": "conventional-changelog-angular-emoji",
+      "allowBranch": "master"
+    },
+    "publish": {
+      "yes": true,
+      "conventionalCommits": true,
+      "noCommitHooks": true,
+      "changelogPreset": "conventional-changelog-angular-emoji",
+      "allowBranch": "master"
+    }
+  },
+  "ignoreChanges": [
+    "**/__fixtures__/**",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "**/*.md"
+  ]
+}

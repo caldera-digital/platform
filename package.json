@@ -2,10 +2,11 @@
   "name": "platform",
   "version": "0.1.0",
   "private": true,
-  "description": "Monorepo of all open sourced Caldera code and projects",
+  "description": "Mono-repo of all open sourced Caldera code and projects",
   "main": "index.js",
   "scripts": {
     "preinstall": "npx use-yarn",
+    "commit": "git-cz",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -16,6 +17,10 @@
     "darwin",
     "linux",
     "!win32"
+  ],
+  "workspaces": [
+    "packages/*",
+    "projects/*"
   ],
   "repository": {
     "type": "git",
@@ -29,10 +34,18 @@
   "homepage": "https://github.com/caldera-digital/platform#readme",
   "husky": {
     "hooks": {
-      "pre-push": "yarn lint"
+      "pre-push": "echo 'Lint on push soon'",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@commitlint/config-lerna-scopes": "^7.5.1",
+    "commitizen": "^3.1.1",
+    "conventional-changelog-angular-emoji": "^0.2.2",
+    "cz-conventional-changelog": "^2.1.0",
+    "cz-lerna-changelog": "^2.0.2",
     "eslint": "^5.16.0",
     "eslint-config-node": "^4.0.0",
     "eslint-config-prettier": "^4.2.0",
@@ -40,7 +53,13 @@
     "eslint-plugin-jest": "^22.5.1",
     "eslint-plugin-prettier": "^3.0.1",
     "husky": "^2.1.0",
+    "lerna": "^3.13.4",
     "prettier": "^1.17.0",
     "use-yarn": "^2.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
   }
 }
