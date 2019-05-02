@@ -1,0 +1,16 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSaveTimeout": 4000,
+  "prettier.eslintIntegration": true,
+  "cSpell.words": [
+    "browserslist",
+    "Workspaces",
+    "dubnium",
+    "repo",
+    "editorconfig",
+    "prettierrc",
+    "BITBUCKET",
+    "Netlify"
+  ],
+  "cSpell.allowCompoundWords": true
+}

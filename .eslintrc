@@ -1,0 +1,30 @@
+{
+  "rules": {
+    "arrow-body-style": ["off"],
+    "comma-dangle": ["off"],
+    "class-methods-use-this": ["off"],
+    "no-invalid-this": ["off"],
+    "import/no-named-as-default": ["off"],
+    "quotes": [2, "single"],
+    "no-console": ["off"],
+    "import/no-nodejs-modules": ["off"],
+    "import/prefer-default-export": ["off"],
+    "import/no-namespace": ["off"],
+    "import/noextraneous-dependencies": ["off"],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "no-sync": ["off", { "allowRootLevel": true }],
+    "jest/no-disabled-tests": ["off"]
+  },
+  "extends": [
+    "node",
+    "react-app",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended"
+  ],
+  "plugins": ["jest", "import"],
+  "globals": {
+    "jest": true
+  }
+}

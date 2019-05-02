@@ -1,0 +1,46 @@
+{
+  "name": "platform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monorepo of all open sourced Caldera code and projects",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx use-yarn",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "^10.15.0",
+    "yarn": "^1.13.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "!win32"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caldera-digital/platform.git"
+  },
+  "author": "Marcus Wood <marcus@calderadigital.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/caldera-digital/platform/issues"
+  },
+  "homepage": "https://github.com/caldera-digital/platform#readme",
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint"
+    }
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-node": "^4.0.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.5.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "husky": "^2.1.0",
+    "prettier": "^1.17.0",
+    "use-yarn": "^2.2.0"
+  }
+}
