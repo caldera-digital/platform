@@ -6,7 +6,7 @@ import svgr from '@svgr/rollup'
 import builtins from 'rollup-plugin-node-builtins'
 import calderaDigitalBabelPreset from '@caldera-digital/babel-preset'
 
-const isProd = process.env.NODE_ENV === 'production'
+// const isProd = process.env.NODE_ENV === 'production'
 
 const globals = {
   'styled-components': 'StyledComponents',
