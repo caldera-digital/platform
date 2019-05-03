@@ -1,5 +1,18 @@
 language: node_js
+
+git:
+  depth: 3
+
 node_js:
   - '10.15.0'
 
-  cache: yarn
+cache: yarn
+
+install:
+  - yarn global add lerna jest
+  - yarn bootstrap
+
+script:
+  - yarn lint
+  - yarn build
+  - yarn test
