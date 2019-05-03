@@ -17,7 +17,8 @@
     "lerna": "lerna",
     "lerna:run-deps": "lerna run --include-filtered-dependencies",
     "commit": "git-cz",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cosmos": "cosmos",
+    "cosmos:export": "cosmos-export"
   },
   "engines": {
     "node": "^10.15.0",
@@ -65,11 +66,13 @@
     "@commitlint/config-conventional": "^7.5.0",
     "@commitlint/config-lerna-scopes": "^7.5.1",
     "@svgr/rollup": "^4.2.0",
+    "babel-loader": "^8.0.5",
     "babel-plugin-dynamic-import-node": "^2.2.0",
     "babel-plugin-inline-react-svg": "^1.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.21",
     "commitizen": "^3.1.1",
     "conventional-changelog-angular-emoji": "^0.2.2",
+    "css-loader": "^2.1.1",
     "cz-conventional-changelog": "^2.1.0",
     "cz-lerna-changelog": "^2.0.2",
     "eslint": "^5.16.0",
@@ -78,12 +81,14 @@
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jest": "^22.5.1",
     "eslint-plugin-prettier": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
     "husky": "^2.1.0",
     "lerna": "^3.13.4",
     "npm-run-all": "^4.1.5",
     "onchange": "^5.2.0",
     "prettier": "^1.17.0",
     "react": "16.8.6",
+    "react-cosmos": "^5.0.0-alpha.2",
     "react-dom": "16.8.6",
     "rimraf": "^2.6.3",
     "rollup": "^1.10.1",
@@ -92,8 +97,10 @@
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-resolve": "^4.2.3",
+    "style-loader": "^0.23.1",
     "styled-components": "4.2.0",
-    "use-yarn": "^2.2.0"
+    "use-yarn": "^2.2.0",
+    "webpack": "^4.30.0"
   },
   "config": {
     "commitizen": {

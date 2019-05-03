@@ -1,17 +1,10 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { ReactComponent } from '../assets/throneLogo.svg'
-import { NavLink } from 'react-router-dom'
-import { media } from '../style'
-import { Hamburger } from './'
-import { AuthConsumer } from '../context'
-import { LOCK_MODE } from '../utils/const'
+import { media, CalderaDigitalThemeConsumer } from '@caldera-digital/theme'
+import { Hamburger } from './Hamburger'
+import { ThemeProvider } from 'styled-components'
 
-// We don't technically have a route for sign out, it calls a method instead
-// once logged out, the use is redirected to the home screen
-const SIGN_OUT_ROUTE_KEY = '/sign-out'
-
-const createRoutes = (isSignedIn = false) => {
+const createRoutes = () => {
   let routes = [
     {
       route: '/faq',
@@ -19,35 +12,10 @@ const createRoutes = (isSignedIn = false) => {
     },
   ]
 
-  if (LOCK_MODE) {
-    routes.push({
-      route: '/donate',
-      text: 'Donate',
-    })
-    routes.push({
-      route: '/analytics',
-      text: 'Analytics',
-    })
-  }
-
-  if (isSignedIn) {
-    if (!LOCK_MODE) {
-      routes.push({
-        route: '/create-group',
-        text: 'Create Group',
-      })
-    }
-
-    routes.push({
-      route: SIGN_OUT_ROUTE_KEY,
-      text: 'Sign Out',
-    })
-  } else {
-    routes.push({
-      route: '/sign-up',
-      text: 'Sign up/Login',
-    })
-  }
+  routes.push({
+    route: '/sign-up',
+    text: 'Sign up/Login',
+  })
 
   return routes
 }
@@ -127,11 +95,11 @@ const NavLinkStyles = css`
     margin-bottom: 0.25rem;
     padding: .75rem;
     margin: 0;
-    font-size: ${props => props.theme.defaultFontSize}
+    font-size: ${props => props.theme.defaultFontSize};
   `}
 `
 
-const StyledNavLink = styled(NavLink)`
+const StyledNavLink = styled.a`
   ${NavLinkStyles}
 `
 
@@ -159,12 +127,12 @@ const RoutesContainer = styled.div`
 
 export const NavComponent = ({ isSignedIn, logout }) => {
   const [hamburgerOpen, setHamburgerOpen] = React.useState(false)
-  const routes = createRoutes(isSignedIn, logout)
+  const routes = createRoutes()
   return (
     <NavContainer>
-      <NavLink to="/" onClick={() => setHamburgerOpen(false)}>
-        <ReactComponent />
-      </NavLink>
+      <a to="/" onClick={() => setHamburgerOpen(false)}>
+        <div>logo here</div>
+      </a>
 
       <NavOptionsContainer>
         <Hamburger
@@ -172,39 +140,28 @@ export const NavComponent = ({ isSignedIn, logout }) => {
           onClick={() => setHamburgerOpen(!hamburgerOpen)}
         />
         <RoutesContainer open={hamburgerOpen}>
-          {routes.map(({ route, text }) =>
-            route === SIGN_OUT_ROUTE_KEY ? (
-              <LogoutButton
-                key={route}
-                onClick={() => {
-                  setHamburgerOpen(false)
-                  logout()
-                }}
-              >
-                {text}
-              </LogoutButton>
-            ) : (
-              <StyledNavLink
-                to={route}
-                key={route}
-                activeClassName="selected"
-                onClick={() => setHamburgerOpen(false)}
-              >
-                {text}
-              </StyledNavLink>
-            )
-          )}
+          {routes.map(({ route, text }) => (
+            <StyledNavLink
+              to={route}
+              key={route}
+              activeClassName="selected"
+              onClick={() => setHamburgerOpen(false)}
+            >
+              {text}
+            </StyledNavLink>
+          ))}
         </RoutesContainer>
       </NavOptionsContainer>
     </NavContainer>
   )
 }
 
-// Pass everything from auth context down
-export const Nav = props => {
-  return (
-    <AuthConsumer>
-      {authContext => <NavComponent {...props} {...authContext} />}
-    </AuthConsumer>
-  )
-}
+export const Nav = () => (
+  <CalderaDigitalThemeConsumer>
+    {theme => (
+      <ThemeProvider theme={theme}>
+        <NavComponent />
+      </ThemeProvider>
+    )}
+  </CalderaDigitalThemeConsumer>
+)

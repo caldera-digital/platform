@@ -12,6 +12,9 @@ const globals = {
   'styled-components': 'StyledComponents',
   react: 'React',
   'react-dom': 'ReactDOM',
+  // Don't package because then it will bundle into packages and we need to use the
+  // same instance in memory for context for work.
+  '@caldera-digital/theme': '@caldera-digital/theme',
 }
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx']

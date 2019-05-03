@@ -1,18 +1,14 @@
 {
-  "name": "@caldera-digital/nav",
+  "name": "@caldera-digital/theme",
   "version": "0.1.0",
   "license": "MIT",
   "peerDependencies": {
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "styled-components": "4.2.0",
-    "@caldera-digital/theme": "^0.1.0"
+    "styled-components": "4.2.0"
   },
   "main": "src/index.js",
   "module": "src/index.module.js",
-  "keywords": [
-    "caldera digital"
-  ],
   "scripts": {
     "preinstall": "npx use-yarn",
     "dev": "rollup -c rollup.config.js -w",
@@ -25,13 +21,15 @@
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint src/**/*.js --fix"
   },
+  "keywords": [
+    "caldera digital"
+  ],
   "husky": {
     "hooks": {
       "pre-push": "yarn lint"
     }
   },
   "devDependencies": {
-    "@caldera-digital/rollup-config": "^0.1.0",
-    "@caldera-digital/theme": "^0.1.0"
+    "@caldera-digital/rollup-config": "^0.1.0"
   }
 }

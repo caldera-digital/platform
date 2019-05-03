@@ -20,11 +20,6 @@
   ],
   "description": "Babel preset, recommended from Caldera Digital",
   "main": "src/index.js",
-  "files": [
-    "lib",
-    "src",
-    "!**/__tests__"
-  ],
   "scripts": {
     "preinstall": "npx use-yarn",
     "precommit": "lint-staged",
