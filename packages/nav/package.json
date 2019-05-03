@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/caldera-digital/platform.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "main": "src/index.js",
   "module": "src/index.module.js",
@@ -43,5 +46,5 @@
     "react-dom": "16.8.6",
     "styled-components": "4.2.0"
   },
-  "gitHead": "e3d0f2bb24fb48152652236b38a2539b30fb1d48"
+  "gitHead": "ff5ce2ac77aebf7af56f79a422302f360d445074"
 }
