@@ -14,6 +14,7 @@
     "clean": "run-p clean:*",
     "clean:node_modules": "lerna run clean:node_modules --parallel && rimraf node_modules",
     "clean:build": "lerna run clean:build --parallel",
+    "lerna": "lerna",
     "lerna:run-deps": "lerna run --include-filtered-dependencies",
     "commit": "git-cz",
     "test": "echo \"Error: no test specified\" && exit 1"
