@@ -3,50 +3,46 @@
   "version": "0.1.0",
   "private": true,
   "description": "Mono-repo of all open sourced Caldera code and projects",
-  "main": "index.js",
-  "scripts": {
-    "preinstall": "npx use-yarn",
-    "bootstrap": "yarn install && yarn build",
-    "rebootstrap": "run-s clean bootstrap killallNode",
-    "killallNode": "killall node",
-    "build": "yarn lerna:run-deps build",
-    "dev": "run-s build 'lerna:run-deps dev --parallel'",
-    "clean": "run-p clean:*",
-    "clean:node_modules": "lerna run clean:node_modules --parallel && rimraf node_modules",
-    "clean:build": "lerna run clean:build --parallel",
-    "lerna": "lerna",
-    "lerna:run-deps": "lerna run --include-filtered-dependencies",
-    "commit": "git-cz",
-    "cosmos": "cosmos",
-    "cosmos:export": "cosmos-export"
+  "homepage": "https://github.com/caldera-digital/platform#readme",
+  "bugs": {
+    "url": "https://github.com/caldera-digital/platform/issues"
   },
-  "engines": {
-    "node": "^10.15.0",
-    "yarn": "^1.13.0"
-  },
-  "os": [
-    "darwin",
-    "linux",
-    "!win32"
-  ],
-  "workspaces": [
-    "packages/*",
-    "projects/*"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/caldera-digital/platform.git"
   },
-  "author": "Marcus Wood <marcus@calderadigital.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/caldera-digital/platform/issues"
+  "author": "Marcus Wood <marcus@calderadigital.com>",
+  "main": "index.js",
+  "workspaces": [
+    "packages/*",
+    "projects/*"
+  ],
+  "scripts": {
+    "bootstrap": "yarn install && yarn build",
+    "build": "yarn lerna:run-deps build",
+    "clean": "run-p clean:*",
+    "clean:build": "lerna run clean:build --parallel",
+    "clean:node_modules": "lerna run clean:node_modules --parallel && rimraf node_modules",
+    "commit": "git-cz",
+    "cosmos": "cosmos",
+    "cosmos:export": "cosmos-export",
+    "dev": "run-s build 'lerna:run-deps dev --parallel'",
+    "preinstall": "npx use-yarn",
+    "killallNode": "killall node",
+    "lerna": "lerna",
+    "lerna:run-deps": "lerna run --include-filtered-dependencies",
+    "rebootstrap": "run-s clean bootstrap killallNode"
   },
-  "homepage": "https://github.com/caldera-digital/platform#readme",
   "husky": {
     "hooks": {
       "pre-push": "echo 'Lint on push soon'",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
     }
   },
   "devDependencies": {
@@ -102,9 +98,13 @@
     "use-yarn": "^2.2.0",
     "webpack": "^4.30.0"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-lerna-changelog"
-    }
-  }
+  "engines": {
+    "node": "^10.15.0",
+    "yarn": "^1.13.0"
+  },
+  "os": [
+    "!win32",
+    "darwin",
+    "linux"
+  ]
 }

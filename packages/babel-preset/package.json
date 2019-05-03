@@ -1,36 +1,33 @@
 {
   "name": "@caldera-digital/babel-preset",
   "version": "0.1.0",
-  "publishConfig": {
-    "access": "public"
-  },
   "private": true,
+  "description": "Babel preset, recommended from Caldera Digital",
+  "keywords": [
+    "caldera digital"
+  ],
+  "homepage": "https://github.com/caldera-digital/platform#readme",
   "bugs": {
     "url": "https://github.com/caldera-digital/platform/issues"
   },
-  "homepage": "https://github.com/caldera-digital/platform#readme",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/caldera-digital/platform.git"
   },
+  "license": "MIT",
   "author": "Marcus Wood <marcus@calderadigital.com>",
-  "keywords": [
-    "caldera digital"
-  ],
-  "description": "Babel preset, recommended from Caldera Digital",
   "main": "src/index.js",
   "scripts": {
-    "preinstall": "npx use-yarn",
-    "precommit": "lint-staged",
-    "clean": "run-p clean:*",
-    "clean:node_modules": "rimraf node_modules",
-    "clean:build": "rimraf dist",
     "build": "echo 'N/A'",
+    "clean": "run-p clean:*",
+    "clean:build": "rimraf dist",
+    "clean:node_modules": "rimraf node_modules",
     "dev": "echo 'N/A'",
-    "test": "echo 'N/A'",
+    "preinstall": "npx use-yarn",
     "lint": "eslint src/**/*.js",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "yarn lint --fix",
+    "precommit": "lint-staged",
+    "test": "echo 'N/A'"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.0.0",
@@ -42,7 +39,10 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.0.0",
     "babel-plugin-dynamic-import-node": "^2.2.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.21",
-    "babel-plugin-inline-react-svg": "^1.1.0"
+    "babel-plugin-inline-react-svg": "^1.1.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.21"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

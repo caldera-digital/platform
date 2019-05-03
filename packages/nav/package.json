@@ -1,29 +1,32 @@
 {
   "name": "@caldera-digital/nav",
   "version": "0.1.0",
-  "license": "MIT",
-  "peerDependencies": {
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "styled-components": "4.2.0",
-    "@caldera-digital/theme": "^0.1.0"
-  },
-  "main": "src/index.js",
-  "module": "src/index.module.js",
+  "description": "Fixed navbar component",
   "keywords": [
     "caldera digital"
   ],
+  "homepage": "https://github.com/caldera-digital/platform#readme",
+  "bugs": {
+    "url": "https://github.com/caldera-digital/platform/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caldera-digital/platform.git"
+  },
+  "license": "MIT",
+  "main": "src/index.js",
+  "module": "src/index.module.js",
   "scripts": {
-    "preinstall": "npx use-yarn",
-    "dev": "rollup -c rollup.config.js -w",
     "build": "rollup -c rollup.config.js",
     "clean": "run-p clean:*",
-    "clean:node_modules": "rimraf node_modules",
     "clean:build": "rimraf dist",
-    "test": "echo 'No tests, coming soon!'",
+    "clean:node_modules": "rimraf node_modules",
+    "dev": "rollup -c rollup.config.js -w",
     "eject": "react-scripts eject",
+    "preinstall": "npx use-yarn",
     "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint src/**/*.js --fix"
+    "lint:fix": "eslint src/**/*.js --fix",
+    "test": "echo 'No tests, coming soon!'"
   },
   "husky": {
     "hooks": {
@@ -33,5 +36,11 @@
   "devDependencies": {
     "@caldera-digital/rollup-config": "^0.1.0",
     "@caldera-digital/theme": "^0.1.0"
+  },
+  "peerDependencies": {
+    "@caldera-digital/theme": "^0.1.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "styled-components": "4.2.0"
   }
 }

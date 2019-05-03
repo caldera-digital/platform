@@ -1,36 +1,41 @@
 {
   "name": "@caldera-digital/rollup-config",
   "version": "0.1.0",
-  "publishConfig": {
-    "access": "public"
-  },
   "private": true,
+  "description": "Rollup config used by Caldera Digital",
+  "keywords": [
+    "caldera digital"
+  ],
+  "homepage": "https://github.com/caldera-digital/platform#readme",
   "bugs": {
     "url": "https://github.com/caldera-digital/platform/issues"
   },
-  "homepage": "https://github.com/caldera-digital/platform#readme",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/caldera-digital/platform.git"
   },
+  "license": "MIT",
   "author": "Marcus Wood <marcus@calderadigital.com>",
-  "keywords": [
-    "caldera digital"
-  ],
-  "description": "Rollup config used by Caldera Digital",
   "main": "dist/index.js",
   "scripts": {
-    "preinstall": "npx use-yarn",
-    "precommit": "lint-staged",
-    "clean": "run-p clean:*",
-    "clean:node_modules": "rimraf node_modules",
-    "clean:build": "rimraf dist",
     "build": "babel src --out-dir dist/ --ignore '**/*.test.js'",
+    "clean": "run-p clean:*",
+    "clean:build": "rimraf dist",
+    "clean:node_modules": "rimraf node_modules",
     "dev": "onchange -i 'src/**/*.js' -- yarn build",
-    "test": "echo 'N/A'",
+    "preinstall": "npx use-yarn",
     "lint": "eslint src/**/*.js",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "yarn lint --fix",
+    "precommit": "lint-staged",
+    "test": "echo 'N/A'"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "yarn lint:fix",
+        "git add"
+      ]
+    }
   },
   "dependencies": {
     "rollup": "^1.10.1",
@@ -40,12 +45,7 @@
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-resolve": "^4.2.3"
   },
-  "lint-staged": {
-    "linters": {
-      "*.js": [
-        "yarn lint:fix",
-        "git add"
-      ]
-    }
+  "publishConfig": {
+    "access": "public"
   }
 }
