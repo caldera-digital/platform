@@ -1,6 +1,6 @@
 {
   "name": "@caldera-digital/rollup-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Rollup config used by Caldera Digital",
   "keywords": [
@@ -38,7 +38,7 @@
     }
   },
   "dependencies": {
-    "@caldera-digital/babel-preset": "^0.1.0",
+    "@caldera-digital/babel-preset": "^0.1.1",
     "@svgr/rollup": "^4.2.0",
     "rollup": "^1.10.1",
     "rollup-plugin-babel": "^4.3.2",
