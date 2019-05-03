@@ -16,7 +16,7 @@
       "noCommitHooks": true,
       "changelogPreset": "conventional-changelog-angular-emoji",
       "allowBranch": "master",
-      "accessPublic": true
+      "access": "public"
     }
   },
   "ignoreChanges": [
