@@ -10,7 +10,9 @@
     "editorconfig",
     "prettierrc",
     "BITBUCKET",
-    "Netlify"
+    "Netlify",
+    "svgr",
+    "lerna"
   ],
   "cSpell.allowCompoundWords": true
 }

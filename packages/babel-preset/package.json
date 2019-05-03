@@ -1,0 +1,48 @@
+{
+  "name": "@caldera-digital/babel-preset",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Babel preset, recommended from Caldera Digital",
+  "keywords": [
+    "caldera digital"
+  ],
+  "homepage": "https://github.com/caldera-digital/platform#readme",
+  "bugs": {
+    "url": "https://github.com/caldera-digital/platform/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caldera-digital/platform.git"
+  },
+  "license": "MIT",
+  "author": "Marcus Wood <marcus@calderadigital.com>",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "echo 'N/A'",
+    "clean": "run-p clean:*",
+    "clean:build": "rimraf dist",
+    "clean:node_modules": "rimraf node_modules",
+    "dev": "echo 'N/A'",
+    "preinstall": "npx use-yarn",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "yarn lint --fix",
+    "precommit": "lint-staged",
+    "test": "echo 'N/A'"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
+    "babel-plugin-inline-react-svg": "^1.1.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.21"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

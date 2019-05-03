@@ -1,0 +1,4 @@
+{
+  "globalImports": ["./cosmos/globalStyle.css"],
+  "staticPath": "static"
+}
