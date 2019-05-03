@@ -18,12 +18,24 @@
     "caldera digital"
   ],
   "description": "Babel preset, recommended from Caldera Digital",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "files": [
     "lib",
     "src",
     "!**/__tests__"
   ],
+  "scripts": {
+    "preinstall": "npx use-yarn",
+    "precommit": "lint-staged",
+    "clean": "run-p clean:*",
+    "clean:node_modules": "rimraf node_modules",
+    "clean:build": "rimraf dist",
+    "build": "echo 'N/A'",
+    "dev": "echo 'N/A'",
+    "test": "echo 'N/A'",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "yarn lint --fix"
+  },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",

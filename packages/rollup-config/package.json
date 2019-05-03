@@ -18,12 +18,19 @@
     "caldera digital"
   ],
   "description": "Rollup config used by Caldera Digital",
-  "main": "lib/index.js",
-  "files": [
-    "lib",
-    "src",
-    "!**/__tests__"
-  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "preinstall": "npx use-yarn",
+    "precommit": "lint-staged",
+    "clean": "run-p clean:*",
+    "clean:node_modules": "rimraf node_modules",
+    "clean:build": "rimraf dist",
+    "build": "babel src --out-dir dist/ --ignore '**/*.test.js'",
+    "dev": "onchange -i 'src/**/*.js' -- yarn build",
+    "test": "echo 'N/A'",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "yarn lint --fix"
+  },
   "dependencies": {
     "rollup": "^1.10.1",
     "rollup-plugin-babel": "^4.3.2",
@@ -31,5 +38,13 @@
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-resolve": "^4.2.3"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "yarn lint:fix",
+        "git add"
+      ]
+    }
   }
 }

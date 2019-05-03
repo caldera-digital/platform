@@ -3,16 +3,16 @@
 // most of this has been inspired by
 // https://github.com/facebook/create-react-app/tree/master/packages/babel-preset-react-app
 
-module.exports = ({modules} = {modules = false}) => ({
+module.exports = ({ modules } = { modules: false }) => ({
   presets: [
     [
-      require("@babel/preset-env"),
+      require('@babel/preset-env'),
       {
-        modules
+        modules,
       },
     ],
     [
-      require("@babel/preset-react"),
+      require('@babel/preset-react'),
       {
         // Will use the native built-in instead of trying to polyfill
         // behavior for any plugins that require one.
@@ -24,7 +24,7 @@ module.exports = ({modules} = {modules = false}) => ({
     // Enable loose mode to use assignment instead of defineProperty
     // See discussion in https://github.com/facebook/create-react-app/issues/4263
     [
-      require("@babel/plugin-proposal-class-properties"),
+      require('@babel/plugin-proposal-class-properties'),
       {
         loose: true,
       },
@@ -33,7 +33,7 @@ module.exports = ({modules} = {modules = false}) => ({
     // extends helper. Note that this assumes `Object.assign` is available.
     // { ...todo, completed: true }
     [
-      require("@babel/plugin-proposal-object-rest-spread"),
+      require('@babel/plugin-proposal-object-rest-spread'),
       {
         useBuiltIns: true,
       },
@@ -41,7 +41,7 @@ module.exports = ({modules} = {modules = false}) => ({
     // Polyfills the runtime needed for async/await, generators, and friends
     // https://babeljs.io/docs/en/babel-plugin-transform-runtime
     [
-      require("@babel/plugin-transform-runtime"),
+      require('@babel/plugin-transform-runtime'),
       {
         corejs: false,
         helpers: false,
@@ -49,19 +49,19 @@ module.exports = ({modules} = {modules = false}) => ({
         useESModules: true,
       },
     ],
-    ...(process.env.NODE_ENV === "production"
+    ...(process.env.NODE_ENV === 'production'
       ? [
-        [
-          // Remove PropTypes from production build
-          require("babel-plugin-transform-react-remove-prop-types"),
-          {
-            removeImport: true,
-          },
-        ],
-      ]
+          [
+            // Remove PropTypes from production build
+            require('babel-plugin-transform-react-remove-prop-types'),
+            {
+              removeImport: true,
+            },
+          ],
+        ]
       : []),
     // Adds syntax support for import()
-    require("@babel/plugin-syntax-dynamic-import"),
-    require('babel-plugin-inline-react-svg')
+    require('@babel/plugin-syntax-dynamic-import'),
+    require('babel-plugin-inline-react-svg'),
   ],
-});
+})
