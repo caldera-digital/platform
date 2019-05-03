@@ -1,3 +1,4 @@
+/* eslint-disable import/no-commonjs */
 // Mostly taken from https://github.com/phenomic/phenomic/blob/master/packages/babel-preset/src/index.js
 
 // most of this has been inspired by
