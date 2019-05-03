@@ -13,10 +13,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-size: ${props => props.theme.defaultFontSize}
+    font-size: ${props => props.theme.defaultFontSize};
 
     ${media.forSmallOnly`
-      font-size: ${props => props.theme.defaultMobileFontSize}
+      font-size: ${props => props.theme.defaultMobileFontSize};
     `}
   }
 

@@ -1,11 +1,10 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, ThemeProvider } from 'styled-components'
 import { media, CalderaDigitalThemeConsumer } from '@caldera-digital/theme'
 import { Hamburger } from './Hamburger'
-import { ThemeProvider } from 'styled-components'
 
 const createRoutes = () => {
-  let routes = [
+  const routes = [
     {
       route: '/faq',
       text: 'FAQ',
@@ -103,10 +102,6 @@ const StyledNavLink = styled.a`
   ${NavLinkStyles}
 `
 
-const LogoutButton = styled.div`
-  ${NavLinkStyles}
-`
-
 const RoutesContainer = styled.div`
   display: flex;
   align-items: center;
@@ -125,12 +120,12 @@ const RoutesContainer = styled.div`
   `}
 `
 
-export const NavComponent = ({ isSignedIn, logout }) => {
+export const NavComponent = () => {
   const [hamburgerOpen, setHamburgerOpen] = React.useState(false)
   const routes = createRoutes()
   return (
     <NavContainer>
-      <a to="/" onClick={() => setHamburgerOpen(false)}>
+      <a to="/" onClick={() => setHamburgerOpen(false)} href="/">
         <div>logo here</div>
       </a>
 
