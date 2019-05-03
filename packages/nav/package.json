@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "styled-components": "4.2.0"
   },
+  "main": "src/index.js",
+  "module": "src/index.module.js",
   "scripts": {
     "preinstall": "npx use-yarn",
-    "start": "rollup -c rollup.config.js -w",
+    "dev": "rollup -c rollup.config.js -w",
     "build": "rollup -c rollup.config.js",
     "clean": "run-p clean:*",
     "clean:node_modules": "rimraf node_modules",

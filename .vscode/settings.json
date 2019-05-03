@@ -11,7 +11,8 @@
     "prettierrc",
     "BITBUCKET",
     "Netlify",
-    "svgr"
+    "svgr",
+    "lerna"
   ],
   "cSpell.allowCompoundWords": true
 }

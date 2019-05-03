@@ -4,6 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "private": true,
   "bugs": {
     "url": "https://github.com/caldera-digital/platform/issues"
   },

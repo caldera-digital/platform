@@ -7,7 +7,10 @@
   "scripts": {
     "preinstall": "npx use-yarn",
     "bootstrap": "yarn install && yarn build",
+    "rebootstrap": "run-s clean bootstrap killallNode",
+    "killallNode": "killall node",
     "build": "yarn lerna:run-deps build",
+    "dev": "run-s build 'lerna:run-deps dev --parallel'",
     "clean": "run-p clean:*",
     "clean:node_modules": "lerna run clean:node_modules --parallel && rimraf node_modules",
     "clean:build": "lerna run clean:build --parallel",
@@ -77,7 +80,10 @@
     "husky": "^2.1.0",
     "lerna": "^3.13.4",
     "npm-run-all": "^4.1.5",
+    "onchange": "^5.2.0",
     "prettier": "^1.17.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
     "rimraf": "^2.6.3",
     "rollup": "^1.10.1",
     "rollup-plugin-babel": "^4.3.2",
@@ -85,6 +91,7 @@
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-resolve": "^4.2.3",
+    "styled-components": "4.2.0",
     "use-yarn": "^2.2.0"
   },
   "config": {
