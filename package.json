@@ -34,7 +34,8 @@
     "lerna:run-deps": "lerna run --include-filtered-dependencies",
     "lint": "lerna run lint --parallel",
     "test": "lerna run test -- parallel",
-    "rebootstrap": "run-s clean bootstrap killallNode"
+    "rebootstrap": "run-s clean bootstrap killallNode",
+    "release": "yarn build && yarn lerna publish"
   },
   "husky": {
     "hooks": {
