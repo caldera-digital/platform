@@ -1,23 +1,7 @@
 import React from 'react'
-import styled, { css, ThemeProvider } from 'styled-components'
-import { media, CalderaDigitalThemeConsumer } from '@caldera-digital/theme'
+import styled, { css } from 'styled-components'
+import { media } from '@caldera-digital/theme'
 import { Hamburger } from './Hamburger'
-
-const createRoutes = () => {
-  const routes = [
-    {
-      route: '/faq',
-      text: 'FAQ',
-    },
-  ]
-
-  routes.push({
-    route: '/sign-up',
-    text: 'Sign up/Login',
-  })
-
-  return routes
-}
 
 const NavContainer = styled.div`
   height: ${props => props.theme.desktopHeaderHeight};
@@ -28,18 +12,9 @@ const NavContainer = styled.div`
   justify-content: space-between;
   padding: 0 2rem;
 
-  svg {
-    width: 250px;
-    fill: white;
-  }
-
   ${media.forSmallOnly`
     height: ${props => props.theme.mobileHeaderHeight};
     padding: 0 1rem;
-
-    svg {
-      width: 175px;
-    }
   `}
 `
 
@@ -98,10 +73,6 @@ const NavLinkStyles = css`
   `}
 `
 
-const StyledNavLink = styled.a`
-  ${NavLinkStyles}
-`
-
 const RoutesContainer = styled.div`
   display: flex;
   align-items: center;
@@ -120,43 +91,62 @@ const RoutesContainer = styled.div`
   `}
 `
 
-export const NavComponent = () => {
-  const [hamburgerOpen, setHamburgerOpen] = React.useState(false)
-  const routes = createRoutes()
-  return (
-    <NavContainer>
-      <a to="/" onClick={() => setHamburgerOpen(false)} href="/">
-        <div>logo here</div>
-      </a>
+const createRouteLink = as => styled(as)`
+  ${NavLinkStyles};
+`
 
-      <NavOptionsContainer>
+export const NavComponent = ({
+  routes = [],
+  containerClassName = '',
+  containerStyle = {},
+  navOptionsStyle = {},
+  renderLeftSection = () => null,
+}) => {
+  const [hamburgerOpen, setHamburgerOpen] = React.useState(false)
+  return (
+    <NavContainer className={containerClassName} style={containerStyle}>
+      {renderLeftSection()}
+
+      <NavOptionsContainer style={navOptionsStyle}>
         <Hamburger
           open={hamburgerOpen}
           onClick={() => setHamburgerOpen(!hamburgerOpen)}
         />
         <RoutesContainer open={hamburgerOpen}>
-          {routes.map(({ route, text }) => (
-            <StyledNavLink
-              to={route}
-              key={route}
-              activeClassName="selected"
-              onClick={() => setHamburgerOpen(false)}
-            >
-              {text}
-            </StyledNavLink>
-          ))}
+          {routes.map(
+            ({
+              route,
+              text,
+              as = 'a',
+              selected = false,
+              renderLinkContent,
+              onClick = () => null,
+              ...rest
+            }) => {
+              // The controls what the link renders as so it works with Reach, React Router, and normal
+              const RouteLink = createRouteLink(as)
+
+              return (
+                <RouteLink
+                  to={route}
+                  key={route}
+                  className={selected ? 'selected' : ''}
+                  onClick={() => {
+                    setHamburgerOpen(false)
+
+                    onClick({ route, text, ...rest })
+                  }}
+                  {...rest}
+                >
+                  {renderLinkContent ? renderLinkContent() : text}
+                </RouteLink>
+              )
+            },
+          )}
         </RoutesContainer>
       </NavOptionsContainer>
     </NavContainer>
   )
 }
 
-export const Nav = () => (
-  <CalderaDigitalThemeConsumer>
-    {theme => (
-      <ThemeProvider theme={theme}>
-        <NavComponent />
-      </ThemeProvider>
-    )}
-  </CalderaDigitalThemeConsumer>
-)
+export const Nav = props => <NavComponent {...props} />
