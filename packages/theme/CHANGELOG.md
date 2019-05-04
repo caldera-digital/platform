@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.6"></a>
+## [0.1.6](https://github.com/caldera-digital/platform/compare/@caldera-digital/theme@0.1.5...@caldera-digital/theme@0.1.6) (2019-05-04)
+
+
+### :sparkles: Features
+
+* fix imports for nav and theme ([f0dc63b](https://github.com/caldera-digital/platform/commit/f0dc63b))
+
+
+
+
+
 <a name="0.1.5"></a>
 ## [0.1.5](https://github.com/caldera-digital/platform/compare/@caldera-digital/theme@0.1.4...@caldera-digital/theme@0.1.5) (2019-05-03)
 
