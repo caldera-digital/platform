@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.8"></a>
+## [0.1.8](https://github.com/caldera-digital/platform/compare/@caldera-digital/theme@0.1.6...@caldera-digital/theme@0.1.8) (2019-05-04)
+
+
+### :ticket: Chores
+
+* add release script ([a833af1](https://github.com/caldera-digital/platform/commit/a833af1))
+
+
+
+
+
 <a name="0.1.6"></a>
 ## [0.1.6](https://github.com/caldera-digital/platform/compare/@caldera-digital/theme@0.1.5...@caldera-digital/theme@0.1.6) (2019-05-04)
 
