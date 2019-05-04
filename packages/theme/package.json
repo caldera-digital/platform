@@ -17,8 +17,8 @@
     "access": "public"
   },
   "license": "MIT",
-  "main": "src/index.js",
-  "module": "src/index.module.js",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
   "scripts": {
     "build": "rollup -c rollup.config.js",
     "clean": "run-p clean:*",
