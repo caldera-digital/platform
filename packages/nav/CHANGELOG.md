@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/caldera-digital/platform/compare/@caldera-digital/nav@0.1.9...@caldera-digital/nav@1.0.1) (2019-05-05)
+
+
+### :sparkles: Features
+
+* add container and 1.0 bump for all ([d9df7a2](https://github.com/caldera-digital/platform/commit/d9df7a2))
+
+
+
+
+
 <a name="0.1.9"></a>
 ## [0.1.9](https://github.com/caldera-digital/platform/compare/@caldera-digital/nav@0.1.8...@caldera-digital/nav@0.1.9) (2019-05-04)
 
