@@ -18,10 +18,10 @@ export const DEFAULT_THEME = {
   primaryColor: '#010628',
   defaultFont: '"Helvetica Neue", Arial, "Noto Sans"',
   white: '#ffffff',
-  defaultHeaderFontColor: '#090728',
   defaultTransition: 'all 0.2s linear',
   defaultFontSize: '18px',
   defaultMobileFontSize: '16px',
+  maxContainerWidth: '1140px',
 }
 
 export const CalderaDigitalThemeProvider = ({ theme = {}, children }) => (
