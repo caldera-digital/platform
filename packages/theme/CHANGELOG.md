@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/caldera-digital/platform/compare/@caldera-digital/theme@1.0.2...@caldera-digital/theme@1.0.3) (2019-05-05)
+
+
+### :sparkles: Features
+
+* wirre up more variables correctly ([883d7dc](https://github.com/caldera-digital/platform/commit/883d7dc))
+
+
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/caldera-digital/platform/compare/@caldera-digital/theme@1.0.1...@caldera-digital/theme@1.0.2) (2019-05-05)
 
