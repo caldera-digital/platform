@@ -21,13 +21,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: ${props => props.theme.defaultHeaderFont};
+    font-family: ${props => props.theme.defaultFont};
     color: ${props => props.theme.defaultFontColor};
 
     h1, h2, h3, h4, h5, h6 {
       margin-top: 0;
       margin-bottom: 0.5rem;
-      color: ${props => props.theme.defaultHeaderFont};
+      color: ${props => props.theme.defaultHeaderColor};
+      font-family: ${props => props.theme.defaultHeaderFont};
       font-weight: 400;
     }
 
