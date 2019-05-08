@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/caldera-digital/platform/compare/@caldera-digital/theme@1.0.3...@caldera-digital/theme@1.0.4) (2019-05-08)
+
+
+### :bug: Bug Fixes
+
+* fix scripts for theme ([3821d36](https://github.com/caldera-digital/platform/commit/3821d36))
+
+
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/caldera-digital/platform/compare/@caldera-digital/theme@1.0.2...@caldera-digital/theme@1.0.3) (2019-05-05)
 
