@@ -25,7 +25,6 @@
     "clean:build": "rimraf dist",
     "clean:node_modules": "rimraf node_modules",
     "dev": "rollup -c rollup.config.js -w",
-    "eject": "react-scripts eject",
     "preinstall": "npx use-yarn",
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint src/**/*.js --fix",
@@ -43,6 +42,5 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "styled-components": "4.2.0"
-  },
-  "gitHead": "ff5ce2ac77aebf7af56f79a422302f360d445074"
+  }
 }
