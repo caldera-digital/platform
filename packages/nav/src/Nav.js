@@ -97,14 +97,14 @@ const createRouteLink = as => styled(as)`
 
 export const NavComponent = ({
   routes = [],
-  containerClassName = '',
+  className = '',
   containerStyle = {},
   navOptionsStyle = {},
   renderLeftSection = () => null,
 }) => {
   const [hamburgerOpen, setHamburgerOpen] = React.useState(false)
   return (
-    <NavContainer className={containerClassName} style={containerStyle}>
+    <NavContainer className={className} style={containerStyle}>
       {renderLeftSection()}
 
       <NavOptionsContainer style={navOptionsStyle}>
@@ -121,6 +121,7 @@ export const NavComponent = ({
               selected = false,
               renderLinkContent,
               onClick = () => null,
+              className = '',
               ...rest
             }) => {
               // The controls what the link renders as so it works with Reach, React Router, and normal
@@ -130,7 +131,7 @@ export const NavComponent = ({
                 <RouteLink
                   to={route}
                   key={route}
-                  className={selected ? 'selected' : ''}
+                  className={`${className} ${selected ? 'selected' : ''}`}
                   onClick={() => {
                     setHamburgerOpen(false)
 
