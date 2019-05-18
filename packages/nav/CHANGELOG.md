@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/caldera-digital/platform/compare/@caldera-digital/nav@1.0.2...@caldera-digital/nav@1.0.3) (2019-05-18)
+
+
+### :bug: Bug Fixes
+
+* fix mobile nav issue ([48325b4](https://github.com/caldera-digital/platform/commit/48325b4))
+
+
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/caldera-digital/platform/compare/@caldera-digital/nav@1.0.1...@caldera-digital/nav@1.0.2) (2019-05-11)
 
