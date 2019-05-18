@@ -70,6 +70,14 @@ const NavLinkStyles = css`
     padding: .75rem;
     margin: 0;
     font-size: ${props => props.theme.defaultFontSize};
+
+      &.selected {
+        font-weight: bold;
+
+      &:after {
+        display: none;
+      }
+    }
   `}
 `
 
