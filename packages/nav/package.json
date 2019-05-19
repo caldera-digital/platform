@@ -25,7 +25,6 @@
     "clean:build": "rimraf dist",
     "clean:node_modules": "rimraf node_modules",
     "dev": "rollup -c rollup.config.js -w",
-    "eject": "react-scripts eject",
     "preinstall": "npx use-yarn",
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint src/**/*.js --fix",

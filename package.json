@@ -26,16 +26,21 @@
     "clean:node_modules": "lerna run clean:node_modules --parallel && rimraf node_modules",
     "commit": "git-cz",
     "cosmos": "cosmos",
+    "lerna": "lerna",
+    "lerna:run": "lerna run",
+    "lerna:run-deps": "lerna run --include-filtered-dependencies --stream",
+    "lerna:list": "lerna list --long --all",
+    "lerna:diff": "lerna diff",
+    "lerna:change": "lerna changed --long || true",
     "cosmos:export": "cosmos-export",
     "dev": "run-s build 'lerna:run-deps dev --parallel'",
     "preinstall": "npx use-yarn",
     "killallNode": "killall node",
-    "lerna": "lerna",
-    "lerna:run-deps": "lerna run --include-filtered-dependencies",
     "lint": "lerna run lint --parallel",
     "test": "lerna run test -- parallel",
     "rebootstrap": "run-s clean bootstrap killallNode",
-    "release": "yarn build && yarn lerna publish"
+    "release": "yarn build && yarn lerna publish",
+    "caldera": "yarn lerna:run-deps --scope @caldera-digital/caldera*"
   },
   "husky": {
     "hooks": {
