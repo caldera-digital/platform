@@ -1,9 +1,10 @@
+/* eslint-disable import/no-commonjs */
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
+    title: 'Caldera',
+    author: 'Marcus Wood',
     description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsby-starter-blog-demo.netlify.com/',
+    siteUrl: 'https://calderadigital.com',
     social: {
       twitter: 'kylemathews',
     },
@@ -66,13 +67,13 @@ module.exports = {
         icon: 'content/assets/gatsby-icon.png',
       },
     },
+    {
+      resolve: 'gatsby-plugin-styled-components',
+      options: {},
+    },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-netlify',
   ],
 }
