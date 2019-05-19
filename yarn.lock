@@ -773,6 +773,11 @@
   resolved "https://registry.yarnpkg.com/@blakeembrey/deque/-/deque-1.0.5.tgz#f4fa17fc5ee18317ec01a763d355782c7b395eaf"
   integrity sha512-6xnwtvp9DY1EINIKdTfvfeAtCYw4OqBZJhtiqkT3ivjnEfa25VQ3TsKvaFfKm8MyGIEfE95qLe+bNEt3nB0Ylg==
 
+"@caldera-digital/theme@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@caldera-digital/theme/-/theme-0.1.8.tgz#8565b1c056040cde1117b2b99f043e070dcdfd72"
+  integrity sha512-mVoI8HNpf2dn4Yl6mOEqK+SM+kxFjsMmPrxVdrGPjqRVMo7jY/PwU/fQBsrHIs93dNHjYiLYdOFV5vOEkg0HUA==
+
 "@commitlint/cli@^7.5.2":
   version "7.5.2"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-7.5.2.tgz#2475cd8f7ed3b2f9c2ab96c06bc24d61d23f8716"
