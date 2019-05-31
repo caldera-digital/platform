@@ -12,7 +12,7 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <link
-          href="https://fonts.googleapis.com/css?family=Palanquin:400,700|Roboto:300,500&display=swap"
+          href="https://fonts.googleapis.com/css?family=Palanquin:400,700|Roboto:300,400,500&display=swap"
           rel="stylesheet"
         />
         {props.headComponents}

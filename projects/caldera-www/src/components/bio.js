@@ -9,7 +9,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 
-function Bio() {
+export const Bio = () => {
   return (
     <StaticQuery
       query={bioQuery}
@@ -57,5 +57,3 @@ const bioQuery = graphql`
     }
   }
 `
-
-export default Bio

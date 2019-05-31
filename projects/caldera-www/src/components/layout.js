@@ -7,8 +7,11 @@ import {
 } from '@caldera-digital/theme'
 import { ThemeProvider } from 'styled-components'
 import { theme as customTheme } from '../style'
+import { NavBar } from '../components'
 
-class Layout extends React.Component {
+import 'normalize.css'
+
+export class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
     // eslint-disable-next-line no-undef
@@ -58,7 +61,7 @@ class Layout extends React.Component {
             <ThemeProvider theme={theme}>
               <div>
                 <GlobalStyle />
-                <header>{header}</header>
+                <header>{<NavBar location={location} />}</header>
                 <main>{children}</main>
                 <footer>
                   © {new Date().getFullYear()}, Built with rrt{' '}
@@ -72,5 +75,3 @@ class Layout extends React.Component {
     )
   }
 }
-
-export default Layout
