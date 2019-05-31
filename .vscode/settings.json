@@ -14,7 +14,8 @@
     "prismjs",
     "repo",
     "roboto",
-    "svgr"
+    "svgr",
+    "svgs"
   ],
   "cSpell.allowCompoundWords": true
 }

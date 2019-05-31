@@ -1,7 +1,7 @@
 {
-  "name": "@caldera-digital/nav",
-  "version": "1.0.4",
-  "description": "Fixed navbar component",
+  "name": "@caldera-digital/core",
+  "version": "1.0.0",
+  "description": "Utility functions and small components used in Caldera apps",
   "keywords": [
     "caldera digital"
   ],

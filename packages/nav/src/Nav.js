@@ -11,6 +11,8 @@ const NavContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
+  position: relative;
+  z-index: 100;
 
   ${media.forSmallOnly`
     height: ${props => props.theme.mobileHeaderHeight};

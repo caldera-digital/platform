@@ -5,7 +5,7 @@ export const theme = {
   defaultHeaderFont: '"Palanquin", sans-serif',
   defaultFontColor: '#000000',
   defaultFontSize: '18px',
-  defaultHeaderColor: '#ffffff',
+  defaultHeaderColor: '#000000',
   defaultInputBackgroundColor: '#f5f5f5',
   defaultMobileFontSize: '16px',
   defaultTransition: 'all 0.2s linear',

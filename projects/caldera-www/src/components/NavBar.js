@@ -4,7 +4,7 @@ import { Nav } from '@caldera-digital/nav'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { media } from '@caldera-digital/theme'
-import Logo from '../images/caldera-logo.svg'
+import Logo from '../assets/svgs/caldera-logo.svg'
 
 const LOGO_SPACING = '28px'
 const LogoContainer = styled(Link)`
