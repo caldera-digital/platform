@@ -1,7 +1,6 @@
 {
   "name": "@caldera-digital/babel-preset",
   "version": "1.0.1",
-  "private": true,
   "description": "Babel preset, recommended from Caldera Digital",
   "keywords": [
     "caldera digital"
