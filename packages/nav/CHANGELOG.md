@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/caldera-digital/platform/compare/@caldera-digital/nav@1.0.3...@caldera-digital/nav@1.0.4) (2019-05-31)
+
+
+### :bug: Bug Fixes
+
+* bump versions to right level ([ab845a8](https://github.com/caldera-digital/platform/commit/ab845a8))
+
+
+### :sparkles: Features
+
+* add caldera-www and update scripts ([08ab427](https://github.com/caldera-digital/platform/commit/08ab427))
+
+
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/caldera-digital/platform/compare/@caldera-digital/nav@1.0.2...@caldera-digital/nav@1.0.3) (2019-05-18)
 

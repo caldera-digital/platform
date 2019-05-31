@@ -1,6 +1,6 @@
 {
   "name": "@caldera-digital/nav",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Fixed navbar component",
   "keywords": [
     "caldera digital"
@@ -36,7 +36,7 @@
     }
   },
   "devDependencies": {
-    "@caldera-digital/rollup-config": "^1.0.1",
+    "@caldera-digital/rollup-config": "^1.0.2",
     "@caldera-digital/theme": "^0.1.8"
   },
   "peerDependencies": {

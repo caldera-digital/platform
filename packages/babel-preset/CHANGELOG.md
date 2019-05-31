@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/caldera-digital/platform/compare/@caldera-digital/babel-preset@1.0.1...@caldera-digital/babel-preset@1.0.2) (2019-05-31)
+
+
+### :sparkles: Features
+
+* publish repos so ci works ([273715a](https://github.com/caldera-digital/platform/commit/273715a))
+
+
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/caldera-digital/platform/compare/@caldera-digital/babel-preset@0.1.1...@caldera-digital/babel-preset@1.0.1) (2019-05-05)
 
