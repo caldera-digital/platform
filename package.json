@@ -28,7 +28,7 @@
     "cosmos": "cosmos",
     "lerna": "lerna",
     "lerna:run": "lerna run",
-    "lerna:run-deps": "lerna run --include-filtered-dependencies --stream",
+    "lerna:run-deps": "lerna run --include-filtered-dependencies --stream --parallel",
     "lerna:list": "lerna list --long --all",
     "lerna:diff": "lerna diff",
     "lerna:change": "lerna changed --long || true",

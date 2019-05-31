@@ -8,6 +8,8 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@caldera-digital/theme": "^1.0.4",
+    "@caldera-digital/nav": "^1.0.3",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.5.5",
     "gatsby-image": "^2.1.0",
@@ -32,6 +34,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-spring": "^8.0.20",
     "react-typography": "^0.16.19",
     "styled-components": "^4.2.0",
     "typeface-merriweather": "0.0.72",

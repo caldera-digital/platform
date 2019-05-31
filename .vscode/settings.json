@@ -3,16 +3,17 @@
   "editor.codeActionsOnSaveTimeout": 4000,
   "prettier.eslintIntegration": true,
   "cSpell.words": [
-    "browserslist",
-    "Workspaces",
-    "dubnium",
-    "repo",
-    "editorconfig",
-    "prettierrc",
     "BITBUCKET",
     "Netlify",
-    "svgr",
-    "lerna"
+    "Workspaces",
+    "browserslist",
+    "dubnium",
+    "editorconfig",
+    "lerna",
+    "prettierrc",
+    "prismjs",
+    "repo",
+    "svgr"
   ],
   "cSpell.allowCompoundWords": true
 }
