@@ -41,7 +41,7 @@
     "rebootstrap": "run-s clean bootstrap killallNode",
     "release": "yarn build && yarn lerna publish",
     "caldera": "yarn lerna:run-deps --scope @caldera-digital/caldera*",
-    "caldera:dev": "yarn lerna:run-deps --scope @caldera-digital/caldera* --parallel dev"
+    "caldera:dev": "yarn caldera --parallel dev"
   },
   "husky": {
     "hooks": {

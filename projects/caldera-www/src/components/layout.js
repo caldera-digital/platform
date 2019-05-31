@@ -1,9 +1,17 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import {
+  CalderaDigitalThemeProvider,
+  CalderaDigitalThemeConsumer,
+  GlobalStyle,
+} from '@caldera-digital/theme'
+import { ThemeProvider } from 'styled-components'
+import { theme as customTheme } from '../style'
 
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
+    // eslint-disable-next-line no-undef
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
@@ -44,14 +52,23 @@ class Layout extends React.Component {
       )
     }
     return (
-      <div>
-        <header>{header}</header>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with{' '}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      <CalderaDigitalThemeProvider theme={customTheme}>
+        <CalderaDigitalThemeConsumer>
+          {theme => (
+            <ThemeProvider theme={theme}>
+              <div>
+                <GlobalStyle />
+                <header>{header}</header>
+                <main>{children}</main>
+                <footer>
+                  © {new Date().getFullYear()}, Built with rrt{' '}
+                  <a href="https://www.gatsbyjs.org">Gatsby</a>
+                </footer>
+              </div>
+            </ThemeProvider>
+          )}
+        </CalderaDigitalThemeConsumer>
+      </CalderaDigitalThemeProvider>
     )
   }
 }
