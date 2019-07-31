@@ -75,11 +75,11 @@ const NavLinkStyles = css`
 
       &.selected {
         font-weight: bold;
+      }
 
       &:after {
-        display: none;
+        display: none !important;
       }
-    }
   `}
 `
 
@@ -111,6 +111,7 @@ export const NavComponent = ({
   containerStyle = {},
   navOptionsStyle = {},
   renderLeftSection = () => null,
+  hamburgerColor,
 }) => {
   const [hamburgerOpen, setHamburgerOpen] = React.useState(false)
   return (
@@ -121,6 +122,7 @@ export const NavComponent = ({
         <Hamburger
           open={hamburgerOpen}
           onClick={() => setHamburgerOpen(!hamburgerOpen)}
+          hamburgerColor={hamburgerColor}
         />
         <RoutesContainer open={hamburgerOpen}>
           {routes.map(

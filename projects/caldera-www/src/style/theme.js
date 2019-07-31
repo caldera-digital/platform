@@ -4,7 +4,7 @@ export const theme = {
   defaultFont: '"Roboto", sans-serif',
   defaultHeaderFont: '"Palanquin", sans-serif',
   defaultFontColor: '#000000',
-  defaultFontSize: '18px',
+  defaultFontSize: '16px',
   defaultHeaderColor: '#000000',
   defaultInputBackgroundColor: '#f5f5f5',
   defaultMobileFontSize: '16px',

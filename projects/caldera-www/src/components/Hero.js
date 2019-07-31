@@ -1,51 +1,132 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Button } from './Button'
-import HeroBlob from '../assets/svgs/blue-blob2.svg'
+import styled, { keyframes } from 'styled-components'
+import HeroBlob from '../assets/svgs/blue-blob5.svg'
 import Phone from '../assets/images/homeHeroImage.png'
+import { media } from '@caldera-digital/theme'
+
+const jiggle = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1) translate(30px, 20px) rotate(10deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+`
 
 const HeroContainer = styled.div`
   position: relative;
   height: 90vh;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+  overflow: hidden;
 
-  & > div {
+  & > * {
     flex: 1;
-    padding: 6rem;
 
     h1 {
       font-size: 70px;
       font-weight: bold;
+      margin-right: 2rem;
     }
+  }
 
-    img {
-      width: 100%;
-      object-fit: contain;
-      max-width: 500px;
-      float: right;
-    }
+  img {
+    width: 100%;
+    object-fit: contain;
+    max-width: 500px;
   }
 
   .backgroundHeroBlob {
     position: absolute;
+    width: 70%;
     top: -25%;
-    right: -25%;
+    right: -10%;
     z-index: -1;
+    animation: 15s ${jiggle} infinite;
   }
+
+  ${media.forSmallMediumOnly`
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 0;
+
+    & > * {
+      h1 {
+        font-size: 50px;
+      }
+    }
+
+    img {
+      max-width: 35%;
+    }
+  `}
+
+  ${media.forSmallOnly`
+  justify-content: flex-start;
+
+    & > * {
+      flex: 0;
+
+      h1 {
+        font-size: 40px;
+        margin: 0;
+      }
+    }
+
+    img {
+      max-width: 60%;
+      display: none;
+    }
+
+    .backgroundHeroBlob {
+      width: 120%;
+      top: 0;
+      right: -10%;
+      z-index: -1;
+      animation: 15s ${jiggle} infinite;
+    }
+  `}
+`
+
+const HeroTextContainer = styled.div`
+  ${media.forSmallMediumOnly`
+    padding: 2rem 3rem 0;
+  `}
+
+  ${media.forSmallOnly`
+    padding: 2rem 2rem 0;
+  `}
+`
+
+const SecondaryText = styled.p`
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  color: ${props => props.theme.grayText};
+
+  ${media.forSmallMediumOnly`
+    font-size: 1.75rem;
+  `}
+
+  ${media.forSmallOnly`
+    font-size: 1.5rem;
+  `}
 `
 
 export const Hero = () => {
   return (
     <HeroContainer>
       <HeroBlob className="backgroundHeroBlob" />
-      <div>
+      <HeroTextContainer>
         <h1>We create outstanding experiences for B2B companies</h1>
-        <Button>Hello</Button>
-      </div>
-      <div>
-        <img src={Phone} alt="fancy phone graphic" />
-      </div>
+        <SecondaryText>Web | Mobile | Apps</SecondaryText>
+      </HeroTextContainer>
+
+      <img src={Phone} alt="fancy phone graphic" />
     </HeroContainer>
   )
 }

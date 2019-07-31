@@ -44,6 +44,11 @@ const StyledNav = styled(Nav)`
     top: 0;
     z-index: 50;
     width: 100%;
+
+    a {
+      margin: 0;
+      font-size: 1.25rem
+    }
   `}
 `
 
@@ -90,10 +95,11 @@ const createRoutes = location => [
   },
 ]
 
-export const NavBar = ({ location }) => {
+export const NavBar = ({ location, theme }) => {
   return (
     <StyledNav
       routes={createRoutes(location)}
+      hamburgerColor={theme.primaryColor}
       renderLeftSection={() => (
         <LogoContainer to="/">
           <Logo />

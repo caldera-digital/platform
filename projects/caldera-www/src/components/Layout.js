@@ -61,7 +61,7 @@ export class Layout extends React.Component {
             <ThemeProvider theme={theme}>
               <div>
                 <GlobalStyle />
-                <header>{<NavBar location={location} />}</header>
+                <header>{<NavBar location={location} theme={theme} />}</header>
                 <main>{children}</main>
                 <footer>
                   © {new Date().getFullYear()}, Built with rrt{' '}
