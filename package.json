@@ -41,7 +41,8 @@
     "rebootstrap": "run-s clean bootstrap killallNode",
     "release": "yarn build && yarn lerna publish",
     "caldera": "yarn lerna:run-deps --scope @caldera-digital/caldera*",
-    "caldera:dev": "yarn caldera --parallel dev"
+    "caldera:dev": "yarn caldera --parallel dev",
+    "caldera:build": "yarn caldera build"
   },
   "husky": {
     "hooks": {
@@ -109,6 +110,7 @@
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-postcss": "^2.0.3",
     "style-loader": "^0.23.1",
     "styled-components": "4.2.0",
     "use-yarn": "^2.2.0",

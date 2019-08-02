@@ -1,20 +1,9 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import HeroBlob from '../assets/svgs/blue-blob5.svg'
 import Phone from '../assets/images/homeHeroImage.png'
 import { media } from '@caldera-digital/theme'
-
-const jiggle = keyframes`
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1) translate(30px, 20px) rotate(10deg);
-  }
-  100% {
-    transform: scale(1);
-  }
-`
+import { jiggle } from '../style/utils'
 
 const HeroContainer = styled.div`
   position: relative;
@@ -23,6 +12,7 @@ const HeroContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 5rem;
+  margin-bottom: 3rem;
   overflow: hidden;
 
   & > * {
@@ -123,7 +113,7 @@ export const Hero = () => {
       <HeroBlob className="backgroundHeroBlob" />
       <HeroTextContainer>
         <h1>We create outstanding experiences for B2B companies</h1>
-        <SecondaryText>Web | Mobile | Apps</SecondaryText>
+        <SecondaryText>Web | Mobile | Analytics</SecondaryText>
       </HeroTextContainer>
 
       <img src={Phone} alt="fancy phone graphic" />

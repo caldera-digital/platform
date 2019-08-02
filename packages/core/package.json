@@ -44,5 +44,8 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "styled-components": "4.2.0"
+  },
+  "dependencies": {
+    "@brainhubeu/react-carousel": "^1.10.17"
   }
 }

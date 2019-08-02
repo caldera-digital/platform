@@ -4,6 +4,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
 import svgr from '@svgr/rollup'
 import builtins from 'rollup-plugin-node-builtins'
+import postcss from 'rollup-plugin-postcss'
 import calderaDigitalBabelPreset from '@caldera-digital/babel-preset'
 
 // const isProd = process.env.NODE_ENV === 'production'
@@ -37,6 +38,9 @@ export default ({ name }, input = './src/index.js') => ({
     },
   ],
   plugins: [
+    postcss({
+      extract: true,
+    }),
     builtins(),
     resolve({ extensions }),
     babel({
