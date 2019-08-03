@@ -49,6 +49,7 @@ export const GlobalStyle = createGlobalStyle`
     p {
       margin-top: 0;
       margin-bottom: 1rem;
+      line-height: ${props => props.theme.defaultParagraphLineHeight};
     }
 
     a {

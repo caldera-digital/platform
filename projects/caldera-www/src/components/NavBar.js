@@ -67,8 +67,8 @@ const createRoutes = location => [
     },
   },
   {
-    route: '/products',
-    text: 'Our Products',
+    route: '/services',
+    text: 'Services',
     as: Link,
     style: routeStyles,
     get selected() {
@@ -76,7 +76,7 @@ const createRoutes = location => [
     },
   },
   {
-    route: '/careers',
+    route: '/join-our-team',
     text: 'Join Our Team',
     as: Link,
     style: routeStyles,

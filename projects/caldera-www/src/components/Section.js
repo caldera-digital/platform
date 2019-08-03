@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Container, media } from '@caldera-digital/theme'
+import { jiggle } from '../style/utils'
 
 const SectionContainer = styled.section`
-  padding: 4rem 0;
+  padding: 5rem 0 4rem;
   position: relative;
   background-color: ${props => {
     if (props.lightBackground) {
@@ -23,7 +24,7 @@ const SectionContainer = styled.section`
   }
 
   ${media.forSmallMediumOnly`
-    padding: 3rem 0;
+    padding: 4rem 0 3rem;
     min-height: auto !important;
 
     p {
@@ -31,8 +32,8 @@ const SectionContainer = styled.section`
     }
   `}
 
-  ${media.forSmallMediumOnly`
-    padding: 2rem 0;
+  ${media.forSmallOnly`
+    padding: 3rem 0;
   `}
 `
 
@@ -61,24 +62,26 @@ const BlobContainer = styled.div`
     position: absolute;
     left: -40%;
     bottom: -25%;
+    animation: 15s ${jiggle} infinite;
   }
 `
 
 const SectionHeader = styled.h2`
   text-align: center;
   font-size: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   color: ${props => props.theme.primaryColor};
   font-weight: bold;
+  padding: 0 1rem;
 
   ${media.forSmallMediumOnly`
     font-size: 2.75rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
   `}
 
-  ${media.forSmallMediumOnly`
+  ${media.forSmallOnly`
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   `}
 `
 

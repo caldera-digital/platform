@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import HeroBlob from '../assets/svgs/blue-blob5.svg'
-import Phone from '../assets/images/homeHeroImage.png'
 import { media } from '@caldera-digital/theme'
-import { jiggle } from '../style/utils'
+import { jiggle } from '../../style/utils'
+
+import HeroBlob from '../../assets/svgs/blue-blob5.svg'
+import Phone from '../../assets/images/homeHeroImage.png'
 
 const HeroContainer = styled.div`
   position: relative;

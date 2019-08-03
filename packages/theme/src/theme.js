@@ -11,6 +11,7 @@ export const DEFAULT_THEME = {
   defaultInputBackgroundColor: '#f5f5f5',
   defaultMobileFontSize: '16px',
   defaultTransition: 'all 0.2s linear',
+  defaultParagraphLineHeight: '1.15',
   desktopHeaderHeight: '80px',
   disabledColor: '#888888',
   errorColor: '#e44100',
