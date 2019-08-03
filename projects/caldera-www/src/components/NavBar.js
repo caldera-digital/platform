@@ -1,6 +1,5 @@
 import React from 'react'
 import { Nav } from '@caldera-digital/nav'
-// import { Location } from '@reach/router'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { media } from '@caldera-digital/theme'
@@ -8,6 +7,9 @@ import Logo from '../assets/svgs/caldera-logo.svg'
 
 const LOGO_SPACING = '28px'
 const LogoContainer = styled(Link)`
+  display: flex;
+  align-items: center;
+
   svg {
     height: calc(${props => props.theme.desktopHeaderHeight} - ${LOGO_SPACING});
 
@@ -58,8 +60,8 @@ const routeStyles = {
 
 export const createRoutes = (location = {}) => [
   {
-    route: '/who-we-are',
-    text: 'Who We Are',
+    route: '/our-process',
+    text: 'Our Process',
     as: Link,
     style: routeStyles,
     get selected() {

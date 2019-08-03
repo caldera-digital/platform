@@ -3,12 +3,19 @@ import {
   CalderaDigitalThemeProvider,
   CalderaDigitalThemeConsumer,
   GlobalStyle,
+  media,
 } from '@caldera-digital/theme'
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import { theme as customTheme } from '../style'
 import { NavBar, Footer } from '../components'
 
 import 'normalize.css'
+
+const MainContentContainer = styled.main`
+  ${media.forSmallOnly`
+    margin-top: ${props => props.theme.mobileHeaderHeight};
+  `}
+`
 
 export const Layout = ({ location, children }) => {
   // eslint-disable-next-line no-undef
@@ -22,7 +29,7 @@ export const Layout = ({ location, children }) => {
             <>
               <GlobalStyle />
               <header>{<NavBar location={location} theme={theme} />}</header>
-              <main>{children}</main>
+              <MainContentContainer>{children}</MainContentContainer>
               <Footer />
             </>
           </ThemeProvider>
