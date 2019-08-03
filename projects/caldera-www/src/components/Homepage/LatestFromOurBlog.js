@@ -4,7 +4,7 @@ import { Section } from '../Section'
 import MockBlog from '../../assets/images/mock-blog.jpg'
 import { Link } from 'gatsby'
 
-const MOCK_BLOGS = [
+export const MOCK_BLOGS = [
   {
     title: 'What’s More Important, Process or Results?',
     text:

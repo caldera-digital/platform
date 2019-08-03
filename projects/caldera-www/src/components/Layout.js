@@ -6,7 +6,7 @@ import {
 } from '@caldera-digital/theme'
 import { ThemeProvider } from 'styled-components'
 import { theme as customTheme } from '../style'
-import { NavBar } from '../components'
+import { NavBar, Footer } from '../components'
 
 import 'normalize.css'
 
@@ -23,10 +23,7 @@ export const Layout = ({ location, children }) => {
               <GlobalStyle />
               <header>{<NavBar location={location} theme={theme} />}</header>
               <main>{children}</main>
-              <footer>
-                © {new Date().getFullYear()}, Built with rrt{' '}
-                <a href="https://www.gatsbyjs.org">Gatsby</a>
-              </footer>
+              <Footer />
             </>
           </ThemeProvider>
         )}

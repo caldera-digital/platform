@@ -56,7 +56,7 @@ const routeStyles = {
   textTransform: 'uppercase',
 }
 
-const createRoutes = location => [
+export const createRoutes = (location = {}) => [
   {
     route: '/who-we-are',
     text: 'Who We Are',

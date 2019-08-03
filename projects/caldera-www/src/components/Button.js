@@ -40,6 +40,19 @@ const ButtonStyles = css`
     color: ${props => props.theme.white};
   }
 
+  ${({ size }) => {
+    if (size === 'small') {
+      return css`
+        border-radius: 30px;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        min-width: 140px;
+        min-height: 28px;
+        letter-spacing: 0.2rem;
+      `
+    }
+  }}
+
   ${({ disabled }) =>
     disabled &&
     css`
