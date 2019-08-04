@@ -12,6 +12,8 @@ import { NavBar, Footer } from '../components'
 import 'normalize.css'
 
 const MainContentContainer = styled.main`
+  margin-bottom: 6rem;
+
   ${media.forSmallOnly`
     margin-top: ${props => props.theme.mobileHeaderHeight};
   `}

@@ -40,6 +40,7 @@ const SubmitButton = styled(Button)`
   `}
 `
 
+const FORM_NAME = 'contact'
 const ContactUs = ({ location }) => {
   return (
     <Layout location={location}>
@@ -60,6 +61,7 @@ const ContactUs = ({ location }) => {
             message: val => !val && 'Message is required.',
           }}
           onFormSubmit={() => navigateTo('/thank-you')}
+          formName={FORM_NAME}
         >
           {({
             onChange,
@@ -71,7 +73,7 @@ const ContactUs = ({ location }) => {
             touched,
           }) => (
             <form
-              name="contact"
+              name={FORM_NAME}
               onSubmit={handleSubmit}
               method="post"
               data-netlify="true"

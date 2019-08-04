@@ -4,12 +4,12 @@ import { media } from '@caldera-digital/theme'
 import { jiggle } from '../style/utils'
 
 import Blob5 from '../assets/svgs/blue-blob5.svg'
-// import Blob3 from '../assets/svgs/blue-blob3.svg'
-// import Blob4 from '../assets/svgs/blue-blob4.svg'
 
-const HeroBlob5 = styled(Blob5)``
-// const HeroBlob3 = styled(Blob3)``
-// const HeroBlob4 = styled(Blob4)``
+const COMMON_BLOB_STYLES = css`
+  position: absolute;
+  z-index: -1;
+  animation: 15s ${jiggle} infinite;
+`
 
 const HeroTextContainer = styled.div`
   ${media.forSmallMediumOnly`
@@ -47,15 +47,6 @@ const HeroContainer = styled.div`
     text-align: center;
   }
 
-  ${HeroBlob5} {
-    position: absolute;
-    width: 70%;
-    top: -25%;
-    right: -10%;
-    z-index: -1;
-    animation: 15s ${jiggle} infinite;
-  }
-
   ${media.forSmallMediumOnly`
     flex-direction: column-reverse;
     align-items: flex-start;
@@ -87,18 +78,10 @@ const HeroContainer = styled.div`
     img {
       display: none;
     }
-
-    ${HeroBlob5} {
-      width: 120%;
-      top: 0;
-      right: -10%;
-      z-index: -1;
-      animation: 15s ${jiggle} infinite;
-    }
   `}
 
-  ${({ secondary }) =>
-    secondary &&
+  ${({ secondary, caseStudy }) =>
+    (secondary || caseStudy) &&
     css`
       margin-bottom: 0;
 
@@ -139,6 +122,59 @@ const HeroContainer = styled.div`
         }
       `}
     `}
+
+  svg.heroBlob {
+    ${COMMON_BLOB_STYLES}
+
+    &.topRight {
+      top: -10%;
+      right: -30%;
+
+      ${media.forSmallOnly`
+        top: 0;
+        right: -10%;
+      `}
+    }
+
+    &.topLeft {
+      top: -10%;
+      left: -50%;
+
+      ${media.forSmallOnly`
+        top: 0;
+        left: -10%;
+      `}
+    }
+
+    &.blob-small {
+      width: 50%;
+
+      ${media.forSmallOnly`
+        width: 120%;
+      `}
+    }
+
+    &.blob-medium {
+      width: 70%;
+
+      ${media.forSmallOnly`
+        width: 120%;
+      `}
+    }
+
+    &.blob-smedium {
+
+    }
+    &.blob-large {
+
+    }
+
+    &.hideOnSmallMedium {
+      ${media.forSmallMediumOnly`
+        display: none;
+      `}
+    }
+  }
 `
 
 const SecondaryText = styled.p`
@@ -169,18 +205,46 @@ const SecondaryText = styled.p`
     `}
 `
 
+const CompanyName = styled.p`
+  margin-top: 2rem;
+  font-size: 60px;
+  border-bottom: 6px solid ${props => props.theme.secondaryColor};
+  display: inline-block;
+
+  ${media.forSmallMediumOnly`
+    font-size: 2rem;
+  `}
+
+  ${media.forSmallOnly`
+    font-size: 1.5rem;
+  `}
+`
+
 export const Hero = ({
   title,
   secondaryText,
   secondary = false,
+  caseStudy = false,
   heroImgConfig,
+  companyName,
+  blobs = [{ blob: Blob5, position: 'topRight', size: 'medium' }],
 }) => {
   return (
-    <HeroContainer secondary={secondary}>
-      <HeroBlob5 />
+    <HeroContainer secondary={secondary} caseStudy={caseStudy}>
+      {blobs.map(({ blob: Blob, position, size, hideOnSmallMedium }, i) => (
+        <Blob
+          key={i}
+          className={`heroBlob ${position} ${size ? `blob-${size}` : ''} ${
+            hideOnSmallMedium ? 'hideOnSmallMedium' : ''
+          }`}
+        />
+      ))}
       <HeroTextContainer>
         <h1>{title}</h1>
-        <SecondaryText secondary={secondary}>{secondaryText}</SecondaryText>
+        {secondaryText && (
+          <SecondaryText secondary={secondary}>{secondaryText}</SecondaryText>
+        )}
+        {companyName && <CompanyName>{companyName}</CompanyName>}
       </HeroTextContainer>
 
       {/* eslint-disable-next-line jsx-a11y/alt-text */}

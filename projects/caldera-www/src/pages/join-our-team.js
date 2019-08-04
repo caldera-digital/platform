@@ -9,9 +9,9 @@ import {
   Textarea,
   Button,
   FileUpload,
+  ContentContainer,
 } from '../components'
 import styled from 'styled-components'
-import { ContentContainer } from './our-process'
 import { media } from '@caldera-digital/theme'
 import { navigateTo } from 'gatsby'
 import { emailIsValid } from '../utils/formUtils'
@@ -38,6 +38,7 @@ const StyledCareersForm = styled.form`
   align-items: center;
 `
 
+const FORM_NAME = 'job-applicants'
 const CareersForm = () => {
   return (
     <NetlifyForm
@@ -52,6 +53,7 @@ const CareersForm = () => {
         email: val => (!val || !emailIsValid(val)) && 'Must be a valid email.',
       }}
       onFormSubmit={() => navigateTo('/thank-you')}
+      formName={FORM_NAME}
     >
       {({
         onChange,
@@ -63,7 +65,7 @@ const CareersForm = () => {
         touched,
       }) => (
         <StyledCareersForm
-          name="job-applicants"
+          name={FORM_NAME}
           onSubmit={handleSubmit}
           method="post"
           data-netlify="true"

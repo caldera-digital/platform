@@ -17,7 +17,7 @@ export const theme = {
   grayText: '#707070',
   lightGray: '#B3B3B3',
   linkColor: '#0080EE',
-  mobileHeaderHeight: '70px',
+  mobileHeaderHeight: '60px',
   primaryColor: '#0080EE',
   secondaryColor: '#FDA396',
   hoveredSecondaryColor: '#FA7B6A',

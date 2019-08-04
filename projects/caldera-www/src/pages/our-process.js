@@ -1,45 +1,18 @@
 import React from 'react'
-import { Layout, SEO, Hero } from '../components'
+import { Layout, SEO, Hero, ContentContainer, Section } from '../components'
 import styled, { css } from 'styled-components'
-import { Container, media } from '@caldera-digital/theme'
+import { media } from '@caldera-digital/theme'
 
 import OurProcessHero from '../assets/images/process-hero.png'
 import ItsADateWelcomeFlow from '../assets/images/its-a-date-welcome-flow.png'
 import POTMMockup from '../assets/images/pride-of-the-meadows-product-mockup.png'
-
-export const ContentContainer = styled(Container)`
-  padding-bottom: 6rem;
-
-  h2 {
-    font-size: 2.8rem;
-    font-weight: bold;
-    color: ${props => props.theme.primaryColor};
-    margin: 2.5rem 0 1.5rem;
-
-    &:first-of-type {
-      margin-top: 0;
-    }
-  }
-
-  ${media.forSmallMediumOnly`
-    h2 {
-      font-size: 2.4rem;
-    }
-  `}
-
-  ${media.forSmallOnly`
-    h2 {
-      font-size: 2rem;
-    }
-  `}
-`
 
 const CallOut = styled.div`
   border-left: 6px solid ${props => props.theme.secondaryColor};
   padding-left: 1rem;
 `
 
-const ProcessImage = styled.img`
+const Image = styled.img`
   object-fit: contain;
 
   ${({ floatLeft }) =>
@@ -55,19 +28,7 @@ const ProcessImage = styled.img`
     `}
 `
 
-const ProcessImage1 = styled(ProcessImage)`
-  ${media.forSmallMediumOnly`
-    max-width: 250px;
-  `}
-
-  ${media.forSmallOnly`
-    float: none;
-    max-width: 175px;
-    display: block;
-    margin: 1.5rem auto;
-  `}
-`
-const ProcessImage2 = styled(ProcessImage)``
+const ProcessImage2 = styled(Image)``
 
 const FinalProductSection = styled.div`
   display: flex;
@@ -123,10 +84,11 @@ const OurProcess = ({ location }) => {
           purpose of all of this? To devise a way to tailor those metrics to
           your digital strategy for your desired outcome.
         </p>
-        <ProcessImage1
+        <Section.Image
           src={ItsADateWelcomeFlow}
-          alt="Its a Date welcome screen"
+          alt="Welcome screen for Its a Date"
           floatRight
+          phoneImage
         />
         <p>
           We know – planning sucks. Plans change, timing changes, you know the

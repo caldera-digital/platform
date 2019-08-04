@@ -46,6 +46,12 @@ export const StyledFormInput = styled.div`
       }
     `}
 
+  ${({ hidden }) =>
+    hidden &&
+    css`
+      display: hidden;
+    `}
+
   ${media.forSmallMediumOnly`
     width: 100%;
   `}
@@ -151,6 +157,7 @@ export const NetlifyForm = ({
   initialValues = {},
   validationSchema = {},
   onFormSubmit = () => null,
+  formName,
 }) => {
   const [values, setValues] = useState(initialValues)
   const [touched, setTouched] = useState(
@@ -183,7 +190,7 @@ export const NetlifyForm = ({
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...values }),
+      body: encode({ 'form-name': formName, ...values }),
     })
       .then(() => onFormSubmit())
       // eslint-disable-next-line no-alert
