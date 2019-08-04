@@ -1,15 +1,9 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { media } from '@caldera-digital/theme'
-import { jiggle } from '../style/utils'
+import { COMMON_BLOB_STYLES, BlobHandler } from './Blob'
 
 import Blob5 from '../assets/svgs/blue-blob5.svg'
-
-const COMMON_BLOB_STYLES = css`
-  position: absolute;
-  z-index: -1;
-  animation: 15s ${jiggle} infinite;
-`
 
 const HeroTextContainer = styled.div`
   ${media.forSmallMediumOnly`
@@ -123,58 +117,7 @@ const HeroContainer = styled.div`
       `}
     `}
 
-  svg.heroBlob {
     ${COMMON_BLOB_STYLES}
-
-    &.topRight {
-      top: -10%;
-      right: -30%;
-
-      ${media.forSmallOnly`
-        top: 0;
-        right: -10%;
-      `}
-    }
-
-    &.topLeft {
-      top: -10%;
-      left: -50%;
-
-      ${media.forSmallOnly`
-        top: 0;
-        left: -10%;
-      `}
-    }
-
-    &.blob-small {
-      width: 50%;
-
-      ${media.forSmallOnly`
-        width: 120%;
-      `}
-    }
-
-    &.blob-medium {
-      width: 70%;
-
-      ${media.forSmallOnly`
-        width: 120%;
-      `}
-    }
-
-    &.blob-smedium {
-
-    }
-    &.blob-large {
-
-    }
-
-    &.hideOnSmallMedium {
-      ${media.forSmallMediumOnly`
-        display: none;
-      `}
-    }
-  }
 `
 
 const SecondaryText = styled.p`
@@ -231,14 +174,7 @@ export const Hero = ({
 }) => {
   return (
     <HeroContainer secondary={secondary} caseStudy={caseStudy}>
-      {blobs.map(({ blob: Blob, position, size, hideOnSmallMedium }, i) => (
-        <Blob
-          key={i}
-          className={`heroBlob ${position} ${size ? `blob-${size}` : ''} ${
-            hideOnSmallMedium ? 'hideOnSmallMedium' : ''
-          }`}
-        />
-      ))}
+      <BlobHandler blobs={blobs} />
       <HeroTextContainer>
         <h1>{title}</h1>
         {secondaryText && (

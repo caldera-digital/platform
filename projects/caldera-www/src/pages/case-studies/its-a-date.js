@@ -6,7 +6,7 @@ import HeroImage from '../../assets/images/its-a-date-hero.png'
 import PhoneImage from '../../assets/images/its-a-date-welcome-flow.png'
 import ScreenCollage from '../../assets/images/its-a-date-screen-collage.png'
 import Blob1 from '../../assets/svgs/its-a-date/teal-blob1.svg'
-import Blob3 from '../../assets/svgs/its-a-date/teal-blob3.svg'
+import Blob3 from '../../assets/svgs/its-a-date/teal-blob2.svg'
 
 const CaseStudy = () => {
   return (
@@ -134,7 +134,7 @@ const CaseStudy = () => {
       />
       <Section smallPadding>
         <Section.H2>Testing</Section.H2>
-        For all apps, we implement three levels of testing:
+        <p>For all apps, we implement three levels of testing:</p>
         <Section.OrderedList>
           <Section.ListItem>
             <b>Programmatic testing:</b> This involves taking the business rules

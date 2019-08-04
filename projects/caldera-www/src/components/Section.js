@@ -2,6 +2,8 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { Container, media } from '@caldera-digital/theme'
 import { jiggle } from '../style/utils'
+import BlueArrow from '../assets/svgs/blue-arrow.svg'
+import { BlobHandler, COMMON_BLOB_STYLES } from './Blob'
 
 const FancyContainer = styled(Container)`
   ${({ twoColumn }) =>
@@ -76,6 +78,8 @@ const SectionContainer = styled.section`
     padding: ${props =>
       props.smallPadding ? '1.25rem 0' : props.noPadding ? '0' : '3rem 0'};
   `}
+
+  ${COMMON_BLOB_STYLES}
 `
 
 const BottomBackgroundImage = styled.div`
@@ -130,6 +134,7 @@ export const Section = ({
   children,
   fluid = false,
   blob: Blob,
+  blobs,
   smallPadding = false,
   noPadding = false,
   lightBackground,
@@ -146,6 +151,7 @@ export const Section = ({
   // This is needed for styled components when we style the section component
   className,
 }) => {
+  console.log('erferf', blobs)
   return (
     <SectionContainer
       backgroundColor={backgroundColor}
@@ -156,6 +162,7 @@ export const Section = ({
       smallPadding={smallPadding}
       noPadding={noPadding}
     >
+      {blobs && <BlobHandler blobs={blobs} />}
       {header && <SectionHeader>{header}</SectionHeader>}
       {renderSection ? (
         renderSection()
@@ -308,3 +315,92 @@ Section.ResponsiveVideo = styled.div`
     position: absolute;
   }
 `
+
+Section.FancyTile = styled.div`
+  padding: 3rem 2rem;
+  border-radius: 60px;
+  box-shadow: 0 0px 15px rgba(54, 163, 252, 0.3);
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: ${props => props.theme.primaryColor};
+  margin: 2rem 0;
+
+  ${media.forSmallMediumOnly`
+    font-size: 2rem;
+    padding: 2.5rem 2rem;
+  `}
+
+  ${media.forSmallOnly`
+    font-size: 1.5rem;
+    padding: 2rem;
+    margin: 1rem 0;
+  `}
+`
+
+Section.FancySteps = styled.div``
+Section.FancySteps.Group = styled.div`
+  display: flex;
+`
+
+const StyledFancyStep = styled.div`
+  padding: 2rem;
+  box-shadow: 0 0px 15px rgba(54, 163, 252, 0.3);
+  margin: 2rem;
+  border-radius: 2rem;
+  line-height: 1.5;
+  flex: 1;
+  position: relative;
+`
+const StyledFancyStepNumber = styled.div`
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  color: ${props =>
+    props.stepColor ? props.stepColor : props.theme.defaultFontColor};
+  font-weight: bold;
+  font-size: 50px;
+`
+const FancyStepNumberArrow = styled(BlueArrow)`
+  position: absolute;
+
+  ${({ arrowDirection }) => {
+    switch (arrowDirection) {
+      case 'down':
+        return css`
+          transform: translateX(-50%) rotate(90deg);
+          bottom: -15px;
+          left: 50%;
+        `
+      case 'right':
+        return css`
+          transform: translateY(-50%);
+          right: -35px;
+          top: 50%;
+        `
+
+      default:
+        return
+    }
+  }}
+`
+
+Section.FancySteps.Step = ({
+  children,
+  step,
+  stepColor,
+  showArrow = true,
+  arrowDirection = 'down',
+}) => {
+  return (
+    <StyledFancyStep>
+      {step && (
+        <StyledFancyStepNumber stepColor={stepColor}>
+          {step}.
+        </StyledFancyStepNumber>
+      )}
+      {showArrow && <FancyStepNumberArrow arrowDirection={arrowDirection} />}
+      {children}
+    </StyledFancyStep>
+  )
+}
