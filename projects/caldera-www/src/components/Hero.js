@@ -117,6 +117,26 @@ const HeroContainer = styled.div`
       `}
     `}
 
+  ${({ smallHeroImage }) =>
+    smallHeroImage &&
+    css`
+      img {
+        max-width: 40%;
+      }
+
+      ${media.forSmallMediumOnly`
+        img {
+          max-width: 55%;
+        }
+      `}
+
+      ${media.forSmallOnly`
+        img {
+          max-width: 75%;
+        }
+      `}
+    `}
+
     ${COMMON_BLOB_STYLES}
 `
 
@@ -168,12 +188,17 @@ export const Hero = ({
   secondaryText,
   secondary = false,
   caseStudy = false,
+  smallHeroImage = false,
   heroImgConfig,
   companyName,
   blobs = [{ blob: Blob5, position: 'topRight', size: 'medium' }],
 }) => {
   return (
-    <HeroContainer secondary={secondary} caseStudy={caseStudy}>
+    <HeroContainer
+      secondary={secondary}
+      caseStudy={caseStudy}
+      smallHeroImage={smallHeroImage}
+    >
       <BlobHandler blobs={blobs} />
       <HeroTextContainer>
         <h1>{title}</h1>

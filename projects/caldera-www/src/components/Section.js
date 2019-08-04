@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { Container, media } from '@caldera-digital/theme'
 import { jiggle } from '../style/utils'
 import BlueArrow from '../assets/svgs/blue-arrow.svg'
 import { BlobHandler, COMMON_BLOB_STYLES } from './Blob'
+import Carousel, { Dots } from '@brainhubeu/react-carousel'
+
+import '@brainhubeu/react-carousel/lib/style.css'
 
 const FancyContainer = styled(Container)`
   ${({ twoColumn }) =>
@@ -130,6 +133,23 @@ const SectionHeader = styled.h2`
   `}
 `
 
+const LightBackgroundMiddleBar = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 500px;
+  background-color: ${props => props.theme.lightBackgroundColor};
+  width: 100%;
+
+  ${media.forSmallMediumOnly`
+    height: 400px;
+  `}
+
+  ${media.forSmallOnly`
+    height: 300px;
+  `}
+`
+
 export const Section = ({
   children,
   fluid = false,
@@ -137,7 +157,8 @@ export const Section = ({
   blobs,
   smallPadding = false,
   noPadding = false,
-  lightBackground,
+  lightBackground = false,
+  lightBackgroundMiddleBar = false,
   backgroundColor,
   bottomBackgroundImage,
   renderSection,
@@ -151,7 +172,6 @@ export const Section = ({
   // This is needed for styled components when we style the section component
   className,
 }) => {
-  console.log('erferf', blobs)
   return (
     <SectionContainer
       backgroundColor={backgroundColor}
@@ -162,6 +182,7 @@ export const Section = ({
       smallPadding={smallPadding}
       noPadding={noPadding}
     >
+      {lightBackgroundMiddleBar && <LightBackgroundMiddleBar />}
       {blobs && <BlobHandler blobs={blobs} />}
       {header && <SectionHeader>{header}</SectionHeader>}
       {renderSection ? (
@@ -245,14 +266,22 @@ Section.Image = styled.img`
     floatLeft &&
     css`
       float: left;
-      padding: 0 0 1rem 1rem;
+      padding: 0 1rem 1rem 0;
+
+      ${media.forSmallOnly`
+        padding: 1rem 0;
+      `}
     `}
 
   ${({ floatRight }) =>
     floatRight &&
     css`
       float: right;
-      padding: 0 1rem 1rem 0;
+      padding: 0 0 1rem 1rem;
+
+      ${media.forSmallOnly`
+        padding: 1rem 0;
+      `}
     `}
 
 
@@ -261,6 +290,41 @@ Section.Image = styled.img`
     css`
       width: 100%;
       height: 100%;
+    `}
+
+  ${({ size }) =>
+    size &&
+    css`
+      width: ${size}px;
+      height: ${size}px;
+    `}
+
+  ${({ medium }) =>
+    medium &&
+    css`
+      width: 50%;
+
+      ${media.forSmallMediumOnly`
+        width: 60%;
+      `}
+
+      ${media.forSmallOnly`
+        width: 100%;
+      `}
+    `}
+
+  ${({ small }) =>
+    small &&
+    css`
+      width: 30%;
+
+      ${media.forSmallMediumOnly`
+        width: 50%;
+      `}
+
+      ${media.forSmallOnly`
+        width: 100%;
+      `}
     `}
 
   ${({ phoneImage }) =>
@@ -402,5 +466,109 @@ Section.FancySteps.Step = ({
       {showArrow && <FancyStepNumberArrow arrowDirection={arrowDirection} />}
       {children}
     </StyledFancyStep>
+  )
+}
+
+const StyledImageCarousel = styled.div``
+
+const ImageCarousel = ({ images = [], className = '' }) => {
+  const [activeItem, setActiveItem] = useState(0)
+
+  const thumbnails = createCollageImages(images, { size: 45 })
+
+  return (
+    <StyledImageCarousel className={className}>
+      <Carousel
+        centered
+        infinite
+        clickToChange
+        slidesPerPage={2}
+        autoPlay={5000}
+        animationSpeed={1000}
+        addArrowClickHandler
+        value={activeItem}
+        onChange={index => setActiveItem(index)}
+        breakpoints={{
+          991: {
+            slidesPerPage: 1,
+          },
+          680: {
+            slidesPerPage: 1,
+          },
+        }}
+      >
+        {createCollageImages(images, { responsive: true })}
+      </Carousel>
+      <Dots
+        onChange={val => setActiveItem(val)}
+        value={activeItem}
+        number={images.length}
+        thumbnails={thumbnails}
+      />
+    </StyledImageCarousel>
+  )
+}
+
+Section.ImageCarousel = ImageCarousel
+
+const createCollageImages = (images = [], { size, responsive }) =>
+  images.map(({ src, alt }, i) => (
+    <Section.Image
+      src={src}
+      alt={alt}
+      key={`${i}-${alt}`}
+      responsive={responsive}
+      size={size}
+    />
+  ))
+
+const StyledImageCollage = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  > * {
+    width: 50%;
+    padding: 1rem;
+  }
+
+  ${media.forSmallOnly`
+    > * {
+      width: 100%;
+      padding: 1rem;
+    }
+  `}
+`
+
+const StyledImageCollageWrapper = styled.div`
+  ${media.forMediumUp`
+    ${StyledImageCollage} {
+      display: block;
+    }
+
+    ${StyledImageCarousel} {
+      display: none;
+    }
+  `}
+
+  ${media.forSmallOnly`
+    ${StyledImageCollage} {
+      display: none;
+    }
+
+    ${StyledImageCarousel} {
+      display: block;
+    }
+  `}
+`
+
+Section.ImageCollage = ({ images = [] }) => {
+  return (
+    <StyledImageCollageWrapper>
+      <StyledImageCollage>
+        {createCollageImages(images, { responsive: true })}
+      </StyledImageCollage>
+      <Section.ImageCarousel images={images} />
+    </StyledImageCollageWrapper>
   )
 }
