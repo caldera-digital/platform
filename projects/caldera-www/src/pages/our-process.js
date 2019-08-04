@@ -3,7 +3,7 @@ import { Layout, SEO, Hero, ContentContainer, Section } from '../components'
 import styled, { css } from 'styled-components'
 import { media } from '@caldera-digital/theme'
 
-import OurProcessHero from '../assets/images/process-hero.png'
+import OurProcessHero from '../assets/images/gamebyrd-mocks.png'
 import ItsADateWelcomeFlow from '../assets/images/its-a-date-welcome-flow.png'
 import POTMMockup from '../assets/images/pride-of-the-meadows-product-mockup.png'
 
