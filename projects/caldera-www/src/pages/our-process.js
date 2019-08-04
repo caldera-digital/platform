@@ -7,8 +7,8 @@ import OurProcessHero from '../assets/images/process-hero.png'
 import ItsADateWelcomeFlow from '../assets/images/its-a-date-welcome-flow.png'
 import POTMMockup from '../assets/images/pride-of-the-meadows-product-mockup.png'
 
-const ContentContainer = styled(Container)`
-  padding-bottom: 4rem;
+export const ContentContainer = styled(Container)`
+  padding-bottom: 6rem;
 
   h2 {
     font-size: 2.8rem;
@@ -20,6 +20,18 @@ const ContentContainer = styled(Container)`
       margin-top: 0;
     }
   }
+
+  ${media.forSmallMediumOnly`
+    h2 {
+      font-size: 2.4rem;
+    }
+  `}
+
+  ${media.forSmallOnly`
+    h2 {
+      font-size: 2rem;
+    }
+  `}
 `
 
 const CallOut = styled.div`

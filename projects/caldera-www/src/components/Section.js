@@ -18,18 +18,9 @@ const SectionContainer = styled.section`
   }};
   min-height: ${props => (props.bottomBackgroundImage ? '800px' : 'auto')};
 
-  > p {
-    font-size: 1.25rem;
-    color: ${props => props.theme.grayText};
-  }
-
   ${media.forSmallMediumOnly`
     padding: 4rem 0 3rem;
     min-height: auto !important;
-
-    p {
-      font-size: 1rem;
-    }
   `}
 
   ${media.forSmallOnly`

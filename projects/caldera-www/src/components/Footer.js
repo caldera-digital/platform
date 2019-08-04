@@ -174,7 +174,7 @@ export const Footer = () => {
         </BlogsContainer>
         <EmailContainer>
           <p>Subscribe to our Newsletter!</p>
-          <form handleSubmit={() => console.log('submit called')}>
+          <form onSubmit={() => console.log('submit called')}>
             <input />
             <Button size="small">Submit</Button>
           </form>
