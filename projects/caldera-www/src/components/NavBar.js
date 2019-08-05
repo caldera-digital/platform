@@ -95,6 +95,15 @@ export const createRoutes = (location = {}) => [
       return this.route === location.pathname
     },
   },
+  {
+    route: '/blog',
+    text: 'Blog',
+    as: Link,
+    style: routeStyles,
+    get selected() {
+      return this.route === location.pathname
+    },
+  },
 ]
 
 export const NavBar = ({ location, theme }) => {

@@ -1,0 +1,108 @@
+---
+title: Did You Know Responsive Images Require Just an Image Tag and Two Attributes?
+author: Marcus Wood
+date: 2017-09-10
+hero: ./images/hero.jpg
+excerpt: Web performance matters. Studies show that 40 percent of your visitors will abandon your page if it takes more than three seconds to load.
+---
+
+Web performance matters. [Studies show](https://blog.kissmetrics.com/loading-time/) that 40 percent of your visitors will abandon your page if it takes more than three seconds to load. If you are developing a new site or trying to make your current one faster, optimizing images and enabling the browser to choose the right image depending on the device and screen size will yield the most impressive gains. We’ll be using Cloudinary, a cloud-based image management solution to optimize, host, transform, and create responsive images.
+Cloudinary offers a variety of ways to optimize the images on your website. Their convenient API allows you to make transformations to images by using parameters in the URL of the image to make sure you always have what you need. This makes it a great fit for creating responsive images and shaving precious kilobytes off your initial page load time. We’ll be using a script I wrote to upload and generate responsive image tags to replace the current ones on your website.
+
+## The Story Behind Responsive Images
+
+[Responsive images](http://cloudinary.com/documentation/responsive_images) have been around for a couple of years, and current browsers offer good support. They fall back gracefully to the original image if a browser does not support them, and the markup for a responsive image is just a normal tag plus two attributes.
+
+```
+<img sizes=”(max-width: 500px) 100vw, (max-width: 1400px) 33vw, 1400"
+srcset=”https://res.cloudinary.com/yourapp/image/upload/c_crop,r_max/c_scale,w_1400/v1501546428/Puppy.jpg 1400w,
+https://res.cloudinary.com/yourapp/image/upload/c_crop,r_max/c_scale,w_1365/v1501546428/Puppy.jpg 1365w,
+https://res.cloudinary.com/yourapp/image/upload/c_crop,r_max/c_scale,w_1202/v1501546428/Puppy.jpg 1202w,
+https://res.cloudinary.com/yourapp/image/upload/c_crop,r_max/c_scale,w_872/v1501546428/Puppy.jpg 872w,
+https://res.cloudinary.com/yourapp/image/upload/c_crop,r_max/c_scale,w_625/v1501546428/Puppy.jpg 625w,
+https://res.cloudinary.com/yourapp/image/upload/c_crop,r_max/c_scale,w_200/v1501546428/Puppy.jpg 200w”
+src=”https://res.cloudinary.com/yourapp/image/upload/v1501546428/Puppy.jpg"
+alt=””
+/>
+```
+
+Responsive images use the same image tag with the addition of two attributes, sizes and srcset. Sizes are media conditions you define based off how the image reacts on certain website sizes. For instance, the tag above tells the browser for devices up to a width of 500 pixels, the image will be 100 percent of the view width(vw) and only 33 percent of the view width up to 1400 pixels. If neither are met, fall back to the size of the image.
+Next up we have the srcset attribute, which defines the various widths of images the browser can choose from when rendering the page.
+
+## Knowing the Right Number of Images to Make
+
+One of the most challenging parts of responsive images is knowing how many different image sizes to make to see relevant performance gains. Luckily, Cloudinary has a built a [great tool](http://www.responsivebreakpoints.com/) that enables you to choose the min-width, max-width, max images to make, and define the byte step before making another image transform.
+
+## Images to the Cloud
+
+The first thing you’ll need to do to optimize your images and generate responsive images is to create an account with Cloudinary. They have a generous free tier that supports storing up to 75,000 images. Once you have an account you can manually upload images using the web app or API. We’ll be using the Cloudinary API, and a little script I made to handle uploading multiple images and generating responsive image tags to place in your app. This helps us create the markup we need and also automatically create the transformations we need to add into our app.
+
+```
+git clone
+
+https://github.com/mwood23/responsiveImageUploaderCloudinary.git
+
+npm install
+```
+
+Next you’ll want to take your API information and place it in the .env file from the cloned repo. It can be found on the front page of the Cloudinary web console. While you’re in the console go over to the settings and choose a default upload quality. I use quality-eco, which will trim off a lot of size on the images while keeping them looking crisp. Now every time you upload an image it will automatically shave off several KBs. Next up, getting the images in there.
+The script takes in a JSON file, photosToUpload.json, with the path of where the file is, the responsive configuration and the image transform object.
+
+```
+{
+  "photos": [
+    {
+      "bytes_step": 20000,
+      "location": "http://res.cloudinary.com/responsivebreakpoints/image/upload/dog.jpg",
+      "max_images": 20,
+      "max_width": 1400,
+      "min_width": 200,
+      "public_id": "Puppy",
+      "tags": [],
+      "transformation": {
+        "crop": "crop",
+        "radius": "max"
+      }
+    },
+    {
+      "bytes_step": 15000,
+      "location": "/user/name/your/cool/puppy",
+      "max_images": 14,
+      "max_width": 1200,
+      "min_width": 800,
+      "public_id": "Your cool puppy photo",
+      "tags": [],
+      "transformation": {}
+    }
+  ]
+}
+```
+
+The location can take the local path on your computer or a link on the internet. Make sure to give it a public id that is different for each image to keep it organized. It’s best to look at the size your image is on your website and use the the responsive breakpoints tool mentioned above to determine the breakpoint configuration.
+Now, back to the script. Navigate to the cloned repo in your terminal of choice and run node index.js. This will give you some logs in the console telling you that your images have been updated successfully and write some pretty markup to output.html that should look something like this:
+
+```
+<! — Upload for PUBLIC_ID Puppy →
+<img sizes=”(max-width: 1400px) 100vw, 1400px”
+srcset=”https://res.cloudinary.com/yourapp/image/upload/c_crop,r_max/c_scale,w_1400/v1501546428/Puppy.jpg 1400w,
+https://res.cloudinary.com/yourapp/image/upload/c_crop,r_max/c_scale,w_1365/v1501546428/Puppy.jpg 1365w,
+https://res.cloudinary.com/yourapp/image/upload/c_crop,r_max/c_scale,w_1202/v1501546428/Puppy.jpg 1202w,
+https://res.cloudinary.com/yourapp/image/upload/c_crop,r_max/c_scale,w_872/v1501546428/Puppy.jpg 872w,
+https://res.cloudinary.com/yourapp/image/upload/c_crop,r_max/c_scale,w_625/v1501546428/Puppy.jpg 625w,
+https://res.cloudinary.com/yourapp/image/upload/c_crop,r_max/c_scale,w_200/v1501546428/Puppy.jpg 200w”
+src=”https://res.cloudinary.com/yourapp/image/upload/v1501546428/Puppy.jpg"
+alt=””
+/>
+<! — Upload for PUBLIC_ID Your cool puppy photo →
+<img sizes=”(max-width: 1200px) 100vw, 1200px”
+srcset=”https://res.cloudinary.com/yourapp/image/upload/c_scale,w_1200/v1501546589/Your%20cool%20puppy%20photo.jpg 1200w,
+https://res.cloudinary.com/yourapp/image/upload/c_scale,w_1182/v1501546589/Your%20cool%20puppy%20photo.jpg 1182w,
+https://res.cloudinary.com/yourapp/image/upload/c_scale,w_1018/v1501546589/Your%20cool%20puppy%20photo.jpg 1018w,
+https://res.cloudinary.com/yourapp/image/upload/c_scale,w_800/v1501546589/Your%20cool%20puppy%20photo.jpg 800w”
+src=”https://res.cloudinary.com/yourapp/image/upload/v1501546589/Your%20cool%20puppy%20photo.jpg"
+alt=””
+/>
+```
+
+Now you just need to replace the image tag in your app with the one above and you will have performant, responsive images. The image optimization alone should take a good amount of time off page rendering times. Combine that with responsive images and you’ve created a better user experience with just a couple hours of work (depending on how many images you have). This method works great for server-side rendered apps, static sites, or web apps where you don’t want to introduce another dependency into your app to optimize a couple of images. However, if your web app is heavily focuses on uploading and showing images Cloudinary has a [Javascript solution](http://cloudinary.com/documentation/responsive_images#step_3_call_the_cloudinary_responsive_method) that works well.
+Let me know what kind of performance gains this did for you by running a [Lighthouse test](https://developers.google.com/web/tools/lighthouse/) before and after on your app!
