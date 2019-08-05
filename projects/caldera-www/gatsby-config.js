@@ -57,6 +57,7 @@ module.exports = {
         background_color: '#FFFFFF',
         theme_color: '#0080EE',
         display: 'minimal-ui',
+        icon: 'src/favicon.png',
       },
     },
     {
@@ -71,7 +72,6 @@ module.exports = {
       resolve: 'gatsby-plugin-styled-components',
       options: {},
     },
-    'gatsby-plugin-favicon',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
