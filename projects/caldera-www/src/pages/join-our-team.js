@@ -35,6 +35,7 @@ const StyledCareersForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
 `
 
 const FORM_NAME = 'job-applicants'
@@ -79,7 +80,7 @@ const CareersForm = () => {
             value={values.name}
           />
           <Input
-            hidden
+            showField={false}
             label="Kittens"
             name="kittens"
             error={'Merp'}

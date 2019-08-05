@@ -79,7 +79,7 @@ export const SEO = ({
     },
     { itemprop: 'name', content: fullPageTitle },
     { itemprop: 'description', content: description || site.description },
-    { itemprop: 'image', content: fullURL(image) },
+    { itemprop: 'image', content: image },
     { name: 'description', content: description || site.description },
 
     { name: 'twitter:card', content: 'summary_large_image' },
@@ -89,12 +89,12 @@ export const SEO = ({
     { name: 'twitter:creator', content: twitter.url },
     {
       name: 'twitter:image',
-      content: fullURL(image),
+      content: image,
     },
 
     { property: 'og:title', content: fullPageTitle },
     { property: 'og:url', content: url },
-    { property: 'og:image', content: fullURL(image) },
+    { property: 'og:image', content: image },
     { property: 'og:description', content: description || site.description },
     { property: 'og:site_name', content: site.name },
   ]

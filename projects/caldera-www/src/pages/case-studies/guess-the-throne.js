@@ -14,6 +14,7 @@ import GTTAnalytics from '../../assets/images/guess-the-throne-launch-analytics.
 import GlobalImpact from '../../assets/images/guess-the-throne-global-impact.png'
 import Podcast from '../../assets/images/guess-the-throne-mockup-podcast.png'
 
+const COMPANY_COLOR = 'rgba(87, 115, 155, .8)'
 const CaseStudy = () => {
   return (
     <Layout>
@@ -23,6 +24,7 @@ const CaseStudy = () => {
         smallHeroImage
         title="Creating a Scalable Infrastructure in One Week"
         companyName="Guess the Throne"
+        companyColor={COMPANY_COLOR}
         heroImgConfig={{
           src: HeroImage,
           alt: 'Phone showcasing Its a Date',

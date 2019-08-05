@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import { Container, media } from '@caldera-digital/theme'
 import Logo from '../assets/svgs/caldera-logo.svg'
 import { createRoutes } from './NavBar'
-import { MOCK_BLOGS } from './Homepage/LatestFromOurBlog'
 import { Button } from './Button'
+import { latestBlogsQuery } from '../utils/blogUtils'
 
 const CopyrightContainer = styled.span`
   font-size: 0.8rem;
@@ -101,6 +101,11 @@ const LinksContainer = styled(FooterColumn)`
   @media (max-width: 767px) {
     border: none;
     width: 100%;
+
+    a {
+      padding: 2px 0;
+      margin-bottom: 0.75rem;
+    }
   }
 `
 const BlogsContainer = styled(FooterColumn)`
@@ -152,6 +157,10 @@ const Copyright = () => (
 )
 
 export const Footer = () => {
+  const {
+    allArticle: { edges },
+  } = useStaticQuery(latestBlogsQuery)
+
   return (
     <StyledFooterWrapper>
       <StyledFooter>
@@ -166,8 +175,8 @@ export const Footer = () => {
           ))}
         </LinksContainer>
         <BlogsContainer>
-          {MOCK_BLOGS.slice(0, 3).map(blog => (
-            <Link to={blog.to} key={blog.to}>
+          {edges.map(({ node: blog }) => (
+            <Link to={blog.slug} key={blog.slug}>
               {blog.title}
             </Link>
           ))}

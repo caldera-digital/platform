@@ -403,9 +403,6 @@ Section.FancyTile = styled.div`
 `
 
 Section.FancySteps = styled.div``
-Section.FancySteps.Group = styled.div`
-  display: flex;
-`
 
 const StyledFancyStep = styled.div`
   padding: 2rem;
@@ -416,6 +413,17 @@ const StyledFancyStep = styled.div`
   flex: 1;
   position: relative;
 `
+Section.FancySteps.Group = styled.div`
+  display: flex;
+
+  ${media.forSmallOnly`
+    flex-direction: column;
+
+    ${StyledFancyStep} {
+      width: calc(100% - 4rem);
+    }
+  `}
+`
 const StyledFancyStepNumber = styled.div`
   position: absolute;
   top: -25px;
@@ -425,22 +433,30 @@ const StyledFancyStepNumber = styled.div`
   font-weight: bold;
   font-size: 50px;
 `
+
+const ARROW_DOWN = css`
+  transform: translateX(-50%) rotate(90deg);
+  bottom: -15px;
+  left: 50%;
+`
+
 const FancyStepNumberArrow = styled(BlueArrow)`
   position: absolute;
 
   ${({ arrowDirection }) => {
     switch (arrowDirection) {
       case 'down':
-        return css`
-          transform: translateX(-50%) rotate(90deg);
-          bottom: -15px;
-          left: 50%;
-        `
+        return ARROW_DOWN
       case 'right':
         return css`
           transform: translateY(-50%);
           right: -35px;
           top: 50%;
+
+          ${media.forSmallOnly`
+            top: auto;
+            ${ARROW_DOWN}
+          `}
         `
 
       default:

@@ -7,6 +7,7 @@ import ScreenCollage from '../../assets/images/its-a-date-screen-collage.png'
 import Blob1 from '../../assets/svgs/its-a-date/teal-blob1.svg'
 import Blob3 from '../../assets/svgs/its-a-date/teal-blob2.svg'
 
+const COMPANY_COLOR = '#FAC4A8'
 const CaseStudy = () => {
   return (
     <Layout>
@@ -15,6 +16,7 @@ const CaseStudy = () => {
         caseStudy
         title="Rapid Prototyping and Iterative Design"
         companyName="It's a Date"
+        companyColor={COMPANY_COLOR}
         heroImgConfig={{
           src: HeroImage,
           alt: 'Phone showcasing Its a Date',

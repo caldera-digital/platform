@@ -9,6 +9,7 @@ import Blob1 from '../../assets/svgs/pride-of-the-meadows/green-blob3.svg'
 import BlobX from '../../assets/svgs/pride-of-the-meadows/green-blob1.svg'
 import Blob3 from '../../assets/svgs/pride-of-the-meadows/green-blob2.svg'
 
+const COMPANY_COLOR = '#B6D2AC'
 const CaseStudy = () => {
   return (
     <Layout>
@@ -17,6 +18,7 @@ const CaseStudy = () => {
         caseStudy
         title="Creating a Digital First Brand"
         companyName="Pride of the Meadows"
+        companyColor={COMPANY_COLOR}
         heroImgConfig={{
           src: HeroImage,
           alt: 'Phone showcasing Its a Date',

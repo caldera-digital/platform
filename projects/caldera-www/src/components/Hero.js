@@ -105,7 +105,7 @@ const HeroContainer = styled.div`
       ${media.forSmallOnly`
         ${HeroTextContainer} {
           h1 {
-            font-size: 35px;
+            font-size: 32px;
           }
         }
 
@@ -171,7 +171,8 @@ const SecondaryText = styled.p`
 const CompanyName = styled.p`
   margin-top: 2rem;
   font-size: 60px;
-  border-bottom: 6px solid ${props => props.theme.secondaryColor};
+  border-bottom: 6px solid
+    ${props => props.borderColor || props.theme.secondaryColor};
   display: inline-block;
 
   ${media.forSmallMediumOnly`
@@ -191,6 +192,7 @@ export const Hero = ({
   smallHeroImage = false,
   heroImgConfig,
   companyName,
+  companyColor,
   blobs = [{ blob: Blob5, position: 'topRight', size: 'medium' }],
 }) => {
   return (
@@ -205,7 +207,9 @@ export const Hero = ({
         {secondaryText && (
           <SecondaryText secondary={secondary}>{secondaryText}</SecondaryText>
         )}
-        {companyName && <CompanyName>{companyName}</CompanyName>}
+        {companyName && (
+          <CompanyName borderColor={companyColor}>{companyName}</CompanyName>
+        )}
       </HeroTextContainer>
 
       {/* eslint-disable-next-line jsx-a11y/alt-text */}

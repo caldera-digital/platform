@@ -46,10 +46,10 @@ export const StyledFormInput = styled.div`
       }
     `}
 
-  ${({ hidden }) =>
-    hidden &&
+  ${({ showField }) =>
+    !showField &&
     css`
-      display: hidden;
+      display: none;
     `}
 
   ${media.forSmallMediumOnly`
@@ -69,14 +69,14 @@ export const Input = ({
   label,
   name,
   error,
-  hidden = false,
+  showField = true,
   optional = false,
   onChange = () => null,
   onBlur = () => null,
   ...rest
 }) => {
   return (
-    <StyledFormInput hidden={hidden}>
+    <StyledFormInput showField={showField}>
       {label && (
         <label htmlFor={name}>
           {label} {optional && <span>- Optional</span>}
@@ -98,14 +98,14 @@ export const FileUpload = ({
   label,
   name,
   error,
-  hidden = false,
+  showField = true,
   optional = false,
   onChange = () => null,
   onBlur = () => null,
   ...rest
 }) => {
   return (
-    <StyledFormInput hidden={hidden} fileUpload>
+    <StyledFormInput showField={showField} fileUpload>
       {label && (
         <label htmlFor={name}>
           {label} {optional && <span>- Optional</span>}
@@ -127,14 +127,14 @@ export const Textarea = ({
   label,
   name,
   error,
-  hidden = false,
+  showField = true,
   optional = false,
   onChange = () => null,
   onBlur = () => null,
   ...rest
 }) => {
   return (
-    <StyledFormInput hidden={hidden}>
+    <StyledFormInput showField={showField}>
       {label && (
         <label htmlFor={name}>
           {label} {optional && <span>- Optional</span>}

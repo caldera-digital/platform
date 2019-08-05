@@ -88,7 +88,7 @@ const ContactUs = ({ location }) => {
                 value={values.name}
               />
               <Input
-                hidden
+                showField={false}
                 label="Kittens"
                 name="kittens"
                 error={'Merp'}

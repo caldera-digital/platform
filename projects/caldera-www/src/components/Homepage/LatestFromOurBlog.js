@@ -1,32 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Section } from '../Section'
-import MockBlog from '../../assets/images/mock-blog.jpg'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
+import { latestBlogsQuery } from '../../utils/blogUtils'
 
-export const MOCK_BLOGS = [
-  {
-    title: 'What’s More Important, Process or Results?',
-    text:
-      'A close friend once asked me, “What’s more important, process or results?” It was after a job interview in college and I immediately replied, “results of course!”',
-    image: MockBlog,
-    to: '/1',
-  },
-  {
-    title: 'What’s More Important, Process or Results?',
-    text:
-      'A close friend once asked me, “What’s more important, process or results?” It was after a job interview in college and I immediately replied, “results of course!”',
-    image: MockBlog,
-    to: '/2',
-  },
-  {
-    title: 'What’s More Important, Process or Results?',
-    text:
-      'A close friend once asked me, “What’s more important, process or results?” It was after a job interview in college and I immediately replied, “results of course!”',
-    image: MockBlog,
-    to: '/3',
-  },
-]
+const ImageContainer = styled.div``
+const BlogContentContainer = styled.div``
+const SubText = styled.p`
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+`
 
 const BlogItem = styled(Link)`
   display: flex;
@@ -35,60 +20,70 @@ const BlogItem = styled(Link)`
   background-color: ${props => props.theme.white};
   overflow: hidden;
 
-  > img {
-    width: 25%;
+  ${ImageContainer} {
+    width: 35%;
     object-fit: cover;
+
+    .gatsby-image-wrapper {
+      height: 100%;
+    }
   }
 
-  > div {
-    width: 75%;
+  ${BlogContentContainer} {
+    width: 65%;
     padding: 2rem;
 
     h3 {
       font-size: 2rem;
       font-weight: bold;
-      margin-bottom: 1.5rem;
     }
 
     p {
       color: ${props => props.theme.defaultFontColor};
+    }
+
+    ${SubText} {
+      color: ${props => props.theme.grayText};
     }
   }
 
   @media (max-width: 767px) {
     flex-direction: column;
 
-    > img {
+    ${ImageContainer} {
       width: 100%;
       height: 200px;
     }
 
-    > div {
+    ${BlogContentContainer} {
       width: 100%;
 
       h3 {
         font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 1.5rem;
-      }
-
-      p {
-        color: ${props => props.theme.defaultFontColor};
       }
     }
   }
 `
 
 export const LatestFromOurBlog = () => {
+  const {
+    allArticle: { edges },
+  } = useStaticQuery(latestBlogsQuery)
+
   return (
     <Section header="Latest from Our Blog" lightBackground>
-      {MOCK_BLOGS.map(blog => (
-        <BlogItem key={blog.to} to={blog.to}>
-          <img src={blog.image} alt={blog.title} />
-          <div>
+      {edges.map(({ node: blog }) => (
+        <BlogItem key={blog.slug} to={blog.slug}>
+          <ImageContainer>
+            <Img fluid={blog.hero.narrow.fluid} />
+          </ImageContainer>
+          <BlogContentContainer>
             <h3>{blog.title}</h3>
-            <p>{blog.text}</p>
-          </div>
+            <SubText>
+              {blog.date} / {blog.timeToRead} minutes to read
+            </SubText>
+            <p>{blog.excerpt}</p>
+          </BlogContentContainer>
         </BlogItem>
       ))}
     </Section>

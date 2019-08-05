@@ -8,7 +8,7 @@ export const theme = {
   defaultParagraphLineHeight: '1.5',
   defaultHeaderColor: '#000000',
   defaultInputBackgroundColor: '#f5f5f5',
-  defaultMobileFontSize: '14px',
+  defaultMobileFontSize: '16px',
   defaultTransition: 'all 0.2s linear',
   desktopHeaderHeight: '75px',
   disabledColor: '#888888',
