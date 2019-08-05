@@ -25,11 +25,16 @@ const StyledImageLinkSection = styled.div`
     font-size: 1.5rem;
   }
 
-  img {
+  > a {
     width: 40%;
-    height: ${`calc(${IMAGE_HEIGHT})`};
-    object-fit: contain;
-    position: relative;
+    padding: ${props => (props.reverse ? '0 0 0 1rem' : '0 1rem 0 0')};
+
+    img {
+      height: ${`calc(${IMAGE_HEIGHT})`};
+      object-fit: contain;
+      position: relative;
+      width: 100%;
+    }
   }
 
   > div {
@@ -43,7 +48,7 @@ const StyledImageLinkSection = styled.div`
     padding-top: ${`calc((${IMAGE_HEIGHT}) / 2)`};
     margin-top: ${`calc((${IMAGE_HEIGHT}) / 2)`};
 
-    img {
+    > a {
       position: absolute;
       /* Note the - for negative */
       top: ${`calc((${IMAGE_HEIGHT}) / -2)`};
@@ -61,13 +66,13 @@ const StyledImageLinkSection = styled.div`
     margin-left: ${props => (props.reverse ? '3rem' : '0')};
     margin-right: ${props => (props.reverse ? '0' : '3rem')};
 
-    img {
+    > a {
       width: 60%;
     }
   `}
 
   @media (max-width: 400px) {
-    img {
+    > a {
       width: 80%;
     }
   }
