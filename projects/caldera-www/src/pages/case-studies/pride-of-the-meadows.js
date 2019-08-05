@@ -1,6 +1,5 @@
 import React from 'react'
 import { Layout, SEO, Hero, Section } from '../../components'
-// import styled from 'styled-components'
 
 import HeroImage from '../../assets/images/pride-of-the-meadows-web.png'
 import ProductSnippet from '../../assets/images/pride-of-the-meadows-product-snippet.jpg'
@@ -13,7 +12,7 @@ import Blob3 from '../../assets/svgs/pride-of-the-meadows/green-blob2.svg'
 const CaseStudy = () => {
   return (
     <Layout>
-      <SEO />
+      <SEO title="Creating a Digital First Brand | Pride of the Meadows" />
       <Hero
         caseStudy
         title="Creating a Digital First Brand"

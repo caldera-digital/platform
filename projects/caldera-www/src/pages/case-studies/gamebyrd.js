@@ -1,6 +1,5 @@
 import React from 'react'
 import { Layout, SEO, Hero, Section } from '../../components'
-// import styled from 'styled-components'
 
 import HeroImage from '../../assets/images/gamebyrd-mocks.png'
 import DesktopMocks from '../../assets/images/gamebyrd-desktop-mocks.png'
@@ -11,7 +10,7 @@ import Blob3 from '../../assets/svgs/gamebyrd/red-blob2.svg'
 const CaseStudy = () => {
   return (
     <Layout>
-      <SEO />
+      <SEO title="Rapid Prototyping and Iterative Design | Gamebyrd" />
       <Hero
         caseStudy
         title="Rapid Prototyping and Iterative Design"

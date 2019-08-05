@@ -1,6 +1,5 @@
 import React from 'react'
 import { Layout, SEO, Hero, Section } from '../../components'
-// import styled from 'styled-components'
 
 import HeroImage from '../../assets/images/its-a-date-hero.png'
 import PhoneImage from '../../assets/images/its-a-date-welcome-flow.png'
@@ -11,7 +10,7 @@ import Blob3 from '../../assets/svgs/its-a-date/teal-blob2.svg'
 const CaseStudy = () => {
   return (
     <Layout>
-      <SEO />
+      <SEO title="Rapid Prototyping and Iterative Design | It's a Date" />
       <Hero
         caseStudy
         title="Rapid Prototyping and Iterative Design"

@@ -34,6 +34,7 @@ const seoQuery = graphql`
             }
             siteUrl
             title
+            name
           }
         }
       }
@@ -46,7 +47,7 @@ export const SEO = ({
   description,
   children,
   url,
-  image,
+  image = 'https://res.cloudinary.com/calderablog/image/upload/v1564971507/social-link_crvqll.png',
   published,
   pathname,
   timeToRead,
@@ -56,6 +57,7 @@ export const SEO = ({
   const twitter = site.social.find(option => option.name === 'twitter') || {}
 
   const fullURL = path => (path ? `${site.siteUrl}${path}` : site.siteUrl)
+  const fullPageTitle = title ? `${title} | ${site.name}` : site.title
 
   const metaTags = [
     { charset: 'utf-8' },
@@ -75,14 +77,14 @@ export const SEO = ({
       rel: 'canonical',
       href: fullURL(pathname),
     },
-    { itemprop: 'name', content: title || site.title },
+    { itemprop: 'name', content: fullPageTitle },
     { itemprop: 'description', content: description || site.description },
     { itemprop: 'image', content: fullURL(image) },
     { name: 'description', content: description || site.description },
 
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:site', content: site.name },
-    { name: 'twitter:title', content: title || site.title },
+    { name: 'twitter:title', content: fullPageTitle },
     { name: 'twitter:description', content: description || site.description },
     { name: 'twitter:creator', content: twitter.url },
     {
@@ -90,7 +92,7 @@ export const SEO = ({
       content: fullURL(image),
     },
 
-    { property: 'og:title', content: title || site.title },
+    { property: 'og:title', content: fullPageTitle },
     { property: 'og:url', content: url },
     { property: 'og:image', content: fullURL(image) },
     { property: 'og:description', content: description || site.description },
@@ -108,7 +110,7 @@ export const SEO = ({
 
   return (
     <Helmet
-      title={title || site.title}
+      title={fullPageTitle}
       htmlAttributes={{ lang: 'en' }}
       meta={metaTags}
     >

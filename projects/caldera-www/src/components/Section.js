@@ -358,7 +358,7 @@ Section.Column = styled.div`
 `
 
 Section.OrderedList = styled.ol``
-Section.UnorderedList = styled.ol``
+Section.UnorderedList = styled.ul``
 
 Section.ListItem = styled.li`
   line-height: 1.5;

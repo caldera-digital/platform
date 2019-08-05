@@ -9,7 +9,6 @@ import {
   Textarea,
   Button,
   FileUpload,
-  ContentContainer,
 } from '../components'
 import styled from 'styled-components'
 import { media } from '@caldera-digital/theme'
@@ -120,10 +119,10 @@ const CareersForm = () => {
 const JoinOurTeam = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO />
+      <SEO title="Join our Team" />
       <Hero
         secondary
-        title="Work With Us"
+        title="Join our Team"
         secondaryText="We’re different than your standard agency. We’re more of a collective – complete with enough business-talk to keep you motivated, enough diversity to keep you intrigued and enough ingenuity to keep you on your toes."
       />
 
@@ -134,8 +133,8 @@ const JoinOurTeam = ({ location }) => {
         </PowerText>
       </Section>
 
-      <ContentContainer>
-        <h2>Join the Collective</h2>
+      <Section>
+        <Section.H2>Join the Collective</Section.H2>
         <p>
           We’re group of people with a particular set of skills that come
           together to craft great outcomes. All of our employees are
@@ -155,7 +154,7 @@ const JoinOurTeam = ({ location }) => {
           hear from you.
         </p>
 
-        <h2>Mentorship Program</h2>
+        <Section.H2>Mentorship Program</Section.H2>
         <p>
           Calling all college students, recent graduates, and people looking to
           change their careers! Our mentorship program gives you the chance to
@@ -169,32 +168,35 @@ const JoinOurTeam = ({ location }) => {
           example…
         </p>
 
-        <ul>
-          <li>Improving the code of this website (it’s open source)</li>
-          <li>Rewriting a social media post to foster higher engagement</li>
-          <li>
+        <Section.UnorderedList>
+          <Section.ListItem>
+            Improving the code of this website (it’s open source)
+          </Section.ListItem>
+          <Section.ListItem>
+            Rewriting a social media post to foster higher engagement
+          </Section.ListItem>
+          <Section.ListItem>
             Share an interesting article or case study with us and how you would
             implement it for a client
-          </li>
-          <li> Submit a post to be on our blog</li>
-          <li>Suggest an event to boost company awareness</li>
-        </ul>
+          </Section.ListItem>
+          <Section.ListItem> Submit a post to be on our blog</Section.ListItem>
+        </Section.UnorderedList>
 
         <em>
           Want to do something that will take a lot of time? Reach out to us
           first and we'll compensate you for it.
         </em>
-        <Section>
-          <PowerText>
-            Or if you think your resume or website is{' '}
-            <span role="img" aria-label="fire">
-              🔥🔥
-            </span>
-            , just send it our way. We’re excited to hear from you!
-          </PowerText>
-        </Section>
+      </Section>
+      <Section>
+        <PowerText>
+          Or if you think your resume or website is{' '}
+          <span role="img" aria-label="fire">
+            🔥🔥
+          </span>
+          , just send it our way. We’re excited to hear from you!
+        </PowerText>
         <CareersForm />
-      </ContentContainer>
+      </Section>
     </Layout>
   )
 }

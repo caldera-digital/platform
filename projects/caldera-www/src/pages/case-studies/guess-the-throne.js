@@ -17,7 +17,7 @@ import Podcast from '../../assets/images/guess-the-throne-mockup-podcast.png'
 const CaseStudy = () => {
   return (
     <Layout>
-      <SEO />
+      <SEO title="Creating a Scalable Infrastructure in One Week | Guess the Throne" />
       <Hero
         caseStudy
         smallHeroImage

@@ -1,27 +1,27 @@
 /* eslint-disable import/no-commonjs */
 module.exports = {
   siteMetadata: {
-    title: 'Caldera',
+    title: 'Caldera | We create outstanding experiences on web and mobile',
     name: 'Caldera',
     siteUrl: 'https://calderadigital.com/',
-    description: 'We create great web experiences.',
+    description: 'We create outstanding experiences.',
     hero: {
       heading: 'The Caldera blog.',
       maxWidth: 652,
     },
     social: [
-      // {
-      //   name: 'twitter',
-      //   url: 'https://twitter.com/narative',
-      // },
+      {
+        name: 'twitter',
+        url: 'https://twitter.com/caldera_digital',
+      },
       {
         name: 'github',
         url: 'https://github.com/caldera-digital',
       },
-      // {
-      //   name: 'instagram',
-      //   url: 'https://instagram.com/narative.co',
-      // },
+      {
+        name: 'instagram',
+        url: 'https://www.instagram.com/calderadigital/',
+      },
       // {
       //   name: 'linkedin',
       //   url: 'https://www.linkedin.com/company/narative/',
@@ -50,14 +50,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Gatsby Starter Blog',
-        short_name: 'GatsbyJS',
-        start_url: '/',
-        background_color: '#ffffff',
-        theme_color: '#663399',
-        display: 'minimal-ui',
         // TODO
-        // icon: 'content/assets/gatsby-icon.png',
+        name: 'Caldera | We Create Outstanding Experiences',
+        short_name: 'Caldera',
+        start_url: '/',
+        background_color: '#FFFFFF',
+        theme_color: '#0080EE',
+        display: 'minimal-ui',
       },
     },
     {
@@ -72,6 +71,7 @@ module.exports = {
       resolve: 'gatsby-plugin-styled-components',
       options: {},
     },
+    'gatsby-plugin-favicon',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',

@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { media } from '@caldera-digital/theme'
 import { Loading } from '@caldera-digital/core'
-// import { Link } from 'gatsby'
+import { Link } from 'gatsby'
 
 const ButtonStyles = css`
   cursor: pointer;
@@ -70,6 +70,10 @@ const StyledButton = styled.button`
   ${ButtonStyles};
 `
 
+const StyledLinkButton = styled(Link)`
+  ${ButtonStyles};
+`
+
 export const Button = ({
   loading = false,
   size = 'large',
@@ -83,11 +87,10 @@ export const Button = ({
   )
 }
 
-// export const LinkButton = ({ to, children, buttonProps = {} }) => {
-//   const LinkButton = createButtonStyle(Link)
-//   return (
-//     <LinkButton {...buttonProps} as={Link} to={to}>
-//       {children}
-//     </LinkButton>
-//   )
-// }
+export const LinkButton = ({ to, children, ...rest }) => {
+  return (
+    <StyledLinkButton to={to} {...rest}>
+      {children}
+    </StyledLinkButton>
+  )
+}

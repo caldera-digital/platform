@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, SEO, Hero, ContentContainer, Section } from '../components'
+import { Layout, SEO, Hero, Section } from '../components'
 import styled, { css } from 'styled-components'
 import { media } from '@caldera-digital/theme'
 
@@ -64,7 +64,7 @@ const FinalProductSection = styled.div`
 const OurProcess = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO />
+      <SEO title="Join our Process" />
       <Hero
         secondary
         title="How We Tackle Big Problems"
@@ -74,8 +74,8 @@ const OurProcess = ({ location }) => {
           alt: 'Gamebyrd proof of concept',
         }}
       />
-      <ContentContainer>
-        <h2>Discover</h2>
+      <Section>
+        <Section.H2>Discover</Section.H2>
         <p>
           Step one - sit down with key stakeholders and current customers to
           discuss goals, learn more about your business and talk about your
@@ -97,7 +97,7 @@ const OurProcess = ({ location }) => {
           the future. Who are your prospective users? What do their experience
           and tech needs look like down the road?
         </p>
-        <h2>Design</h2>
+        <Section.H2>Design</Section.H2>
         <p>
           The discovery phase grants us two major pieces of information need to
           start designing:
@@ -122,7 +122,7 @@ const OurProcess = ({ location }) => {
           features needed for a 1.0 launch. This mirrors the conversion flow and
           user journey crafted via the wireframes.
         </p>
-        <h2>Development</h2>
+        <Section.H2>Development</Section.H2>
         <p>
           Development is a whirlwind. We move quickly through this phase, with
           two-week iterations that help us develop features to mirror the
@@ -131,7 +131,7 @@ const OurProcess = ({ location }) => {
           through a continuous integration flow, so you are able to see progress
           online as we complete features.
         </p>
-        <h2>Refinement</h2>
+        <Section.H2>Refinement</Section.H2>
         <p>
           Once the website is launched we begin to measure everything. There’s
           normally a backlog of features to add to the application after the 1.0
@@ -151,7 +151,7 @@ const OurProcess = ({ location }) => {
         <FinalProductSection>
           <ProcessImage2 src={POTMMockup} alt="Pride of the Meadows mockup" />
           <div>
-            <h2>A final product – for now</h2>
+            <Section.H2>A final product – for now</Section.H2>
             <p>
               While this process may end, the project is often on-going. Our
               process is refined to keep our clients involved without any added
@@ -161,7 +161,7 @@ const OurProcess = ({ location }) => {
             </p>
           </div>
         </FinalProductSection>
-      </ContentContainer>
+      </Section>
     </Layout>
   )
 }

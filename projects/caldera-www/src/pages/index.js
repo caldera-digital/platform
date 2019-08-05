@@ -12,10 +12,10 @@ import Phone from '../assets/images/homeHeroImage.png'
 const HomePage = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO title="All posts" />
+      <SEO />
       <Hero
-        title="We create outstanding experiences for B2B companies"
-        secondaryText="Web | Mobile | Analytics"
+        title="We create outstanding experiences."
+        secondaryText="Web | Mobile | Automation"
         heroImgConfig={{
           src: Phone,
           alt: 'Phone with blobs floating out of it',

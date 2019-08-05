@@ -44,7 +44,7 @@ const FORM_NAME = 'contact'
 const ContactUs = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO />
+      <SEO title="Contact Us" />
       <ContactThankYouContainer>
         <h1>Contact Us</h1>
         <NetlifyForm

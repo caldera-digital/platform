@@ -23,6 +23,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: ${props => props.theme.defaultFont};
     color: ${props => props.theme.defaultFontColor};
+    background-color: ${props => props.theme.bodyBackgroundColor};
 
     h1, h2, h3, h4, h5, h6 {
       margin-top: 0;

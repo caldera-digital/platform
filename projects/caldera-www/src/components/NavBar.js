@@ -69,8 +69,8 @@ export const createRoutes = (location = {}) => [
     },
   },
   {
-    route: '/services',
-    text: 'Services',
+    route: '/our-work',
+    text: 'Our Work',
     as: Link,
     style: routeStyles,
     get selected() {
