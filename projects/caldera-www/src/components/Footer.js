@@ -1,11 +1,40 @@
 import React from 'react'
-import { Link, useStaticQuery } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Container, media } from '@caldera-digital/theme'
 import Logo from '../assets/svgs/caldera-logo.svg'
 import { createRoutes } from './NavBar'
 import { Button } from './Button'
-import { latestBlogsQuery } from '../utils/blogUtils'
+
+export const latestBlogsQuery = graphql`
+  {
+    allArticle(limit: 3, sort: { fields: date, order: DESC }) {
+      edges {
+        node {
+          id
+          date(formatString: "MMMM Do, YYYY")
+          title
+          timeToRead
+          excerpt
+          slug
+          hero {
+            narrow: childImageSharp {
+              fluid(maxWidth: 457, quality: 90) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 const CopyrightContainer = styled.span`
   font-size: 0.8rem;

@@ -1,9 +1,38 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Section } from '../Section'
-import { Link, useStaticQuery } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import { latestBlogsQuery } from '../../utils/blogUtils'
+
+export const latestBlogsQuery = graphql`
+  {
+    allArticle(limit: 3, sort: { fields: date, order: DESC }) {
+      edges {
+        node {
+          id
+          date(formatString: "MMMM Do, YYYY")
+          title
+          timeToRead
+          excerpt
+          slug
+          hero {
+            narrow: childImageSharp {
+              fluid(maxWidth: 457, quality: 90) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 const ImageContainer = styled.div``
 const BlogContentContainer = styled.div``
