@@ -48,6 +48,30 @@ const CarouselItem = styled.div`
     > svg {
       margin: 0 0 2rem;
     }
+
+    > div {
+      h3 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  `}
+
+  ${media.forSmallMediumOnly`
+    flex-direction: column;
+
+    > svg {
+      width: 50%;
+    }
+
+    > div {
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
   `}
 `
 
@@ -99,7 +123,7 @@ export const OurServices = () => {
           <CarouselItem>
             <Analytics />
             <div>
-              <h3>Analytics</h3>
+              <h3>Automation</h3>
               <p>
                 It all starts with the basics. The success of any app can be
                 tracked to the initial discussions about what it will do, what
