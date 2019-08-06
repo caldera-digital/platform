@@ -8,6 +8,7 @@ const COMMON_INPUT_STYLES = css`
   border: 3px solid ${props => props.theme.primaryColor};
   font-size: 1.5rem;
   padding: 5px;
+  margin: 0 auto;
 `
 
 export const StyledFormInput = styled.div`
@@ -73,10 +74,11 @@ export const Input = ({
   optional = false,
   onChange = () => null,
   onBlur = () => null,
+  containerStyle = {},
   ...rest
 }) => {
   return (
-    <StyledFormInput showField={showField}>
+    <StyledFormInput showField={showField} style={containerStyle}>
       {label && (
         <label htmlFor={name}>
           {label} {optional && <span>- Optional</span>}

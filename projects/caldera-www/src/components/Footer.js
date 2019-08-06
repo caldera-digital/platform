@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Container, media } from '@caldera-digital/theme'
 import Logo from '../assets/svgs/caldera-logo.svg'
 import { createRoutes } from './NavBar'
 import { Button } from './Button'
+import addToMailchimp from 'gatsby-plugin-mailchimp'
+import { Input } from './Form'
+import { emailIsValid } from '../utils/formUtils'
 
 export const latestBlogsQuery = graphql`
   {
@@ -178,6 +181,41 @@ const EmailContainer = styled(FooterColumn)`
     width: 100%;
   }
 `
+const FooterCTA = styled.div`
+  background-color: ${props => props.theme.lightBackgroundColor};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8rem;
+
+  p {
+    text-align: center;
+    max-width: 500px;
+  }
+
+  span {
+    color: ${props => props.theme.primaryColor};
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  ${media.forSmallMediumOnly`
+    padding: 6rem 0;
+
+    span {
+      font-size: 2.25rem;
+    }
+  `}
+
+  ${media.forSmallMediumOnly`
+    padding: 4rem 1rem;
+
+    span {
+      font-size: 2rem;
+    }
+  `}
+`
 
 const Copyright = () => (
   <CopyrightContainer>
@@ -185,40 +223,75 @@ const Copyright = () => (
   </CopyrightContainer>
 )
 
-export const Footer = () => {
+export const Footer = ({ showFooterCTA = true }) => {
+  const [email, setEmail] = useState('')
+  const [showSuccess, setShowSuccess] = useState(false)
   const {
     allArticle: { edges },
   } = useStaticQuery(latestBlogsQuery)
 
   return (
-    <StyledFooterWrapper>
-      <StyledFooter>
-        <LogoContainer>
-          <Logo />
-        </LogoContainer>
-        <LinksContainer>
-          {createRoutes().map(({ route, text }) => (
-            <Link to={route} key={route}>
-              {text}
-            </Link>
-          ))}
-        </LinksContainer>
-        <BlogsContainer>
-          {edges.map(({ node: blog }) => (
-            <Link to={blog.slug} key={blog.slug}>
-              {blog.title}
-            </Link>
-          ))}
-        </BlogsContainer>
-        <EmailContainer>
-          <p>Subscribe to our Newsletter!</p>
-          <form onSubmit={() => console.log('submit called')}>
-            <input />
-            <Button size="small">Submit</Button>
-          </form>
-        </EmailContainer>
-      </StyledFooter>
-      <Copyright />
-    </StyledFooterWrapper>
+    <>
+      {showFooterCTA && (
+        <FooterCTA>
+          <p>
+            Our team loves to work on new and exciting products. Give us a shout
+            if there's anything we can help with!
+          </p>
+
+          <span>Let's get started</span>
+          <Button>Contact Us</Button>
+        </FooterCTA>
+      )}
+
+      <StyledFooterWrapper>
+        <StyledFooter>
+          <LogoContainer>
+            <Logo />
+          </LogoContainer>
+          <LinksContainer>
+            {createRoutes().map(({ route, text }) => (
+              <Link to={route} key={route}>
+                {text}
+              </Link>
+            ))}
+          </LinksContainer>
+          <BlogsContainer>
+            {edges.map(({ node: blog }) => (
+              <Link to={blog.slug} key={blog.slug}>
+                {blog.title}
+              </Link>
+            ))}
+          </BlogsContainer>
+          <EmailContainer>
+            <p>Subscribe to our Newsletter!</p>
+            <form
+              onSubmit={async e => {
+                e.preventDefault()
+                await addToMailchimp(email)
+
+                setEmail('')
+                setShowSuccess(true)
+              }}
+            >
+              <Input
+                onChange={e => setEmail(e.target.value)}
+                value={email}
+                containerStyle={{ width: '100%' }}
+              />
+              <Button size="small" disabled={!emailIsValid(email)}>
+                Submit
+              </Button>
+              {showSuccess && (
+                <span style={{ color: 'white', marginTop: '1rem' }}>
+                  Subscribed!
+                </span>
+              )}
+            </form>
+          </EmailContainer>
+        </StyledFooter>
+        <Copyright />
+      </StyledFooterWrapper>
+    </>
   )
 }

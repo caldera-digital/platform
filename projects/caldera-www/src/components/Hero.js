@@ -37,7 +37,7 @@ const HeroContainer = styled.div`
 
   img {
     object-fit: contain;
-    max-width: 550px;
+    max-width: 500px;
     text-align: center;
   }
 
@@ -55,7 +55,8 @@ const HeroContainer = styled.div`
     }
 
     img {
-      max-width: 45%;
+      max-width: 40%;
+      margin: 3rem 0 0 2rem;
     }
   `}
 
@@ -70,7 +71,7 @@ const HeroContainer = styled.div`
     }
 
     img {
-      display: none;
+      max-width: 58%;
     }
   `}
 
@@ -174,6 +175,7 @@ const CompanyName = styled.p`
   border-bottom: 6px solid
     ${props => props.borderColor || props.theme.secondaryColor};
   display: inline-block;
+  color: ${props => props.theme.defaultFontColor} !important;
 
   ${media.forSmallMediumOnly`
     font-size: 2rem;
@@ -193,6 +195,7 @@ export const Hero = ({
   heroImgConfig,
   companyName,
   companyColor,
+  companyWebsite,
   blobs = [{ blob: Blob5, position: 'topRight', size: 'medium' }],
 }) => {
   return (
@@ -208,7 +211,23 @@ export const Hero = ({
           <SecondaryText secondary={secondary}>{secondaryText}</SecondaryText>
         )}
         {companyName && (
-          <CompanyName borderColor={companyColor}>{companyName}</CompanyName>
+          <>
+            {companyWebsite ? (
+              <a
+                href={companyWebsite}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <CompanyName borderColor={companyColor}>
+                  {companyName}
+                </CompanyName>
+              </a>
+            ) : (
+              <CompanyName borderColor={companyColor}>
+                {companyName}
+              </CompanyName>
+            )}
+          </>
         )}
       </HeroTextContainer>
 

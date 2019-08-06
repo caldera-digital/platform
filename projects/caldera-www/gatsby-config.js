@@ -82,5 +82,12 @@ module.exports = {
         shortname: 'calderadigital',
       },
     },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint:
+          'https://calderadigital.us18.list-manage.com/subscribe/post?u=4c88cd983f586a817f4b1b345&amp;id=0ed9147da3',
+      },
+    },
   ],
 }

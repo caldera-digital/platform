@@ -19,6 +19,7 @@ const CaseStudy = () => {
         title="Creating a Digital First Brand"
         companyName="Pride of the Meadows"
         companyColor={COMPANY_COLOR}
+        companyWebsite="https://www.prideofthemeadows.com/"
         heroImgConfig={{
           src: HeroImage,
           alt: 'Phone showcasing Its a Date',

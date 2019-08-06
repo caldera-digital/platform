@@ -19,7 +19,12 @@ const MainContentContainer = styled.main`
   `}
 `
 
-export const Layout = ({ location, children }) => {
+export const Layout = ({
+  location,
+  children,
+  showFooterCTA = true,
+  className = '',
+}) => {
   // eslint-disable-next-line no-undef
   // const rootPath = `${__PATH_PREFIX__}/`
 
@@ -31,8 +36,10 @@ export const Layout = ({ location, children }) => {
             <>
               <GlobalStyle />
               <header>{<NavBar location={location} theme={theme} />}</header>
-              <MainContentContainer>{children}</MainContentContainer>
-              <Footer />
+              <MainContentContainer className={className}>
+                {children}
+              </MainContentContainer>
+              <Footer showFooterCTA={showFooterCTA} />
             </>
           </ThemeProvider>
         )}

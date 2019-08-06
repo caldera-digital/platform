@@ -25,6 +25,7 @@ const CaseStudy = () => {
         title="Creating a Scalable Infrastructure in One Week"
         companyName="Guess the Throne"
         companyColor={COMPANY_COLOR}
+        companyWebsite="https://guessthethrone.com/"
         heroImgConfig={{
           src: HeroImage,
           alt: 'Phone showcasing Its a Date',

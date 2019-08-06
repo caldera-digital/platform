@@ -17,6 +17,7 @@ const CaseStudy = () => {
         title="Rapid Prototyping and Iterative Design"
         companyName="It's a Date"
         companyColor={COMPANY_COLOR}
+        companyWebsite="https://www.itsadate.app/"
         heroImgConfig={{
           src: HeroImage,
           alt: 'Phone showcasing Its a Date',

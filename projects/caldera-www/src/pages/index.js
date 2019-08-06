@@ -11,7 +11,7 @@ import Phone from '../assets/images/homeHeroImage.png'
 
 const HomePage = ({ location }) => {
   return (
-    <Layout location={location}>
+    <Layout location={location} showFooterCTA={false}>
       <SEO />
       <Hero
         title="We create outstanding experiences."
@@ -20,6 +20,7 @@ const HomePage = ({ location }) => {
           src: Phone,
           alt: 'Phone with blobs floating out of it',
         }}
+        blobs={[]}
       />
       <Welcome />
       <WhoWeveWorkedWith />

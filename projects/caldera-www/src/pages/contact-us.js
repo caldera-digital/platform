@@ -11,6 +11,20 @@ import styled from 'styled-components'
 import { Container, media } from '@caldera-digital/theme'
 import { navigateTo } from 'gatsby'
 import { emailIsValid } from '../utils/formUtils'
+import { BlobHandler, COMMON_BLOB_STYLES } from '../components/Blob'
+
+import Blob from '../assets/svgs/blue-blob2.svg'
+import Blob2 from '../assets/svgs/blue-blob4.svg'
+
+const StyledLayout = styled(Layout)`
+  ${COMMON_BLOB_STYLES}
+
+  ${media.forSmallOnly`
+    svg {
+      display: none;
+    }
+  `}
+`
 
 export const ContactThankYouContainer = styled(Container)`
   margin: 5rem auto 6rem;
@@ -43,9 +57,16 @@ const SubmitButton = styled(Button)`
 const FORM_NAME = 'contact'
 const ContactUs = ({ location }) => {
   return (
-    <Layout location={location}>
+    <StyledLayout location={location} showFooterCTA={false}>
       <SEO title="Contact Us" />
-      <ContactThankYouContainer>
+      <BlobHandler
+        blobs={[
+          { blob: Blob, position: 'topRight', size: 'medium' },
+          { blob: Blob2, position: 'bottomLeft', size: 'medium' },
+        ]}
+      />
+
+      <ContactThankYouContainer style={{ position: 'relative' }}>
         <h1>Contact Us</h1>
         <NetlifyForm
           initialValues={{
@@ -125,7 +146,7 @@ const ContactUs = ({ location }) => {
           )}
         </NetlifyForm>
       </ContactThankYouContainer>
-    </Layout>
+    </StyledLayout>
   )
 }
 

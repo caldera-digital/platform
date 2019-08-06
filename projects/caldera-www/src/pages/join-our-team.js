@@ -8,7 +8,7 @@ import {
   Input,
   Textarea,
   Button,
-  FileUpload,
+  // FileUpload,
 } from '../components'
 import styled from 'styled-components'
 import { media } from '@caldera-digital/theme'
@@ -45,12 +45,14 @@ const CareersForm = () => {
       initialValues={{
         name: '',
         email: '',
+        link: '',
         message: '',
-        resume: '',
+        // resume: '',
       }}
       validationSchema={{
         name: val => !val && 'Name is required.',
         email: val => (!val || !emailIsValid(val)) && 'Must be a valid email.',
+        link: val => !val && 'Field is required.',
       }}
       onFormSubmit={() => navigateTo('/thank-you')}
       formName={FORM_NAME}
@@ -95,8 +97,16 @@ const CareersForm = () => {
             onBlur={onBlur}
             value={values.email}
           />
+          <Input
+            label="Portfolio, LinkedIn, or URL to Resume"
+            name="link"
+            error={touched.link && errors.link}
+            onChange={onChange}
+            onBlur={onBlur}
+            value={values.link}
+          />
           <Textarea
-            label="What can we help you with?"
+            label="Anything else we should look at?"
             name="message"
             optional
             rows="3"
@@ -104,12 +114,12 @@ const CareersForm = () => {
             onBlur={onBlur}
             value={values.message}
           />
-          <FileUpload
+          {/* <FileUpload
             label="Resume"
             name="resume"
             optional
             onChange={onChange}
-          />
+          /> */}
           <Button disabled={!isValid}>Submit</Button>
         </StyledCareersForm>
       )}
@@ -119,7 +129,7 @@ const CareersForm = () => {
 
 const JoinOurTeam = ({ location }) => {
   return (
-    <Layout location={location}>
+    <Layout location={location} showFooterCTA={false}>
       <SEO title="Join our Team" />
       <Hero
         secondary
