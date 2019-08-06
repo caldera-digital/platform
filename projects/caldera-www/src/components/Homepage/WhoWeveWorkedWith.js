@@ -57,7 +57,7 @@ const FlexibleImage = styled.div`
   `}
 
   ${media.forSmallOnly`
-    padding: 2rem 0.5rem;
+    padding: 2rem 1rem;
 
     &:nth-child(odd) {
       padding-left: 0;

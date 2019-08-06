@@ -277,7 +277,7 @@ export const Footer = ({ showFooterCTA = true }) => {
               <Input
                 onChange={e => setEmail(e.target.value)}
                 value={email}
-                containerStyle={{ width: '100%' }}
+                containerStyle={{ width: '100%', margin: 0 }}
               />
               <Button size="small" disabled={!emailIsValid(email)}>
                 Submit
