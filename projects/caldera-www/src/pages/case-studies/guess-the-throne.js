@@ -1,18 +1,9 @@
 import React from 'react'
 import { Layout, SEO, Hero, Section } from '../../components'
+import { createOptimizedCloudinary } from '../../utils/utilityService'
 
-import HeroImage from '../../assets/images/guess-the-throne-mockup-web.png'
-import PhoneImage from '../../assets/images/its-a-date-welcome-flow.png'
 import Blob1 from '../../assets/svgs/guess-the-throne/dark-blue-blob3.svg'
 import Blob3 from '../../assets/svgs/guess-the-throne/dark-blue-blob2.svg'
-
-import GTTLogin from '../../assets/images/guess-the-throne-login.png'
-import GTTStats from '../../assets/images/guess-the-throne-stats.png'
-import GTTStats1 from '../../assets/images/guess-the-throne-stats-1.png'
-import GTTStats2 from '../../assets/images/guess-the-throne-stats-2.png'
-import GTTAnalytics from '../../assets/images/guess-the-throne-launch-analytics.png'
-import GlobalImpact from '../../assets/images/guess-the-throne-global-impact.png'
-import Podcast from '../../assets/images/guess-the-throne-mockup-podcast.png'
 
 const COMPANY_COLOR = 'rgba(87, 115, 155, .8)'
 const CaseStudy = () => {
@@ -27,7 +18,9 @@ const CaseStudy = () => {
         companyColor={COMPANY_COLOR}
         companyWebsite="https://guessthethrone.com/"
         heroImgConfig={{
-          src: HeroImage,
+          src: createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565066031/guess-the-throne-mockup-web_st6rbk.png',
+          ),
           alt: 'Phone showcasing Its a Date',
         }}
         blobs={[
@@ -43,7 +36,10 @@ const CaseStudy = () => {
       <Section smallPadding>
         <Section.H2>Guess the Throne</Section.H2>
         <Section.Image
-          src={PhoneImage}
+          src={createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565065682/its-a-date-intro-mockup3_2x_prmqqs.png',
+            'w_350,c_fit',
+          )}
           alt="Welcome screen for Its a Date"
           floatRight
           phoneImage
@@ -127,19 +123,27 @@ const CaseStudy = () => {
         <Section.ImageCollage
           images={[
             {
-              src: GTTLogin,
+              src: createOptimizedCloudinary(
+                'https://res.cloudinary.com/calderablog/image/upload/v1565066329/GTT-mockup-14_2x_vuc3ec.png',
+              ),
               alt: 'Guess the Throne login page',
             },
             {
-              src: GTTStats,
+              src: createOptimizedCloudinary(
+                'https://res.cloudinary.com/calderablog/image/upload/v1565066427/GTT-mockup-13_2x_uvmogf.png',
+              ),
               alt: 'Guess the Throne stats',
             },
             {
-              src: GTTStats1,
+              src: createOptimizedCloudinary(
+                'https://res.cloudinary.com/calderablog/image/upload/v1565066262/GTT-mockup-12_2x_kxlpwt.png',
+              ),
               alt: 'Guess the Throne stats',
             },
             {
-              src: GTTStats2,
+              src: createOptimizedCloudinary(
+                'https://res.cloudinary.com/calderablog/image/upload/v1565066223/GTT-mockup-11_2x_oe7lbp.png',
+              ),
               alt: 'Guess the Throne stats',
             },
           ]}
@@ -156,7 +160,9 @@ const CaseStudy = () => {
           the loud, global GoT fan base would be our best chance.
         </p>
         <Section.Image
-          src={Podcast}
+          src={createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565066296/GTT-mockup-10_2x_etuapv.png',
+          )}
           alt="Guess the Throne Podcast Web"
           floatRight
           medium
@@ -190,7 +196,9 @@ const CaseStudy = () => {
           messaging, but we eventually struck gold.
         </p>
         <Section.Image
-          src={GlobalImpact}
+          src={createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565066044/guess-the-throne-global-impact_bsahve.png',
+          )}
           alt="Guess the Throne Global Impact"
           floatLeft
           small
@@ -237,7 +245,9 @@ const CaseStudy = () => {
           return (
             <Section.Column>
               <Section.Image
-                src={GTTAnalytics}
+                src={createOptimizedCloudinary(
+                  'https://res.cloudinary.com/calderablog/image/upload/v1565064136/GTT-mockup2_2x_qlfxlz.png',
+                )}
                 alt="Guess the Throne Google Analytics"
                 responsive
               />

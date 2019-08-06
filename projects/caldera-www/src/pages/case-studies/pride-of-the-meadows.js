@@ -1,13 +1,10 @@
 import React from 'react'
 import { Layout, SEO, Hero, Section } from '../../components'
 
-import HeroImage from '../../assets/images/pride-of-the-meadows-web.png'
-import ProductSnippet from '../../assets/images/pride-of-the-meadows-product-snippet.jpg'
-import ScreenCollage from '../../assets/images/pride-of-the-meadows-mockup-group.png'
-import ProductMockup from '../../assets/images/pride-of-the-meadows-product-mockup.png'
 import Blob1 from '../../assets/svgs/pride-of-the-meadows/green-blob3.svg'
 import BlobX from '../../assets/svgs/pride-of-the-meadows/green-blob1.svg'
 import Blob3 from '../../assets/svgs/pride-of-the-meadows/green-blob2.svg'
+import { createOptimizedCloudinary } from '../../utils/utilityService'
 
 const COMPANY_COLOR = '#B6D2AC'
 const CaseStudy = () => {
@@ -21,9 +18,12 @@ const CaseStudy = () => {
         companyColor={COMPANY_COLOR}
         companyWebsite="https://www.prideofthemeadows.com/"
         heroImgConfig={{
-          src: HeroImage,
+          src: createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565064208/Image_68_2x_flau11.png',
+          ),
           alt: 'Phone showcasing Its a Date',
         }}
+        smallHeroImage
         blobs={[
           { blob: Blob1, position: 'topRight', size: 'medium' },
           {
@@ -76,7 +76,9 @@ const CaseStudy = () => {
       </Section>
       <Section lightBackground>
         <Section.Image
-          src={ScreenCollage}
+          src={createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565064190/Image_55_2x_gp2mkt.png',
+          )}
           alt="Collage of Its a Date screens"
           responsive
           style={{ objectPosition: 'bottom' }}
@@ -179,7 +181,9 @@ const CaseStudy = () => {
         </p>
         <Section.FancyTile>
           <Section.Image
-            src={ProductSnippet}
+            src={createOptimizedCloudinary(
+              'https://res.cloudinary.com/calderablog/image/upload/v1565064190/Screen_Shot_2019-03-02_at_7.06.55_PM_2x_kjbyka.png',
+            )}
             alt="Pride of the Meadows Jalapeno Peppers"
             responsive
           />
@@ -192,7 +196,9 @@ const CaseStudy = () => {
           return (
             <Section.Column>
               <Section.Image
-                src={ProductMockup}
+                src={createOptimizedCloudinary(
+                  'https://res.cloudinary.com/calderablog/image/upload/v1565064191/pride-of-the-meadows-mockup3_2x_vtu3do.png',
+                )}
                 alt="Pride of the Meadows Products"
                 responsive
               />

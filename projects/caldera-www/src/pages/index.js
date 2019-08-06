@@ -6,8 +6,7 @@ import { Welcome } from '../components/Homepage/Welcome'
 import { WhoWeveWorkedWith } from '../components/Homepage/WhoWeveWorkedWith'
 import { LatestFromOurBlog } from '../components/Homepage/LatestFromOurBlog'
 import { CallToAction } from '../components/Homepage/CallToAction'
-
-import Phone from '../assets/images/homeHeroImage.png'
+import { createOptimizedCloudinary } from '../utils/utilityService'
 
 const HomePage = ({ location }) => {
   return (
@@ -17,7 +16,9 @@ const HomePage = ({ location }) => {
         title="We create outstanding experiences."
         secondaryText="Web | Mobile | Automation"
         heroImgConfig={{
-          src: Phone,
+          src: createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565067237/homeHeroImage_kmpyyb.png',
+          ),
           alt: 'Phone with blobs floating out of it',
         }}
         blobs={[]}

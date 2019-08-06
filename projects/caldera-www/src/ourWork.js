@@ -1,14 +1,12 @@
 import React from 'react'
-
-import ItsADatePhone from './assets/images/its-a-date-phone.png'
-import PrideOfTheMeadowsWeb from './assets/images/pride-of-the-meadows-web.png'
-import Gamebyrd from './assets/images/gamebyrd-mocks.png'
-import GuessTheThrone from './assets/images/guess-the-throne-mockup-web.png'
+import { createOptimizedCloudinary } from './utils/utilityService'
 
 export const OUR_WORK = [
   {
     imageConfig: {
-      src: ItsADatePhone,
+      src: createOptimizedCloudinary(
+        'https://res.cloudinary.com/calderablog/image/upload/v1565066770/its-a-date-phone_izkfva.png',
+      ),
       // eslint-disable-next-line quotes
       alt: "It's a Date app launch screen",
     },
@@ -30,7 +28,9 @@ export const OUR_WORK = [
   },
   {
     imageConfig: {
-      src: PrideOfTheMeadowsWeb,
+      src: createOptimizedCloudinary(
+        'https://res.cloudinary.com/calderablog/image/upload/v1565064208/Image_68_2x_flau11.png',
+      ),
       alt: 'Pride of the Meadows landing page',
     },
     title: 'Pride of the Meadows',
@@ -50,7 +50,9 @@ export const OUR_WORK = [
   },
   {
     imageConfig: {
-      src: GuessTheThrone,
+      src: createOptimizedCloudinary(
+        'https://res.cloudinary.com/calderablog/image/upload/v1565066031/guess-the-throne-mockup-web_st6rbk.png',
+      ),
       alt: 'Guess the Throne landing page',
     },
     title: 'Guess the Throne',
@@ -70,7 +72,9 @@ export const OUR_WORK = [
   },
   {
     imageConfig: {
-      src: Gamebyrd,
+      src: createOptimizedCloudinary(
+        'https://res.cloudinary.com/calderablog/image/upload/v1565065226/Image_45_2x_aoybmp.png',
+      ),
       alt: 'Gamebyrd landing page',
     },
     title: 'Gamebyrd',

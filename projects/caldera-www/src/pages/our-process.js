@@ -2,10 +2,7 @@ import React from 'react'
 import { Layout, SEO, Hero, Section } from '../components'
 import styled, { css } from 'styled-components'
 import { media } from '@caldera-digital/theme'
-
-import OurProcessHero from '../assets/images/gamebyrd-mocks.png'
-import ItsADateWelcomeFlow from '../assets/images/its-a-date-welcome-flow.png'
-import POTMMockup from '../assets/images/pride-of-the-meadows-product-mockup.png'
+import { createOptimizedCloudinary } from '../utils/utilityService'
 
 const CallOut = styled.div`
   border-left: 6px solid ${props => props.theme.secondaryColor};
@@ -70,7 +67,9 @@ const OurProcess = ({ location }) => {
         title="How We Tackle Big Problems"
         secondaryText="We look at every project as an explosion of ideas – we move fast, we break things down, and at the end you’re left with something great that works just right."
         heroImgConfig={{
-          src: OurProcessHero,
+          src: createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565065226/Image_45_2x_aoybmp.png',
+          ),
           alt: 'Gamebyrd proof of concept',
         }}
       />
@@ -85,7 +84,10 @@ const OurProcess = ({ location }) => {
           your digital strategy for your desired outcome.
         </p>
         <Section.Image
-          src={ItsADateWelcomeFlow}
+          src={createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565065682/its-a-date-intro-mockup3_2x_prmqqs.png',
+            'w_350,c_fit',
+          )}
           alt="Welcome screen for Its a Date"
           floatRight
           phoneImage
@@ -149,7 +151,12 @@ const OurProcess = ({ location }) => {
         </p>
 
         <FinalProductSection>
-          <ProcessImage2 src={POTMMockup} alt="Pride of the Meadows mockup" />
+          <ProcessImage2
+            src={createOptimizedCloudinary(
+              'https://res.cloudinary.com/calderablog/image/upload/v1565065481/pride-of-the-meadows-mockup3_2x_vtu3do.png',
+            )}
+            alt="Pride of the Meadows mockup"
+          />
           <div>
             <Section.H2>A final product – for now</Section.H2>
             <p>

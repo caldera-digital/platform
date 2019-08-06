@@ -1,11 +1,9 @@
 import React from 'react'
 import { Layout, SEO, Hero, Section } from '../../components'
 
-import HeroImage from '../../assets/images/its-a-date-hero.png'
-import PhoneImage from '../../assets/images/its-a-date-welcome-flow.png'
-import ScreenCollage from '../../assets/images/its-a-date-screen-collage.png'
 import Blob1 from '../../assets/svgs/its-a-date/teal-blob1.svg'
 import Blob3 from '../../assets/svgs/its-a-date/teal-blob2.svg'
+import { createOptimizedCloudinary } from '../../utils/utilityService'
 
 const COMPANY_COLOR = '#FAC4A8'
 const CaseStudy = () => {
@@ -17,9 +15,12 @@ const CaseStudy = () => {
         title="Rapid Prototyping and Iterative Design"
         companyName="It's a Date"
         companyColor={COMPANY_COLOR}
+        mediumHeroImage
         companyWebsite="https://www.itsadate.app/"
         heroImgConfig={{
-          src: HeroImage,
+          src: createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565064161/Group_637_2x_scvnjg.png',
+          ),
           alt: 'Phone showcasing Its a Date',
         }}
         blobs={[
@@ -35,7 +36,10 @@ const CaseStudy = () => {
       <Section smallPadding>
         <Section.H2>It's a Date</Section.H2>
         <Section.Image
-          src={PhoneImage}
+          src={createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565065682/its-a-date-intro-mockup3_2x_prmqqs.png',
+            'w_350,c_fit',
+          )}
           alt="Welcome screen for Its a Date"
           floatRight
           phoneImage
@@ -84,7 +88,9 @@ const CaseStudy = () => {
           return (
             <Section.Column>
               <Section.Image
-                src={ScreenCollage}
+                src={createOptimizedCloudinary(
+                  'https://res.cloudinary.com/calderablog/image/upload/v1565064176/Image_53_2x_yzlmxs.png',
+                )}
                 alt="Collage of Its a Date screens"
                 responsive
                 style={{ objectPosition: 'bottom' }}

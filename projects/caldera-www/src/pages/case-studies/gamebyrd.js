@@ -1,11 +1,9 @@
 import React from 'react'
 import { Layout, SEO, Hero, Section } from '../../components'
 
-import HeroImage from '../../assets/images/gamebyrd-mocks.png'
-import DesktopMocks from '../../assets/images/gamebyrd-desktop-mocks.png'
-import OrderSuccess from '../../assets/images/gamebyrd-mockup-order-success.png'
 import Blob1 from '../../assets/svgs/gamebyrd/red-blob1.svg'
 import Blob3 from '../../assets/svgs/gamebyrd/red-blob2.svg'
+import { createOptimizedCloudinary } from '../../utils/utilityService'
 
 const CaseStudy = () => {
   return (
@@ -16,7 +14,9 @@ const CaseStudy = () => {
         title="Rapid Prototyping and Iterative Design"
         companyName="Gamebyrd"
         heroImgConfig={{
-          src: HeroImage,
+          src: createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565064201/Image_45_2x_aoybmp.png',
+          ),
           alt: 'Phone showcasing Its a Date',
         }}
         blobs={[
@@ -64,7 +64,9 @@ const CaseStudy = () => {
       </Section>
       <Section lightBackground>
         <Section.Image
-          src={DesktopMocks}
+          src={createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565064201/Image_70_2x_ykahdj.png',
+          )}
           alt="Gamebyrd's Home Page on Monitor"
           responsive
         />
@@ -112,7 +114,9 @@ const CaseStudy = () => {
           return (
             <Section.Column>
               <Section.Image
-                src={OrderSuccess}
+                src={createOptimizedCloudinary(
+                  'https://res.cloudinary.com/calderablog/image/upload/v1565064201/gamebyrd-mockup2_2x_cxhvi8.png',
+                )}
                 alt="Gamebyrd's Order Success"
                 responsive
               />
