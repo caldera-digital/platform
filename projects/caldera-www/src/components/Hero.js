@@ -214,6 +214,7 @@ export const Hero = ({
   smallHeroImage = false,
   mediumHeroImage = false,
   heroImgConfig,
+  renderRightSide,
   companyName,
   companyColor,
   companyWebsite,
@@ -253,8 +254,12 @@ export const Hero = ({
         )}
       </HeroTextContainer>
 
-      {/* eslint-disable-next-line jsx-a11y/alt-text */}
-      {heroImgConfig && <img {...heroImgConfig} />}
+      {renderRightSide ? (
+        renderRightSide()
+      ) : heroImgConfig ? (
+        // eslint-disable-next-line jsx-a11y/alt-text
+        <img {...heroImgConfig} />
+      ) : null}
     </HeroContainer>
   )
 }
