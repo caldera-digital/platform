@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
   CalderaDigitalThemeProvider,
   CalderaDigitalThemeConsumer,
@@ -19,31 +19,46 @@ const MainContentContainer = styled.main`
   `}
 `
 
-export const Layout = ({
-  location,
-  children,
-  showFooterCTA = true,
-  className = '',
-}) => {
-  // eslint-disable-next-line no-undef
-  // const rootPath = `${__PATH_PREFIX__}/`
+export class Layout extends Component {
+  componentDidCatch(error, errorInfo) {
+    const { Sentry } = window
+    console.log('erfe', error)
+    Sentry.configureScope(scope => {
+      Object.keys(errorInfo).forEach(key => {
+        scope.setExtra(key, errorInfo[key])
+      })
+    })
+    Sentry.captureException(error)
+  }
 
-  return (
-    <CalderaDigitalThemeProvider theme={customTheme}>
-      <CalderaDigitalThemeConsumer>
-        {theme => (
-          <ThemeProvider theme={theme}>
-            <>
-              <GlobalStyle />
-              <header>{<NavBar location={location} theme={theme} />}</header>
-              <MainContentContainer className={className}>
-                {children}
-              </MainContentContainer>
-              <Footer showFooterCTA={showFooterCTA} />
-            </>
-          </ThemeProvider>
-        )}
-      </CalderaDigitalThemeConsumer>
-    </CalderaDigitalThemeProvider>
-  )
+  render() {
+    // const rootPath = `${__PATH_PREFIX__}/`
+    // eslint-disable-next-line no-undef
+
+    const {
+      location,
+      children,
+      showFooterCTA = true,
+      className = '',
+    } = this.props
+
+    return (
+      <CalderaDigitalThemeProvider theme={customTheme}>
+        <CalderaDigitalThemeConsumer>
+          {theme => (
+            <ThemeProvider theme={theme}>
+              <>
+                <GlobalStyle />
+                <header>{<NavBar location={location} theme={theme} />}</header>
+                <MainContentContainer className={className}>
+                  {children}
+                </MainContentContainer>
+                <Footer showFooterCTA={showFooterCTA} />
+              </>
+            </ThemeProvider>
+          )}
+        </CalderaDigitalThemeConsumer>
+      </CalderaDigitalThemeProvider>
+    )
+  }
 }

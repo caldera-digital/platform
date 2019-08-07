@@ -82,6 +82,7 @@ const CaseStudy = () => {
           alt="Collage of Its a Date screens"
           responsive
           style={{ objectPosition: 'bottom' }}
+          zoomable
         />
       </Section>
       <Section
@@ -186,6 +187,7 @@ const CaseStudy = () => {
             )}
             alt="Pride of the Meadows Jalapeno Peppers"
             responsive
+            zoomable
           />
         </Section.FancyTile>
       </Section>
@@ -201,6 +203,7 @@ const CaseStudy = () => {
                 )}
                 alt="Pride of the Meadows Products"
                 responsive
+                zoomable
               />
             </Section.Column>
           )

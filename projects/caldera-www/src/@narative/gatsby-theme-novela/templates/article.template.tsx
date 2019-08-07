@@ -4,7 +4,7 @@ import throttle from "lodash/throttle";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Layout from "@narative/gatsby-theme-novela/src/components/Layout";
-import { RichText } from "@narative/gatsby-theme-novela/src/components/Media";
+import RichText from "../components/Media/Media.RichText";
 import Progress from "@narative/gatsby-theme-novela/src/components/Progress";
 import Section from "@narative/gatsby-theme-novela/src/components/Section";
 
@@ -39,10 +39,8 @@ const siteQuery = graphql`
   }
 `;
 
-function Article({ pageContext, location, ...rest }) {
+function Article({ pageContext, location }) {
   const contentSectionRef = useRef<HTMLElement>(null);
-
-  console.log('erfe', { pageContext, location, ...rest })
 
   const [hasCalculated, setHasCalculated] = useState<boolean>(false);
   const [contentHeight, setContentHeight] = useState<number>(0);

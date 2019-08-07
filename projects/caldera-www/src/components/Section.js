@@ -5,6 +5,7 @@ import { jiggle } from '../style/utils'
 import BlueArrow from '../assets/svgs/blue-arrow.svg'
 import { BlobHandler, COMMON_BLOB_STYLES } from './Blob'
 import Carousel, { Dots } from '@brainhubeu/react-carousel'
+import ImageZoom from 'react-medium-image-zoom'
 
 import '@brainhubeu/react-carousel/lib/style.css'
 
@@ -257,10 +258,16 @@ Section.H2 = styled.h2`
   `}
 `
 
-Section.Image = styled.img`
-  object-fit: contain;
+const StyledImage = styled.div`
   position: relative;
   z-index: 10;
+  display: inline;
+
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
 
   ${({ floatLeft }) =>
     floatLeft &&
@@ -342,6 +349,20 @@ Section.Image = styled.img`
       `}
     `}
 `
+
+Section.Image = ({ zoomable, src, alt, style = {}, ...rest }) => {
+  const image = { src, alt, style }
+
+  return (
+    <StyledImage {...rest}>
+      {zoomable ? (
+        <ImageZoom image={image} zoomImage={image} />
+      ) : (
+        <img src={src} alt={alt} />
+      )}
+    </StyledImage>
+  )
+}
 
 Section.Column = styled.div`
   ${({ fluidGuard }) =>
@@ -490,7 +511,7 @@ const StyledImageCarousel = styled.div``
 const ImageCarousel = ({ images = [], className = '' }) => {
   const [activeItem, setActiveItem] = useState(0)
 
-  const thumbnails = createCollageImages(images, { size: 45 })
+  const thumbnails = createCollageImages(images, { size: 45, zoomable: false })
 
   return (
     <StyledImageCarousel className={className}>
@@ -499,7 +520,6 @@ const ImageCarousel = ({ images = [], className = '' }) => {
         infinite
         clickToChange
         slidesPerPage={2}
-        autoPlay={5000}
         animationSpeed={1000}
         addArrowClickHandler
         value={activeItem}
@@ -513,7 +533,7 @@ const ImageCarousel = ({ images = [], className = '' }) => {
           },
         }}
       >
-        {createCollageImages(images, { responsive: true })}
+        {createCollageImages(images, { responsive: true, zoomable: true })}
       </Carousel>
       <Dots
         onChange={val => setActiveItem(val)}
@@ -527,15 +547,21 @@ const ImageCarousel = ({ images = [], className = '' }) => {
 
 Section.ImageCarousel = ImageCarousel
 
-const createCollageImages = (images = [], { size, responsive }) =>
+const createCollageImages = (
+  images = [],
+  { size, responsive, zoomable = false },
+) =>
   images.map(({ src, alt }, i) => (
-    <Section.Image
-      src={src}
-      alt={alt}
-      key={`${i}-${alt}`}
-      responsive={responsive}
-      size={size}
-    />
+    <div style={{ display: 'inline-block' }}>
+      <Section.Image
+        src={src}
+        alt={alt}
+        key={`${i}-${alt}`}
+        responsive={responsive}
+        size={size}
+        zoomable={zoomable}
+      />
+    </div>
   ))
 
 const StyledImageCollage = styled.div`
@@ -582,7 +608,7 @@ Section.ImageCollage = ({ images = [] }) => {
   return (
     <StyledImageCollageWrapper>
       <StyledImageCollage>
-        {createCollageImages(images, { responsive: true })}
+        {createCollageImages(images, { responsive: true, zoomable: true })}
       </StyledImageCollage>
       <Section.ImageCarousel images={images} />
     </StyledImageCollageWrapper>

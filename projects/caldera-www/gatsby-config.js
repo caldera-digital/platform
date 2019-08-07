@@ -89,5 +89,21 @@ module.exports = {
           'https://calderadigital.us18.list-manage.com/subscribe/post?u=4c88cd983f586a817f4b1b345&amp;id=0ed9147da3',
       },
     },
+    {
+      resolve: 'gatsby-plugin-polyfill-io',
+      options: {
+        features: ['Promise', 'Array.prototype.forEach'],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: 'https://8d2d575dedeb41f989e0cc19e83aaa0e@sentry.io/1523590',
+        // Optional settings, see https://docs.sentry.io/clients/node/config/#optional-settings
+        environment: process.env.NODE_ENV,
+        enabled: (() =>
+          ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)(),
+      },
+    },
   ],
 }

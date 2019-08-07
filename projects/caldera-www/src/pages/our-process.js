@@ -91,6 +91,7 @@ const OurProcess = ({ location }) => {
           alt="Welcome screen for Its a Date"
           floatRight
           phoneImage
+          zoomable
         />
         <p>
           We know – planning sucks. Plans change, timing changes, you know the

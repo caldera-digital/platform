@@ -43,6 +43,7 @@ const CaseStudy = () => {
           alt="Welcome screen for Its a Date"
           floatRight
           phoneImage
+          zoomable
         />
         <p>
           The team at Caldera is wild about Game of Thrones, so naturally, we
@@ -166,6 +167,7 @@ const CaseStudy = () => {
           alt="Guess the Throne Podcast Web"
           floatRight
           medium
+          zoomable
         />
         <p>
           We tried to exhaust all avenues of free and earned media before
@@ -202,6 +204,7 @@ const CaseStudy = () => {
           alt="Guess the Throne Global Impact"
           floatLeft
           small
+          zoomable
         />
         <p>
           We tried a number of angles on Fiverr.com, a network of internet doers
@@ -250,6 +253,7 @@ const CaseStudy = () => {
                 )}
                 alt="Guess the Throne Google Analytics"
                 responsive
+                zoomable
               />
             </Section.Column>
           )

@@ -124,5 +124,10 @@
     "!win32",
     "darwin",
     "linux"
+  ],
+  "browserslist": [
+    ">0.25%",
+    "not dead",
+    "IE 11"
   ]
 }

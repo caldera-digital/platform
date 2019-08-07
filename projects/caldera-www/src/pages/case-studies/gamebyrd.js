@@ -69,6 +69,7 @@ const CaseStudy = () => {
           )}
           alt="Gamebyrd's Home Page on Monitor"
           responsive
+          zoomable
         />
       </Section>
       <Section>
@@ -119,6 +120,7 @@ const CaseStudy = () => {
                 )}
                 alt="Gamebyrd's Order Success"
                 responsive
+                zoomable
               />
             </Section.Column>
           )

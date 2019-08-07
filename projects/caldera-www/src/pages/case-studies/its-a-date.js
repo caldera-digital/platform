@@ -43,6 +43,7 @@ const CaseStudy = () => {
           alt="Welcome screen for Its a Date"
           floatRight
           phoneImage
+          zoomable
         />
         <p>
           Online dating is flooded with mobile apps which focus on rapidly
@@ -165,7 +166,7 @@ const CaseStudy = () => {
             simply instructed to move through the main event flow with specific
             aid only offered when requested. Points of approval, disapproval,
             and suggestion were all noted by category; then ranked by urgency
-            for continued development.{' '}
+            for continued development.
           </Section.ListItem>
         </Section.OrderedList>
       </Section>
