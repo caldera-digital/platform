@@ -83,7 +83,7 @@ const HomePage = ({ location }) => {
     <Layout location={location} showFooterCTA={false}>
       <SEO />
       <Hero
-        title="We create outstanding experiences."
+        title="You Dream it. We Bring it to Life."
         secondaryText="Web | Mobile | Automation"
         renderRightSide={() => (
           <StyledPhoneContainer>

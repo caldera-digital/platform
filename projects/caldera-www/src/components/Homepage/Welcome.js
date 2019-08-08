@@ -57,17 +57,16 @@ export const Welcome = () => {
   return (
     <BlobSection fluid blob={Blob}>
       <WelcomeTextContainer>
-        <h2>Fusing technology and identity to tell your story</h2>
+        <h2>
+          We use innovative technology to bring your vision, brand, and identity
+          to life.
+        </h2>
         <BreakoutSection>
           <p>
-            What do you get when you bring together a collection of computer
-            nerds, graphic artists and inspired writers? Caldera.
-          </p>
-          <p>
-            We take pride in bringing out the best in each other - and in turn,
-            bringing out the best in your business. Our team does that by
-            combining the latest and greatest technology with proven user
-            experiences to create outstanding results.
+            We are graphic artists and designers, expert coders, and published
+            writers. Caldera is your one-stop-shop. We take pride in working
+            with the best and latest technology out there - and in turn, bring
+            only the best to your business.
           </p>
         </BreakoutSection>
       </WelcomeTextContainer>

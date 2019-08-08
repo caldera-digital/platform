@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Container, media } from '@caldera-digital/theme'
 import Logo from '../assets/svgs/caldera-logo.svg'
 import { createRoutes } from './NavBar'
-import { Button } from './Button'
+import { Button, LinkButton } from './Button'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import { Input } from './Form'
 import { emailIsValid } from '../utils/formUtils'
@@ -235,12 +235,12 @@ export const Footer = ({ showFooterCTA = true }) => {
       {showFooterCTA && (
         <FooterCTA>
           <p>
-            Our team loves to work on new and exciting products. Give us a shout
-            if there's anything we can help with!
+            Our team is always looking for new and exciting products to be a
+            part of! Interested in learning how we can help?
           </p>
 
-          <span>Let's get started</span>
-          <Button>Contact Us</Button>
+          <span>Let's get started.</span>
+          <LinkButton to="/contact-us">Contact Us</LinkButton>
         </FooterCTA>
       )}
 

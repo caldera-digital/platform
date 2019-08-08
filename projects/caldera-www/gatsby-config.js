@@ -1,10 +1,11 @@
 /* eslint-disable import/no-commonjs */
 module.exports = {
   siteMetadata: {
-    title: 'Caldera | We create outstanding experiences on web and mobile',
+    title: 'Caldera | You Dream it. We Bring it to Life.',
     name: 'Caldera',
     siteUrl: 'https://calderadigital.com/',
-    description: 'We create outstanding experiences.',
+    description:
+      'Caldera is a product and application development agency that uses innovative technology to bring your vision, brand, and identity to life through human-centered design practices.',
     hero: {
       heading: 'The Caldera blog.',
       maxWidth: 652,

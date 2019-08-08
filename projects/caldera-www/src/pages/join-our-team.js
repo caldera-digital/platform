@@ -134,21 +134,22 @@ const JoinOurTeam = ({ location }) => {
       <Hero
         secondary
         title="Join our Team"
-        secondaryText="We’re different than your standard agency. We’re more of a collective – complete with enough business-talk to keep you motivated, enough diversity to keep you intrigued and enough ingenuity to keep you on your toes."
+        secondaryText="What makes us great is how we are different. We are a collective group of individuals who come from a variety of backgrounds. If you want to build cool products, look no further."
       />
 
       <Section lightBackground sectionContainerStyle={{ marginBottom: '3rem' }}>
         <PowerText>
-          Want to get involved? All of our roles are 100% remote and give you
-          access to our Slack group (operating on constant gif entertainment!).
+          Want to get involved? We are 100% remote business, allowing you the
+          opportunity to work from anywhere (like at that cute coffee shop down
+          the street or your couch).
         </PowerText>
       </Section>
 
       <Section>
         <Section.H2>Join the Collective</Section.H2>
         <p>
-          We’re group of people with a particular set of skills that come
-          together to craft great outcomes. All of our employees are
+          We are a group of people with a particular set of skills who have
+          joined together to craft great outcomes. All of our employees are
           contractors, and many folks have their own freelance gigs on the side.
           This creates a unique dynamic – giving both personal goals and shared
           goals some time in the limelight. We work to bring you opportunities
@@ -157,54 +158,59 @@ const JoinOurTeam = ({ location }) => {
         </p>
         <p>
           Our projects consist of anything and everything within the digital
-          landscape. Our tasks are constantly evolving, so we’re always looking
-          for coders, copywriters, visual designers, musicians, social media
-          gurus, user experience experts, photographers, bloggers, chefs,
-          videographers and everything in-between (SEO bots do your thang). If
-          you have a skill that can be tailored to the internet - we want to
-          hear from you.
+          landscape. Some of our tasks are constantly evolving, but we are
+          always looking for coders, copywriters, visual designers, musicians,
+          social media gurus, user experience experts, photographers, bloggers,
+          chefs, videographers, and everything in-between (SEO bots do your
+          thing). If you have a skill that can be tailored to the internet, we
+          want to hear from you.
         </p>
 
         <Section.H2>Mentorship Program</Section.H2>
         <p>
-          Calling all college students, recent graduates, and people looking to
-          change their careers! Our mentorship program gives you the chance to
-          work as a contractor and try your hand in the freelance landscape.
-          There’s no job description for this role because it’s dependent on YOU
-          and what YOU want to learn. This is paid, 100% remote and has flexible
-          hours. Pretty sweet, right?
+          Calling all college students, recent graduates, or people looking for
+          a career change! Our mentorship program gives you the chance to work
+          as a contractor and try your hand in the freelance landscape. There is
+          no job description for this role because it is dependent on YOU and
+          what YOU want to learn. This is a paid, 100% remote opportunity with
+          flexible hours - which we think is pretty sweet.
         </p>
         <p>
-          To apply, send us an idea of how YOU think we can improve Caldera. For
+          To apply, send us an idea of how you think we can improve Caldera. For
           example…
         </p>
 
         <Section.UnorderedList>
           <Section.ListItem>
-            Improving the code of this website (it’s open source)
+            Improving the code of this website (it’s{' '}
+            <a href="https://github.com/caldera-digital/platform">
+              open-source
+            </a>
+            )
           </Section.ListItem>
           <Section.ListItem>
             Rewriting a social media post to foster higher engagement
           </Section.ListItem>
           <Section.ListItem>
-            Share an interesting article or case study with us and how you would
-            implement it for a client
+            Sharing an interesting article/case study and your ideas on how you
+            would implement it for a client
           </Section.ListItem>
-          <Section.ListItem> Submit a post to be on our blog</Section.ListItem>
+          <Section.ListItem>Writing a post for our blog</Section.ListItem>
         </Section.UnorderedList>
 
         <em>
-          Want to do something that will take a lot of time? Reach out to us
-          first and we'll compensate you for it.
+          (Want to do something that will take a lot of time and is outside of
+          the realm of ideas listed above? Reach out to us first and we will
+          compensate you for it if we like it!)
         </em>
       </Section>
       <Section>
         <PowerText>
           Or if you think your resume or website is{' '}
           <span role="img" aria-label="fire">
-            🔥🔥
+            🔥
           </span>
-          , just send it our way. We’re excited to hear from you!
+          , send it our way. We are excited to hear from you!
         </PowerText>
         <CareersForm />
       </Section>

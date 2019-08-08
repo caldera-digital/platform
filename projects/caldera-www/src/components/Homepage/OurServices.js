@@ -107,16 +107,13 @@ export const OurServices = () => {
             <div>
               <h3>Mobile Applications</h3>
               <p>
-                It all starts with the basics. The success of any app can be
-                tracked to the initial discussions about what it will do, what
-                it will be, and who it will serve. The answers to these
-                questions allow the technical aspects to fall into place.
-              </p>
-              <p>
-                With our human-centric methods and high-tech approach to
-                application development, we ensure what we’re building is more
-                than just code. Our apps become a means towards lasting
-                progress.
+                A mobile app's success and technical aspects lie in the answers
+                to these three initial questions: Who will it serve? What will
+                it be? And what will it do? With our human-centric and high-tech
+                approach to application development, we ensure that what we
+                build is more than just code. Our apps progress with
+                technological innovation - which means they will never be
+                out-of-date.
               </p>
             </div>
           </CarouselItem>
@@ -125,16 +122,10 @@ export const OurServices = () => {
             <div>
               <h3>Automation</h3>
               <p>
-                It all starts with the basics. The success of any app can be
-                tracked to the initial discussions about what it will do, what
-                it will be, and who it will serve. The answers to these
-                questions allow the technical aspects to fall into place.
-              </p>
-              <p>
-                With our human-centric methods and high-tech approach to
-                application development, we ensure what we’re building is more
-                than just code. Our apps become a means towards lasting
-                progress.
+                If it can be repeated, it can be automated. We employ a variety
+                of techniques to make repetitive tasks easy as pressing a
+                button. Whether it be creating a spreadsheet plugin or pulling
+                data to showcase on a real time dashboard, we have you covered.
               </p>
             </div>
           </CarouselItem>
@@ -143,16 +134,12 @@ export const OurServices = () => {
             <div>
               <h3>Web Applications</h3>
               <p>
-                It all starts with the basics. The success of any app can be
-                tracked to the initial discussions about what it will do, what
-                it will be, and who it will serve. The answers to these
-                questions allow the technical aspects to fall into place.
-              </p>
-              <p>
-                With our human-centric methods and high-tech approach to
-                application development, we ensure what we’re building is more
-                than just code. Our apps become a means towards lasting
-                progress.
+                We will help your business stand out with our innovative
+                designs, responsive web pages, and phenomenal user experience.
+                Technology is constantly improving, and your site will too with
+                progressive updates and eye-catching graphic design. Your
+                business is the masterpiece of your mind - and we are the team
+                to bring it to life.
               </p>
             </div>
           </CarouselItem>

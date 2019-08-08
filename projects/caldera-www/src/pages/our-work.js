@@ -19,7 +19,7 @@ const OurWork = ({ location }) => {
       <Hero
         secondary
         title="Our Work"
-        secondaryText="We're proud to of worked with many great brands and to of launched multiple products."
+        secondaryText="We are proud to have worked with amazing brands and to have been involved in the launch of fantastic products!"
       />
       <OurWorkSection>
         {OUR_WORK.map(work => (

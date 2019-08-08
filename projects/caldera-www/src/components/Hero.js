@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { media } from '@caldera-digital/theme'
 import { COMMON_BLOB_STYLES, BlobHandler } from './Blob'
+import { isFunction } from '../utils/formUtils'
 
 import Blob5 from '../assets/svgs/blue-blob5.svg'
 
@@ -231,7 +232,9 @@ export const Hero = ({
       <HeroTextContainer>
         <h1>{title}</h1>
         {secondaryText && (
-          <SecondaryText secondary={secondary}>{secondaryText}</SecondaryText>
+          <SecondaryText secondary={secondary}>
+            {isFunction(secondaryText) ? secondaryText() : secondaryText}
+          </SecondaryText>
         )}
         {companyName && (
           <>
