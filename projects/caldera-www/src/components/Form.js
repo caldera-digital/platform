@@ -70,6 +70,7 @@ export const Input = ({
   name,
   error,
   showField = true,
+  showLabel = true,
   optional = false,
   onChange = () => null,
   onBlur = () => null,
@@ -78,18 +79,21 @@ export const Input = ({
 }) => {
   return (
     <StyledFormInput showField={showField} style={containerStyle}>
-      {label && (
-        <label htmlFor={name}>
-          {label} {optional && <span>- Optional</span>}
-          <input
-            type="text"
-            name={name}
-            onChange={onChange}
-            onBlur={onBlur}
-            {...rest}
-          />
-        </label>
-      )}
+      <label htmlFor={name}>
+        {showLabel && (
+          <>
+            {label} {optional && <span>- Optional</span>}
+          </>
+        )}
+
+        <input
+          type="text"
+          name={name}
+          onChange={onChange}
+          onBlur={onBlur}
+          {...rest}
+        />
+      </label>
       {error && <Error>{error}</Error>}
     </StyledFormInput>
   )

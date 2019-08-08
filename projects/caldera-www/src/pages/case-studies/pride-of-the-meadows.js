@@ -50,7 +50,7 @@ const CaseStudy = () => {
           From the start, we wanted to create a brand consistent with the
           heritage of the company. Through interviews with employees of the
           company and surveying current customers we created Pride of the
-          Meadows. The parent company,
+          Meadows. The parent company,{' '}
           <a
             href="https://woodsproduce.com/"
             target="_blank"
