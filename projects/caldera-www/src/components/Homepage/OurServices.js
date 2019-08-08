@@ -89,12 +89,11 @@ export const OurServices = () => {
           centered
           infinite
           clickToChange
-          keepDirectionWhenDragging
           stopAutoPlayOnHover
           slidesPerPage={2}
           autoPlay={5000}
           animationSpeed={1000}
-          addArrowClickHandler
+          slidesPerScroll={1}
           value={currentIndex}
           onChange={index => setCurrentIndex(index)}
           breakpoints={{

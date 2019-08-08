@@ -142,6 +142,117 @@ const CaseStudy = () => {
           )
         }}
       />
+      <Section>
+        <Section.H2>The Landing Page</Section.H2>
+        <p>
+          With app development nearly complete and users asking about app, we
+          created a landing page to generate hype around the product. The emails
+          we captured were leveraged for user testing events and beta testing
+          the app in its current state. With more feedback under our belt, we
+          launched a blog and CMS for team members to write about cool events
+          happening in the DC area.
+        </p>
+      </Section>
+      <Section lightBackground>
+        <Section.Image
+          src={createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565063779/its-a-date-website_tvptp8.jpg',
+          )}
+          alt="It's a Date landing page"
+          responsive
+          zoomable
+        />
+      </Section>
+      <Section>
+        <Section.H2>Administrative Portal</Section.H2>
+        <p>
+          Adhereing to our design principles, we launched without many features
+          users take for granted in a dating app, like blocking functionality
+          and a support portal. Instead, we opted to create a personal concierge
+          that would route messages directly to the team to take care of any
+          issue. Not only did it align with our app's goal of being more
+          personal to our audience, but it allowed us to cut the development
+          runway by three weeks.
+        </p>
+        <p>
+          The admin portal was the place for our team to chat directly with
+          users of the app, create new dates, and send push notifications. This
+          was 100% integrated into the application and gave us fine grained
+          control over how we interacted with users.
+        </p>
+      </Section>
+      <Section>
+        <Section.Image
+          src={createOptimizedCloudinary(
+            'https://res.cloudinary.com/calderablog/image/upload/v1565063763/its-a-date-admin_hg7y5q.jpg',
+          )}
+          alt="It's a Date admin portal"
+          responsive
+          zoomable
+        />
+      </Section>
+      <Section>
+        <Section.H2>Design Thinking</Section.H2>
+        <p>
+          For an internal app venture, this was our first experience tackling a
+          domain as intimate as online dating and wanted to get it right. We
+          enlisted the help of the{' '}
+          <a
+            href="http://www.sidoinnovation.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            SIDO Innovation
+          </a>{' '}
+          team to help us run design thinking and facilitation sessions with
+          friends and beta users. Through their proven techniques, we were able
+          to pull out crucial insights on what users wanted and to see if we
+          were on the mark with our hypothesis - something has to change in
+          online dating.
+        </p>
+        <Section.FancyTile>
+          Using proven design thinking techniques was crucial to the launch of
+          It's a Date.
+        </Section.FancyTile>
+        <p>
+          Each session lasted roughly three hours with drinks and apps provided.
+          What was most striking is how quickly people opened up about their
+          frustrations with using the app and shared their experiences with the
+          team.
+        </p>
+        <Section.ImageCollage
+          images={[
+            {
+              src: createOptimizedCloudinary(
+                'https://res.cloudinary.com/calderablog/image/upload/v1565241839/its-a-date-session-entrance_yvsr7y.jpg',
+                'w_1200,c_fit',
+              ),
+              alt: 'Its a Date User Testing Entrance',
+            },
+            {
+              src: createOptimizedCloudinary(
+                'https://res.cloudinary.com/calderablog/image/upload/v1565241836/its-a-date-testing-session_taxuow.jpg',
+                'w_1200,c_fit',
+              ),
+              alt: 'Its a Date session',
+            },
+            {
+              src: createOptimizedCloudinary(
+                'https://res.cloudinary.com/calderablog/image/upload/v1565241836/its-a-date-feature-grouping_han4px.jpg',
+                'w_1200,c_fit',
+              ),
+              alt: 'Its a Date feature grouping',
+            },
+            {
+              src: createOptimizedCloudinary(
+                'https://res.cloudinary.com/calderablog/image/upload/v1565241836/its-a-date-group-talking_zzirga.jpg',
+                'w_1200,c_fit',
+              ),
+              alt: 'Its a Date Group Talking',
+            },
+          ]}
+        />
+      </Section>
       <Section smallPadding>
         <Section.H2>Testing</Section.H2>
         <p>For all apps, we implement three levels of testing:</p>

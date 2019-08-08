@@ -409,17 +409,17 @@ Section.FancyTile = styled.div`
   font-size: 2.5rem;
   font-weight: bold;
   color: ${props => props.theme.primaryColor};
-  margin: 2rem 0;
+  margin: 3rem 0;
 
   ${media.forSmallMediumOnly`
     font-size: 2rem;
     padding: 2.5rem 2rem;
+    margin: 2rem 0;
   `}
 
   ${media.forSmallOnly`
     font-size: 1.5rem;
     padding: 2rem;
-    margin: 1rem 0;
   `}
 `
 

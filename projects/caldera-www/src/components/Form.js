@@ -8,7 +8,7 @@ const COMMON_INPUT_STYLES = css`
   border: 3px solid ${props => props.theme.primaryColor};
   font-size: 1.5rem;
   padding: 5px;
-  margin: 0 auto;
+  margin: 0.5rem auto 0;
 `
 
 export const StyledFormInput = styled.div`
@@ -21,31 +21,30 @@ export const StyledFormInput = styled.div`
 
   label {
     color: ${props => props.theme.grayText};
-    margin-bottom: 0.5rem;
 
     span {
       font-style: italic;
       font-size: 0.8rem;
     }
-  }
 
-  input {
-    ${COMMON_INPUT_STYLES}
-  }
+    input {
+      ${COMMON_INPUT_STYLES}
+    }
 
-  textarea {
-    ${COMMON_INPUT_STYLES}
-    resize: none;
-  }
+    textarea {
+      ${COMMON_INPUT_STYLES}
+      resize: none;
+    }
 
-  ${({ fileUpload }) =>
-    fileUpload &&
-    css`
-      input {
-        border: none;
-        font-size: 1rem;
-      }
-    `}
+    ${({ fileUpload }) =>
+      fileUpload &&
+      css`
+        input {
+          border: none;
+          font-size: 1rem;
+        }
+      `}
+  }
 
   ${({ showField }) =>
     !showField &&
@@ -82,16 +81,16 @@ export const Input = ({
       {label && (
         <label htmlFor={name}>
           {label} {optional && <span>- Optional</span>}
+          <input
+            type="text"
+            name={name}
+            onChange={onChange}
+            onBlur={onBlur}
+            {...rest}
+          />
         </label>
       )}
       {error && <Error>{error}</Error>}
-      <input
-        type="text"
-        name={name}
-        onChange={onChange}
-        onBlur={onBlur}
-        {...rest}
-      />
     </StyledFormInput>
   )
 }
@@ -111,16 +110,16 @@ export const FileUpload = ({
       {label && (
         <label htmlFor={name}>
           {label} {optional && <span>- Optional</span>}
+          <input
+            type="file"
+            name={name}
+            onChange={onChange}
+            onBlur={onBlur}
+            {...rest}
+          />
         </label>
       )}
       {error && <Error>{error}</Error>}
-      <input
-        type="file"
-        name={name}
-        onChange={onChange}
-        onBlur={onBlur}
-        {...rest}
-      />
     </StyledFormInput>
   )
 }
@@ -140,16 +139,16 @@ export const Textarea = ({
       {label && (
         <label htmlFor={name}>
           {label} {optional && <span>- Optional</span>}
+          <textarea
+            type="text"
+            name={name}
+            onChange={onChange}
+            onBlur={onBlur}
+            {...rest}
+          />
         </label>
       )}
       {error && <Error>{error}</Error>}
-      <textarea
-        type="text"
-        name={name}
-        onChange={onChange}
-        onBlur={onBlur}
-        {...rest}
-      />
     </StyledFormInput>
   )
 }

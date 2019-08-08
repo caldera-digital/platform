@@ -11,19 +11,23 @@ import ItsADateLogo from '../../assets/images/its-a-date-logo.png'
 const CLIENTS = [
   {
     name: 'Ten Oaks Flooring',
+    to: 'https://www.tenoaksflooring.com/',
     image: TenOaksLogo,
   },
   {
     name: 'CAM',
+    to: 'https://www.camaerospace.com/',
     image: CAMLogo,
   },
   {
     name: 'Pride of the Meadows',
+    to: 'https://www.prideofthemeadows.com/',
     image: POTMLogo,
   },
   {
     // eslint-disable-next-line quotes
     name: "It's a Date",
+    to: 'https://www.itsadate.app/',
     image: ItsADateLogo,
   },
 ]
@@ -38,7 +42,7 @@ const LogosWrapper = styled.div`
   `}
 `
 
-const FlexibleImage = styled.div`
+const FlexibleImage = styled.a`
   flex: 1;
   padding: 1rem;
   height: 150px;
@@ -73,7 +77,12 @@ export const WhoWeveWorkedWith = () => {
     <Section header="Who We've Worked With">
       <LogosWrapper>
         {CLIENTS.map(client => (
-          <FlexibleImage key={client.name}>
+          <FlexibleImage
+            key={client.name}
+            href={client.to}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={client.image} alt={client.name} />
           </FlexibleImage>
         ))}

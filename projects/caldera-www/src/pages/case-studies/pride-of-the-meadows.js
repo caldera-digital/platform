@@ -51,10 +51,16 @@ const CaseStudy = () => {
           heritage of the company. Through interviews with employees of the
           company and surveying current customers we created Pride of the
           Meadows. The parent company,
-          <a href="https://woodsproduce.com/">Wood's Produce</a>, has a rich
-          history of growing crops in the small town of Meadows of Dan, VA.
-          Creating a brand that pairs the rich history of the company with a
-          popular design patterns was a perfect match.
+          <a
+            href="https://woodsproduce.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Wood's Produce
+          </a>
+          , has a rich history of growing crops in the small town of Meadows of
+          Dan, VA. Creating a brand that pairs the rich history of the company
+          with a popular design patterns was a perfect match.
         </p>
         <p>
           Next, we created a message to build the brand around. We boiled down
