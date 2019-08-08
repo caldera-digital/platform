@@ -13,7 +13,7 @@ import '@brainhubeu/react-carousel/lib/style.css'
 const CarouselItem = styled.div`
   border-radius: 60px;
   box-shadow: 0 3px 17px rgba(54, 163, 252, 0.2);
-  min-height: 400px;
+  min-height: 420px;
   width: 100%;
   margin: 1rem;
   padding: 3rem;
@@ -44,6 +44,7 @@ const CarouselItem = styled.div`
 
   ${media.forSmallMediumOnly`
     flex-direction: column;
+    min-height: 550px;
 
     > svg {
       margin: 0 0 2rem;
@@ -60,8 +61,9 @@ const CarouselItem = styled.div`
     }
   `}
 
-  ${media.forSmallMediumOnly`
+  ${media.forSmallOnly`
     flex-direction: column;
+    min-height: 670px;
 
     > svg {
       width: 50%;
@@ -87,6 +89,8 @@ export const OurServices = () => {
           centered
           infinite
           clickToChange
+          keepDirectionWhenDragging
+          stopAutoPlayOnHover
           slidesPerPage={2}
           autoPlay={5000}
           animationSpeed={1000}

@@ -65,6 +65,9 @@ const HeroContainer = styled.div`
     justify-content: flex-start;
 
     ${HeroTextContainer} {
+      padding-left: 1rem;
+      padding-right: 1rem;
+
       h1 {
         font-size: 40px;
         margin: 0;
