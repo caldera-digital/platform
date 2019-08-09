@@ -21,9 +21,9 @@ export const GroovyPhone = ({ className = '' }) => {
           gradientTransform="matrix(.905 -.038 .048 1.149 10.926 -19.975)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#0658ff" />
-          <stop offset=".49" stop-color="#2d9cfc" />
-          <stop offset="1" stop-color="#1d49fa" />
+          <stop offset="0" stopColor="#0658ff" />
+          <stop offset=".49" stopColor="#2d9cfc" />
+          <stop offset="1" stopColor="#1d49fa" />
         </radialGradient>
         <linearGradient
           id="linear-gradient"
@@ -32,9 +32,9 @@ export const GroovyPhone = ({ className = '' }) => {
           y2=".5"
           gradientUnits="objectBoundingBox"
         >
-          <stop offset=".21" stop-color="#5ec6cc" />
-          <stop offset=".51" stop-color="#157fff" />
-          <stop offset="1" stop-color="#5ec6cc" />
+          <stop offset=".21" stopColor="#5ec6cc" />
+          <stop offset=".51" stopColor="#157fff" />
+          <stop offset="1" stopColor="#5ec6cc" />
         </linearGradient>
         <radialGradient
           id="radial-gradient-2"
@@ -44,8 +44,8 @@ export const GroovyPhone = ({ className = '' }) => {
           gradientTransform="matrix(.898 -.038 .048 1.14 11.839 -17.036)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#2d9cfc" />
-          <stop offset=".9" stop-color="#0658ff" />
+          <stop offset="0" stopColor="#2d9cfc" />
+          <stop offset=".9" stopColor="#0658ff" />
         </radialGradient>
         <linearGradient
           id="linear-gradient-2"
@@ -54,9 +54,9 @@ export const GroovyPhone = ({ className = '' }) => {
           y2=".5"
           gradientUnits="objectBoundingBox"
         >
-          <stop offset="0" stop-color="#f47b31" />
-          <stop offset=".48" stop-color="#f5cc8e" />
-          <stop offset="1" stop-color="#f47b31" />
+          <stop offset="0" stopColor="#f47b31" />
+          <stop offset=".48" stopColor="#f5cc8e" />
+          <stop offset="1" stopColor="#f47b31" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-3"
@@ -65,8 +65,8 @@ export const GroovyPhone = ({ className = '' }) => {
           y2=".5"
           gradientUnits="objectBoundingBox"
         >
-          <stop offset="0" stop-color="#2dbffc" />
-          <stop offset="1" stop-color="#2d9cfc" />
+          <stop offset="0" stopColor="#2dbffc" />
+          <stop offset="1" stopColor="#2d9cfc" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-4"
@@ -83,9 +83,9 @@ export const GroovyPhone = ({ className = '' }) => {
           gradientTransform="matrix(.986 0 0 .986 2.612 2.574)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".01" stop-color="#e65c54" />
-          <stop offset=".53" stop-color="#ff7c50" />
-          <stop offset="1" stop-color="#e65c54" />
+          <stop offset=".01" stopColor="#e65c54" />
+          <stop offset=".53" stopColor="#ff7c50" />
+          <stop offset="1" stopColor="#e65c54" />
         </radialGradient>
       </defs>
       <g id="Group_645" data-name="Group 645" transform="translate(-3003 -984)">
@@ -124,7 +124,7 @@ export const GroovyPhone = ({ className = '' }) => {
           <path
             id="Path_320"
             data-name="Path 320"
-            class="cls-3"
+            className="cls-3"
             fill="#5a99ff"
             d="M667.289-573.565l-142.046-73.056a60.173 60.173 0 0 0-57.083 1.1L104.715-440.505a12.78 12.78 0 0 0-6.5 10.8 12.78 12.78 0 0 0 5.937 11.122L245.8-328.855a62.752 62.752 0 0 0 66.373.49L668.3-546.656a15.449 15.449 0 0 0 7.362-13.75 15.449 15.449 0 0 0-8.373-13.159zM596.8-602.13a2.753 2.753 0 0 1 2.753 2.753 2.753 2.753 0 0 1-2.753 2.753 2.753 2.753 0 0 1-2.754-2.753 2.753 2.753 0 0 1 2.754-2.753zm-28.333-12.282a1.653 1.653 0 0 1 2.228-.708l19.048 9.868a1.653 1.653 0 0 1 .707 2.228 1.652 1.652 0 0 1-.967.816 1.652 1.652 0 0 1-1.261-.108l-19.048-9.868a1.653 1.653 0 0 1-.708-2.229zm96.909 64.386L310.8-333.356a70.517 70.517 0 0 1-14.395 6.819 54.336 54.336 0 0 1-32.452 1.084c-6.552-1.877-10.807-4.17-16.6-7.758l-138.06-86.576-2.435-1.622a9.309 9.309 0 0 1-4.146-7.89 9.309 9.309 0 0 1 4.387-7.759l2.547-1.585 361.42-204.388a53.2 53.2 0 0 1 50.8-.969l10.7 5.558a2.526 2.526 0 0 1 1.461 1.843 2.526 2.526 0 0 1-.691 2.248l-1.153 1.315a5.982 5.982 0 0 0-1.387 5.016 5.982 5.982 0 0 0 3.066 4.2l80.583 41.969c7.242 3.871 11.432 2.777 18.581-.852a9.57 9.57 0 0 1 8.763-.048l22.849 11.778a12.029 12.029 0 0 1 6.483 10.258 12.029 12.029 0 0 1-5.751 10.685z"
             transform="translate(-4.454)"
@@ -132,7 +132,7 @@ export const GroovyPhone = ({ className = '' }) => {
           <rect
             id="Rectangle_638"
             data-name="Rectangle 638"
-            class="cls-3"
+            className="cls-3"
             width="59.024"
             height="6.849"
             rx="3.424"
