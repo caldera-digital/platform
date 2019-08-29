@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/caldera-digital/platform/compare/@caldera-digital/ecommerce-stripe-shared@0.1.4...@caldera-digital/ecommerce-stripe-shared@0.2.1) (2019-08-29)
+
+
+### :sparkles: Features
+
+* publish all packages, this bumps lerna ([f5f5c9e](https://github.com/caldera-digital/platform/commit/f5f5c9e))
+
+
+
+
+
 <a name="0.1.4"></a>
 ## [0.1.4](https://github.com/caldera-digital/platform/compare/@caldera-digital/ecommerce-stripe-shared@0.1.3...@caldera-digital/ecommerce-stripe-shared@0.1.4) (2019-08-29)
 

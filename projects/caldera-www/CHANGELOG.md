@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/gatsbyjs/gatsby-starter-blog/compare/@caldera-digital/caldera-www@0.1.2...@caldera-digital/caldera-www@0.2.1) (2019-08-29)
+
+
+### :sparkles: Features
+
+* publish all packages, this bumps lerna ([f5f5c9e](https://github.com/gatsbyjs/gatsby-starter-blog/commit/f5f5c9e))
+
+
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/gatsbyjs/gatsby-starter-blog/compare/@caldera-digital/caldera-www@0.1.1...@caldera-digital/caldera-www@0.1.2) (2019-08-29)
 
