@@ -6,9 +6,9 @@
   ],
   "settings": {
     "workbench.colorCustomizations": {
-      "titleBar.activeBackground": "#0080ee",
+      "titleBar.activeBackground": "#32325D",
       "titleBar.activeForeground": "#ffffff",
-      "titleBar.inactiveBackground": "#0080ee",
+      "titleBar.inactiveBackground": "#32325D",
       "titleBar.inactiveForeground": "#ffffff"
     },
     "search.exclude": {
@@ -22,7 +22,7 @@
       "**/packages/*/coverage": true
     },
     "files.exclude": {
-      "**/projects/ecommerce-stripe*": true,
+      "**/projects/caldera*": true,
       "**/build": true
     }
   }

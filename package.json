@@ -42,7 +42,10 @@
     "release": "yarn build && yarn lerna publish",
     "caldera": "yarn lerna:run-deps --scope @caldera-digital/caldera*",
     "caldera:dev": "yarn caldera --parallel dev",
-    "caldera:build": "yarn caldera build"
+    "caldera:build": "yarn caldera build",
+    "ecommerce": "yarn lerna:run-deps --scope @caldera-digital/ecommerce-stripe*",
+    "ecommerce:dev": "yarn ecommerce --parallel dev",
+    "ecommerce:build": "yarn ecommerce build"
   },
   "husky": {
     "hooks": {
@@ -72,6 +75,14 @@
     "@commitlint/config-conventional": "^7.5.0",
     "@commitlint/config-lerna-scopes": "^7.5.1",
     "@svgr/rollup": "^4.2.0",
+    "@types/jest": "^24.0.18",
+    "@types/lodash": "^4.14.138",
+    "@types/node": "^12.7.2",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^4.3.5",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-dynamic-import-node": "^2.2.0",
@@ -113,6 +124,8 @@
     "rollup-plugin-postcss": "^2.0.3",
     "style-loader": "^0.23.1",
     "styled-components": "4.2.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "3.5.3",
     "use-yarn": "^2.2.0",
     "webpack": "^4.30.0"
   },
