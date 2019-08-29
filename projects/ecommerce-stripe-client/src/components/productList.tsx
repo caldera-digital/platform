@@ -35,10 +35,16 @@ export const ProductListItem: FC<ProductListItemProps> = ({
       >
         <Card.Meta
           title={product.title}
-          description={truncate(
-            { length: 250, separator: ' ' },
-            product.description,
-          )}
+          description={
+            <div>
+              <p>
+                <strong>Price:</strong> ${product.price}
+              </p>
+              <p>
+                {truncate({ length: 250, separator: ' ' }, product.description)}
+              </p>
+            </div>
+          }
           style={{ minHeight: '150px' }}
         />
       </Card>

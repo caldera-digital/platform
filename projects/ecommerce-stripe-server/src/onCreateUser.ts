@@ -25,6 +25,7 @@ const createProfile = async ({ uid }: UserRecord) => {
 
     await usersRef.set({
       cart: [],
+      purchases: [],
       userId: authedUserRecord.uid,
       joined: admin.firestore.FieldValue.serverTimestamp(),
       email: authedUserRecord.email,

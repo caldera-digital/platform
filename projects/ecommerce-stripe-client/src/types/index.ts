@@ -27,6 +27,7 @@ export type ProductShort = {
 
 export type User = {
   cart: ProductShort[]
+  purchases: any
   userId: string
   joined: string
   email: string

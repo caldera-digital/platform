@@ -7,3 +7,6 @@ export const createShortProduct = (
 ): ProductShort =>
   // @ts-ignore
   omit(['quantity', 'quantity_sold', 'received_by'])(product)
+
+export const getPurchaseByFirebaseID = (purchases: [any], id: string) =>
+  purchases.find(purchase => purchase.id === id)

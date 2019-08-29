@@ -3560,6 +3560,13 @@
   resolved "https://registry.yarnpkg.com/@types/stripe-v3/-/stripe-v3-3.1.7.tgz#7ae64076e663af2852d23706deb503d3c5ce7e67"
   integrity sha512-S0cfUfMna2FjLkpQOooyIZvx1OqQLXMoltzJFkDL5zAaXEWX0dsA8S6HKTj2j+dIJhKKw4xw1NE3esLYEeDk4Q==
 
+"@types/stripe@^6.31.23":
+  version "6.31.23"
+  resolved "https://registry.yarnpkg.com/@types/stripe/-/stripe-6.31.23.tgz#713c5d263b38942b84e4fc6bf364752ef9b046ca"
+  integrity sha512-RxpETIrNyTyaS2CJTa55+gJQajDo1PoyD5wWbLqsDASLUfLK9FEGTHZdDcPnAYq9/fqpeyWStwWf/ZTiwK6ypQ==
+  dependencies:
+    "@types/node" "*"
+
 "@types/styled-components@^4.1.18":
   version "4.1.18"
   resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.18.tgz#348804fe5a399ae0a46550afaf030085815ad931"
@@ -18153,6 +18160,11 @@ qs@6.7.0:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
+qs@^6.6.0:
+  version "6.8.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.8.0.tgz#87b763f0d37ca54200334cd57bb2ef8f68a1d081"
+  integrity sha512-tPSkj8y92PfZVbinY1n84i1Qdx75lZjMQYx9WZhnkofyxzw2r7Ho39G3/aEvSUdebxpnnM4LZJCtvE/Aq3+s9w==
+
 query-string@^5.0.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/query-string/-/query-string-5.1.1.tgz#a78c012b71c17e05f2e3fa2319dd330682efb3cb"
@@ -21446,6 +21458,13 @@ strip-outer@^1.0.0:
   integrity sha512-k55yxKHwaXnpYGsOzg4Vl8+tDrWylxDEpknGjhTiZB8dFRU5rTo9CAzeycivxV3s+zlTKwrs6WxMxR95n26kwg==
   dependencies:
     escape-string-regexp "^1.0.2"
+
+stripe@^7.8.0:
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/stripe/-/stripe-7.8.0.tgz#4b21a21721cb4a20fbc5c5c97ea32bf690262ed6"
+  integrity sha512-Tmq0xB68W2e4m1FCHLly1dr6SXg+m4cXKhN77NCRkiefaetq/H2+8jDKYerY63Otd6fsRmWTVjuqy+NfUkVVwQ==
+  dependencies:
+    qs "^6.6.0"
 
 strong-log-transformer@^2.0.0:
   version "2.1.0"

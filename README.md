@@ -55,3 +55,23 @@ If you need to add a global variable, insert it into the `.eslintrc` file. Somet
 ### Workspaces
 
 There is a workspace available for this project located in [`.vscode/caldera-platform.code-workspace`](./.vscode/caldera-platform.code-workspace). It is helpful to run this so you can receive topical search results that ignore built files or test coverage directories. It also changes your title bar color so you can easily find this project compared to other coding windows you have open.
+
+## Adding Firebase Secrets
+
+In order to add secrets to a Firebase project you need to be logged in and authorized to do so by the project. All of this is done though the cli with the following command:
+
+```sh
+# Cannot use uppercase!
+firebase functions:config:set stripe.testsecret="your-test-secret-key"
+
+# Deploy your updates
+firebase deploy --only functions
+```
+
+You can then get to it in your cloud functions like so:
+
+```js
+import { config } from 'firebase-functions'
+
+const secret = config().stripe.testsecret
+```

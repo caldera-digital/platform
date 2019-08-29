@@ -57,7 +57,7 @@ export const PrivateRoute: FC<P> = ({
           <RenderAuthedComponent
             component={requestedComponent}
             user={user}
-            {...rest}
+            {...props}
           />
         ) : (
           <Redirect
