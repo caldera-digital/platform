@@ -5,7 +5,6 @@
     "clean": "run-p clean:*",
     "clean:build": "rimraf dist",
     "clean:node_modules": "rimraf node_modules",
-    "preinstall": "npx use-yarn",
     "lint": "eslint src/**/*.{ts,tsx,js}",
     "lint:fix": "eslint src/**/*.{ts,tsx,js} --fix",
     "build": "tsc",
