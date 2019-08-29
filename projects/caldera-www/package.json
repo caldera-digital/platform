@@ -1,8 +1,7 @@
 {
   "name": "@caldera-digital/caldera-www",
-  "private": true,
   "description": "Website for Caldera.",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "Marcus Wood <marcus@calderadigital.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
