@@ -10,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/caldera-digital/platform.git"
   },
-  "private": true,
   "main": "dist/index.js",
   "module": "dist/index.module.js",
   "scripts": {
