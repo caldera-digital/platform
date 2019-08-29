@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/caldera-digital/platform/compare/@caldera-digital/ecommerce-stripe-shared@0.1.3...@caldera-digital/ecommerce-stripe-shared@0.1.4) (2019-08-29)
+
+
+### :sparkles: Features
+
+* security rules, fix for shared, filter published packages ([172fe31](https://github.com/caldera-digital/platform/commit/172fe31))
+
+
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/caldera-digital/platform/compare/@caldera-digital/ecommerce-stripe-shared@0.1.2...@caldera-digital/ecommerce-stripe-shared@0.1.3) (2019-08-29)
 
