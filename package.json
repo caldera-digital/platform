@@ -1,6 +1,5 @@
 {
   "name": "platform",
-  "version": "1.0.0",
   "private": true,
   "description": "Mono-repo of all open sourced Caldera code and projects",
   "homepage": "https://github.com/caldera-digital/platform#readme",

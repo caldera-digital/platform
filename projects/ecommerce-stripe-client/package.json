@@ -1,6 +1,5 @@
 {
   "name": "@caldera-digital/ecommerce-stripe-client",
-  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@caldera-digital/ecommerce-stripe-shared": "^0.1.1",
