@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { PageWrapper } from '../../components'
+
 export const NoMatchPage = () => {
-  return <div>Not found.</div>
+  return <PageWrapper>Not found.</PageWrapper>
 }

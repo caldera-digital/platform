@@ -1,13 +1,24 @@
+// Replace this line with polyfills import for browser support
+import 'normalize.css'
+
+import { GlobalStyle } from '@caldera-digital/theme'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { ThemeProvider } from 'styled-components'
 
 import App from './App'
 import { AuthProvider } from './context/AuthContext'
 import * as serviceWorker from './serviceWorker'
+import { THEME } from './utils/theme'
 
 ReactDOM.render(
   <AuthProvider>
-    <App />
+    <ThemeProvider theme={THEME}>
+      <>
+        <GlobalStyle />
+        <App />
+      </>
+    </ThemeProvider>
   </AuthProvider>,
   document.getElementById('root'),
 )

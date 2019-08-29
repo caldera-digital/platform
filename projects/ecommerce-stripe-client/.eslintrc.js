@@ -33,6 +33,7 @@ module.exports = {
     '@typescript-eslint/ban-ts-ignore': ['off'],
     '@typescript-eslint/member-delimiter-style': ['off'],
     '@typescript-eslint/camelcase': ['off'],
+    '@typescript-eslint/explicit-function-return-type': ['off'],
   },
   globals: {
     jest: true,

@@ -2,6 +2,7 @@ import * as firebaseui from 'firebaseui'
 import React from 'react'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 
+import { PageWrapper } from '../../components'
 import firebase from '../../config/firebase'
 
 // Configure FirebaseUI.
@@ -29,9 +30,11 @@ const uiConfig = {
 
 export const LoginPage: React.FC = () => {
   return (
-    <div>
-      <h1 style={{ textAlign: 'center' }}>Ecommerce Test App</h1>
+    <PageWrapper showNav={false}>
+      <h1 style={{ textAlign: 'center', marginBottom: '3rem' }}>
+        Ecommerce Test App
+      </h1>
       <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-    </div>
+    </PageWrapper>
   )
 }

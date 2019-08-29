@@ -1,5 +1,6 @@
 {
   "name": "@caldera-digital/ecommerce-stripe-server",
+  "version": "0.1.0",
   "scripts": {
     "clean": "run-p clean:*",
     "clean:build": "rimraf dist",
