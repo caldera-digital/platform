@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/caldera-digital/platform/compare/@caldera-digital/ecommerce-stripe-shared@0.1.1...@caldera-digital/ecommerce-stripe-shared@0.1.2) (2019-08-29)
+
+
+### :bug: Bug Fixes
+
+* no versions so packages arent published, tweak data ([ea30443](https://github.com/caldera-digital/platform/commit/ea30443))
+
+
+
+
+
 <a name="0.1.1"></a>
 ## 0.1.1 (2019-08-29)
 

@@ -1,6 +1,6 @@
 {
   "name": "@caldera-digital/ecommerce-stripe-shared",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Shared code between server and client",
   "homepage": "https://github.com/caldera-digital/platform#readme",
   "bugs": {
