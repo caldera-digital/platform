@@ -3,7 +3,7 @@
  * an NPM script and check it here.
  */
 import 'firebase/auth'
-import 'firebase/database'
+import 'firebase/firestore'
 
 import { FIREBASE_CONFIG } from '@caldera-digital/ecommerce-stripe-shared'
 import firebase from 'firebase/app'

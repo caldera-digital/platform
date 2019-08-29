@@ -38,7 +38,7 @@
     "lint": "lerna run lint --parallel",
     "test": "lerna run test -- parallel",
     "rebootstrap": "run-s clean bootstrap killallNode",
-    "release": "yarn build && yarn lerna publish",
+    "release": "yarn build && yarn lerna publish --ignore @caldera-digital/{caldera-www,ecommerce-stripe-client,ecommerce-stripe-server}",
     "caldera": "yarn lerna:run-deps --scope @caldera-digital/caldera*",
     "caldera:dev": "yarn caldera --parallel dev",
     "caldera:build": "yarn caldera build",
