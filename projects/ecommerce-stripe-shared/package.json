@@ -6,6 +6,9 @@
   "bugs": {
     "url": "https://github.com/caldera-digital/platform/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/caldera-digital/platform.git"
