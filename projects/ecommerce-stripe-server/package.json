@@ -1,6 +1,6 @@
 {
   "name": "@caldera-digital/ecommerce-stripe-server",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "scripts": {
     "clean": "run-p clean:*",
     "clean:build": "rimraf dist",
@@ -33,6 +33,5 @@
     "firebase-admin": "^8.4.0",
     "firebase-functions": "^3.2.0",
     "lodash": "^4.17.15"
-  },
-  "private": true
+  }
 }
