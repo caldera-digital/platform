@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
 
 import firebase from '../config/firebase'
-import { User } from '../types'
 
 const db = firebase.firestore()
 
 export interface AuthState {
   isAuthed: boolean
   loading: boolean
-  user?: User
+  user?: firebase.User
   logout?: () => void
 }
 
@@ -25,14 +24,7 @@ export const useAuth = (): AuthState => {
       firebase.auth().onAuthStateChanged(user => {
         if (user) {
           db.collection('users')
-            .doc(user.uid)
-            .onSnapshot(doc => {
-              // https://github.com/googleapis/nodejs-firestore/issues/109
-              // @ts-ignore
-              const data: User = doc.data()
-
-              setAuthState({ isAuthed: true, user: data, loading: false })
-            })
+          setAuthState({ isAuthed: true, user, loading: false })
         } else {
           setAuthState({ isAuthed: false, loading: false, user: undefined })
         }

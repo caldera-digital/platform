@@ -22,6 +22,7 @@
     "react-firebaseui": "^4.0.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.1.1",
+    "react-stripe-elements": "^5.0.0",
     "recompose": "^0.30.0",
     "styled-components": "4.2.0",
     "yup": "^0.27.0"

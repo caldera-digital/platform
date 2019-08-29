@@ -4,6 +4,7 @@ import 'normalize.css'
 import { GlobalStyle } from '@caldera-digital/theme'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { StripeProvider } from 'react-stripe-elements'
 import { ThemeProvider } from 'styled-components'
 
 import App from './App'
@@ -13,11 +14,14 @@ import { THEME } from './utils/theme'
 
 ReactDOM.render(
   <AuthProvider>
+    {/* This is the test apiKey! */}
     <ThemeProvider theme={THEME}>
-      <>
-        <GlobalStyle />
-        <App />
-      </>
+      <StripeProvider apiKey="pk_test_UAZRjNIu7TRnDkjCLMpIEAlf">
+        <>
+          <GlobalStyle />
+          <App />
+        </>
+      </StripeProvider>
     </ThemeProvider>
   </AuthProvider>,
   document.getElementById('root'),

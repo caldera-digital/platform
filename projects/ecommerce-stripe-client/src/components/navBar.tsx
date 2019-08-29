@@ -6,6 +6,7 @@ import { compose } from 'recompose'
 import styled, { withTheme } from 'styled-components'
 
 import { AuthContext } from '../context/AuthContext'
+import { APP_NAME } from '../utils/const'
 
 type RouteConfig = {
   pathname: string
@@ -100,8 +101,6 @@ export const createRoutes = ({ pathname, logout, theme }: RouteConfig) => [
 const NavBarComponent: FC<NavProps> = ({ location, theme }) => {
   const { logout } = useContext(AuthContext)
 
-  console.log(location)
-
   return (
     <StyledNav
       routes={createRoutes({
@@ -111,7 +110,7 @@ const NavBarComponent: FC<NavProps> = ({ location, theme }) => {
       })}
       hamburgerColor={theme.primaryColor}
       renderLeftSection={() => (
-        <div style={{ color: theme.primaryColor }}>Gamebyrd</div>
+        <div style={{ color: theme.primaryColor }}>{APP_NAME}</div>
       )}
     />
   )

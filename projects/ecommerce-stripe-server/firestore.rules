@@ -4,7 +4,7 @@ service cloud.firestore {
     match /users/{user} {
       allow read, write: if request.auth != null && user == request.auth.uid
     }
-    match /games/{game} {
+    match /products/{product} {
       allow read: if request.auth != null
       allow write: if false
     }

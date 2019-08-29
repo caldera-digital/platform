@@ -1,2 +1,2 @@
-// Common methods go here
-export const commonMethod = 'test'
+// Make sure to update in /public as well
+export const APP_NAME = 'Gamebyrd'

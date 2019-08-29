@@ -1,9 +1,14 @@
 import React, { FC, useContext } from 'react'
+import { useDocumentData } from 'react-firebase-hooks/firestore'
 import { Redirect, Route, RouteProps } from 'react-router-dom'
 
+import firebase from '../config/firebase'
 import { AuthContext } from '../context/AuthContext'
 import { User } from '../types'
+import { Error } from './error'
 import { Loading } from './loading'
+
+const db = firebase.firestore()
 
 export type PrivateRouteReturnComponentProps = RouteProps & {
   user: User
@@ -12,9 +17,32 @@ export type PrivateRouteReturnComponentProps = RouteProps & {
 type PrivateRouteProps = {
   component: FC<PrivateRouteReturnComponentProps>
 }
-type P = PrivateRouteProps & RouteProps
+type P = PrivateRouteProps & RouteProps | any
 
-export const PrivateRoute: FC<P> = ({ component: Component, ...rest }: P) => {
+/**
+ * Why here?
+ *
+ * Because the cloud functions take time to heat up on a cold start and putting it in the auth context could result in a user
+ * being redirected and kicked back to login because the document in the DB isn't ready to be queried
+ */
+const RenderAuthedComponent: FC<P> = ({
+  component: Component,
+  user: authedUserRecord,
+  ...rest
+}) => {
+  const [user, loading, error] = useDocumentData<User>(
+    db.collection('users').doc(authedUserRecord.uid),
+  )
+  if (loading) return <Loading />
+  if (error || !user) return <Error />
+
+  return <Component user={user} {...rest} />
+}
+
+export const PrivateRoute: FC<P> = ({
+  component: requestedComponent,
+  ...rest
+}: P) => {
   const { isAuthed, user, loading } = useContext(AuthContext)
 
   // Firebase auth is async!
@@ -26,7 +54,11 @@ export const PrivateRoute: FC<P> = ({ component: Component, ...rest }: P) => {
       // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/27805
       render={(props): any =>
         isAuthed && user ? (
-          <Component user={user} {...props} />
+          <RenderAuthedComponent
+            component={requestedComponent}
+            user={user}
+            {...rest}
+          />
         ) : (
           <Redirect
             to={{

@@ -19,7 +19,7 @@ type P = PrivateRouteReturnComponentProps
 
 export const HomePage: FC<P> = ({ user }) => {
   const [values, loading, error] = useCollectionData<Product>(
-    db.collection('games').limit(30),
+    db.collection('products').limit(30),
   )
   const userRef = db.collection('users').doc(user.userId)
   if (loading) return <Loading />
@@ -49,7 +49,7 @@ export const HomePage: FC<P> = ({ user }) => {
               onClick={async () => {
                 if (isProductAlreadyAddedToCart) {
                   return message.warning(
-                    'You can only add one of each game to your cart.',
+                    'You can only add one of each product to your cart.',
                   )
                 }
 

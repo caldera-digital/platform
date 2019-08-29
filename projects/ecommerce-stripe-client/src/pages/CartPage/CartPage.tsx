@@ -1,10 +1,12 @@
-import { Button, Icon, message } from 'antd'
+import { Icon, message } from 'antd'
 import React, { FC } from 'react'
+import { Elements } from 'react-stripe-elements'
 
 import { PageWrapper, PrivateRouteReturnComponentProps } from '../../components'
 import { ProductList } from '../../components/productList'
 import firebase from '../../config/firebase'
 import { ProductShort } from '../../types'
+import { CheckoutForm } from './CheckoutForm'
 
 const db = firebase.firestore()
 
@@ -20,12 +22,15 @@ export const CartPage: FC<P> = ({ user }) => {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
+          marginBottom: '2rem',
         }}
       >
         <h1>Cart</h1>
-        <Button type="primary" disabled={user.cart.length === 0}>
-          Checkout
-        </Button>
+
+        {/* Initializes form */}
+        <Elements>
+          <CheckoutForm user={user} />
+        </Elements>
       </div>
       <ProductList
         products={user.cart}
