@@ -2,6 +2,7 @@ import React, { FC, useContext } from 'react'
 import { Redirect, Route, RouteProps } from 'react-router-dom'
 
 import { AuthContext } from '../context/AuthContext'
+import { Loading } from './loading'
 
 export type PrivateRouteReturnComponentProps = RouteProps & {
   user: any
@@ -13,7 +14,10 @@ type PrivateRouteProps = {
 type P = PrivateRouteProps & RouteProps
 
 export const PrivateRoute: FC<P> = ({ component: Component, ...rest }: P) => {
-  const { isAuthed, user } = useContext(AuthContext)
+  const { isAuthed, user, loading } = useContext(AuthContext)
+
+  // Firebase auth is async!
+  if (loading) return <Loading />
 
   return (
     <Route

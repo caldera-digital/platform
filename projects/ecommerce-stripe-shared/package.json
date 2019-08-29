@@ -1,0 +1,30 @@
+{
+  "name": "@caldera-digital/ecommerce-stripe-shared",
+  "version": "0.1.0",
+  "description": "Shared code between server and client",
+  "homepage": "https://github.com/caldera-digital/platform#readme",
+  "bugs": {
+    "url": "https://github.com/caldera-digital/platform/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caldera-digital/platform.git"
+  },
+  "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "clean": "run-p clean:*",
+    "clean:build": "rimraf dist",
+    "clean:node_modules": "rimraf node_modules",
+    "dev": "rollup -c rollup.config.js -w",
+    "preinstall": "npx use-yarn",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
+    "test": "echo 'No tests, coming soon!'"
+  },
+  "devDependencies": {
+    "@caldera-digital/rollup-config": "^1.0.2"
+  }
+}

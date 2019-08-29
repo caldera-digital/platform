@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@caldera-digital/ecommerce-stripe-shared": "^0.1.0",
     "antd": "^3.22.2",
     "customize-cra": "^0.5.0",
     "firebase": "^6.4.2",
@@ -24,7 +25,13 @@
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean": "run-p clean:*",
+    "clean:build": "rimraf dist",
+    "clean:node_modules": "rimraf node_modules",
+    "preinstall": "npx use-yarn",
+    "lint": "eslint src/**/*.{ts,tsx,js}",
+    "lint:fix": "eslint src/**/*.{ts,tsx,js} --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
