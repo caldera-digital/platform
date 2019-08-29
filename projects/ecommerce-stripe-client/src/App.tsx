@@ -1,22 +1,22 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+import { PrivateRoute, ScrollToTop } from './components'
+import { HomePage } from './pages/HomePage/HomePage'
+import { LoginPage } from './pages/LoginPage/LoginPage'
+import { NoMatchPage } from './pages/NoMatch/NoMatch'
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ScrollToTop>
+        <Switch>
+          <Route path="/login" exact component={LoginPage} />å
+          <PrivateRoute path="/" exact component={HomePage} />
+          <PrivateRoute component={NoMatchPage} />
+        </Switch>
+      </ScrollToTop>
+    </Router>
   )
 }
 

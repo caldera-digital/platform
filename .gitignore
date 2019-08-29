@@ -79,7 +79,7 @@ typings/
 
 # gatsby files
 .cache/
-public
+projects/caldera-www/public
 
 # Yarn
 yarn-error.log
