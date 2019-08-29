@@ -17,7 +17,7 @@ export const PageWrapper: FC<P> = ({
     <div>
       {showNav && <NavBar />}
 
-      <Container fluid={fluid} style={{ paddingTop: '3rem' }}>
+      <Container fluid={fluid} style={{ paddingTop: '5rem' }}>
         {children}
       </Container>
     </div>

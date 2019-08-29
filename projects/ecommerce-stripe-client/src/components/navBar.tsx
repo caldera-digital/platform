@@ -111,7 +111,7 @@ const NavBarComponent: FC<NavProps> = ({ location, theme }) => {
       })}
       hamburgerColor={theme.primaryColor}
       renderLeftSection={() => (
-        <div style={{ color: theme.primaryColor }}>Fancy logo here</div>
+        <div style={{ color: theme.primaryColor }}>Gamebyrd</div>
       )}
     />
   )

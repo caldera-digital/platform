@@ -2,10 +2,11 @@ import React, { FC, useContext } from 'react'
 import { Redirect, Route, RouteProps } from 'react-router-dom'
 
 import { AuthContext } from '../context/AuthContext'
+import { User } from '../types'
 import { Loading } from './loading'
 
 export type PrivateRouteReturnComponentProps = RouteProps & {
-  user: any
+  user: User
 }
 
 type PrivateRouteProps = {

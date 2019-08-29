@@ -14,9 +14,9 @@ const App: React.FC = () => {
       <ScrollToTop>
         <Switch>
           <Route path="/login" exact component={LoginPage} />
-          <Route path="/cart" exact component={CartPage} />
-          <Route path="/thank-you" exact component={ThankYouPage} />
           <PrivateRoute path="/" exact component={HomePage} />
+          <PrivateRoute path="/cart" exact component={CartPage} />
+          <PrivateRoute path="/thank-you" exact component={ThankYouPage} />
           <PrivateRoute component={NoMatchPage} />
         </Switch>
       </ScrollToTop>

@@ -5,7 +5,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@caldera-digital/ecommerce-stripe-shared": "^0.1.4",
+    "@caldera-digital/ecommerce-stripe-shared": "^0.2.3",
     "@caldera-digital/nav": "^1.0.5",
     "@caldera-digital/theme": "^1.0.6",
     "antd": "^3.22.2",
@@ -27,8 +27,8 @@
     "yup": "^0.27.0"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "build": "react-scripts build",
+    "dev": "react-app-rewired start",
+    "build": "react-app-rewired build",
     "test": "echo 'No tests, coming soon!'",
     "eject": "react-scripts eject",
     "clean": "run-p clean:*",
