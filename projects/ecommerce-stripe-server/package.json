@@ -19,11 +19,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "workspaces": {
-    "nohoist": [
-      "**"
-    ]
-  },
   "engines": {
     "node": "10"
   },

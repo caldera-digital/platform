@@ -13,7 +13,6 @@
     },
     "search.exclude": {
       "**/node_modules": true,
-      "**/build": true,
       "**/projects/*/dist": true,
       "**/packages/*/dist": true,
       "**/projects/*/build": true,
@@ -22,8 +21,7 @@
       "**/packages/*/coverage": true
     },
     "files.exclude": {
-      "**/projects/caldera*": true,
-      "**/build": true
+      "**/projects/caldera*": true
     }
   }
 }
