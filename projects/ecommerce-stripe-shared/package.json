@@ -1,6 +1,6 @@
 {
   "name": "@caldera-digital/ecommerce-stripe-shared",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shared code between server and client",
   "homepage": "https://github.com/caldera-digital/platform#readme",
   "bugs": {
@@ -24,6 +24,6 @@
     "test": "echo 'No tests, coming soon!'"
   },
   "devDependencies": {
-    "@caldera-digital/rollup-config": "^1.0.2"
+    "@caldera-digital/rollup-config": "^1.0.3"
   }
 }

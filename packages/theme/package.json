@@ -1,6 +1,6 @@
 {
   "name": "@caldera-digital/theme",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Rollup config used by Caldera Digital",
   "keywords": [
     "caldera digital"
@@ -36,7 +36,7 @@
     }
   },
   "devDependencies": {
-    "@caldera-digital/rollup-config": "^1.0.2"
+    "@caldera-digital/rollup-config": "^1.0.3"
   },
   "peerDependencies": {
     "react": "16.8.6",

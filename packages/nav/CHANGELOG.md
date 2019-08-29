@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.5"></a>
+## [1.0.5](https://github.com/caldera-digital/platform/compare/@caldera-digital/nav@1.0.4...@caldera-digital/nav@1.0.5) (2019-08-29)
+
+
+### :sparkles: Features
+
+* nav, start on hero, core module, config updates ([617202b](https://github.com/caldera-digital/platform/commit/617202b))
+* website hero and nav complete desktop and mobile ([3e9fbc0](https://github.com/caldera-digital/platform/commit/3e9fbc0))
+
+
+
+
+
 <a name="1.0.4"></a>
 ## [1.0.4](https://github.com/caldera-digital/platform/compare/@caldera-digital/nav@1.0.3...@caldera-digital/nav@1.0.4) (2019-05-31)
 

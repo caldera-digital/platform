@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/caldera-digital/platform/compare/@caldera-digital/rollup-config@1.0.2...@caldera-digital/rollup-config@1.0.3) (2019-08-29)
+
+
+### :sparkles: Features
+
+* home page and mobile tweaks ([b5b820e](https://github.com/caldera-digital/platform/commit/b5b820e))
+
+
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/caldera-digital/platform/compare/@caldera-digital/rollup-config@1.0.1...@caldera-digital/rollup-config@1.0.2) (2019-05-31)
 

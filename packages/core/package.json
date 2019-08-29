@@ -1,6 +1,6 @@
 {
   "name": "@caldera-digital/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility functions and small components used in Caldera apps",
   "keywords": [
     "caldera digital"
@@ -36,7 +36,7 @@
     }
   },
   "devDependencies": {
-    "@caldera-digital/rollup-config": "^1.0.2",
+    "@caldera-digital/rollup-config": "^1.0.3",
     "@caldera-digital/theme": "^0.1.8"
   },
   "peerDependencies": {
