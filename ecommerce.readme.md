@@ -1,7 +1,8 @@
-- An overview of your application in 1 page or less: how does it work? What does it do? Which Stripe APIs does it use?
-- A paragraph or two about how you approached this problem.
-- A paragraph about why you picked the language/framework you did.
-- A paragraph or two about how you might extend this if you were building a more robust instance of the same application.
+## Getting Started
+
+The ecommerce app is located inside of the monorepo. Once you bootstrap the repo (instructions in readme.md), all you need to do is run `yarn ecommerce:dev:client`. Once it's running you'll need to refresh the page and you're good to go!
+
+It's also hosted if you would rather try it that way: [https://gamebyrdstripe.netlify.com/login](https://gamebyrdstripe.netlify.com/login). They both use the same Cloud Firestore instance currently so you can poke around at data locally that you made on the hosted version.
 
 ## Ecommerce Stripe Sample App
 

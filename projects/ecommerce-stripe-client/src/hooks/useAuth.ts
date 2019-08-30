@@ -23,7 +23,6 @@ export const useAuth = (): AuthState => {
     () =>
       firebase.auth().onAuthStateChanged(user => {
         if (user) {
-          db.collection('users')
           setAuthState({ isAuthed: true, user, loading: false })
         } else {
           setAuthState({ isAuthed: false, loading: false, user: undefined })

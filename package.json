@@ -44,6 +44,7 @@
     "caldera:build": "yarn caldera build",
     "ecommerce": "yarn lerna:run-deps --scope @caldera-digital/ecommerce-stripe*",
     "ecommerce:dev": "yarn ecommerce --parallel dev",
+    "ecommerce:dev:client": "yarn lerna:run-deps --scope @caldera-digital/ecommerce-stripe-client --scope @caldera-digital/ecommerce-stripe-shared --parallel dev",
     "ecommerce:build": "yarn ecommerce build"
   },
   "husky": {

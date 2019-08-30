@@ -49,6 +49,10 @@ const StyledNav = styled(Nav)`
       margin: 0;
       font-size: 1.25rem
     }
+
+    button {
+      color: white !important;
+    }
   `}
 `
 

@@ -33,8 +33,8 @@ const RenderAuthedComponent: FC<P> = ({
   const [user, loading, error] = useDocumentData<User>(
     db.collection('users').doc(authedUserRecord.uid),
   )
-  if (loading) return <Loading />
-  if (error || !user) return <Error />
+  if (loading || !user) return <Loading />
+  if (error) return <Error />
 
   return <Component user={user} {...rest} />
 }

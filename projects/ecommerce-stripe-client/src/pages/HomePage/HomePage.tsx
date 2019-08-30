@@ -19,6 +19,7 @@ type P = PrivateRouteReturnComponentProps
 
 export const HomePage: FC<P> = ({ user }) => {
   const [values, loading, error] = useCollectionData<Product>(
+    // Only showing 30 because this is a POC and infinite scroll is high LOE
     db.collection('products').limit(30),
   )
   const userRef = db.collection('users').doc(user.userId)

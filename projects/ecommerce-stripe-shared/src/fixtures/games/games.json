@@ -868,20 +868,6 @@
     "comments": ""
   },
   {
-    "id": "8guw_LiLluc",
-    "title": "Fallout 4",
-    "rating": 93,
-    "console": "Xbox One",
-    "cover": "http://cdn.gamerant.com/wp-content/uploads/Fallout-4-Box-Art.jpg",
-    "cover_alt": "'http://cdn.gamerant.com/wp-content/uploads/Fallout-4-Box-Art.jpg', ",
-    "quantity": 5,
-    "quantity_sold": 0,
-    "price": 12,
-    "description": "Bethesda Game Studios, the award-winning creators of Fallout 3 and The Elder Scrolls V: Skyrim, welcome you to the world of Fallout 4 – their most ambitious game ever, and the next generation of open-world gaming.",
-    "received_by": "admin",
-    "comments": ""
-  },
-  {
     "id": "kVeltP8az5H",
     "title": "Forza Horizon",
     "rating": 93,
@@ -1845,20 +1831,6 @@
     "quantity_sold": 3,
     "price": 8,
     "description": "First Game Boy entry into the series, later re-released in colorized \"DX\" form for Game Boy Color. The game is essentially one long side quest that deviates as much from the traditional Zelda storyline as the N64's Majora's Mask. The story is completely new and original, but the game system is largely the same as in the Super NES hit, A Link to the Past. You explore a vast island named Koholint, opening up access to more new and new areas as you collect special items and solve puzzles. On your way, you gather Rupees and heart containers, use your sword to defeat enemies, and push plenty of blocks around.",
-    "received_by": "admin",
-    "comments": ""
-  },
-  {
-    "id": "8g2SDGCQFvW",
-    "title": "Watch Dogs",
-    "rating": 87,
-    "console": "Playstation 4",
-    "cover": "http://www.gengame.net/wp-content/gallery/watch_dogs-box-art/watch-dogs-ps3-boxart.jpg",
-    "cover_alt": "'http://www.gengame.net/wp-content/gallery/watch_dogs-box-art/watch-dogs-ps3-boxart.jpg', ",
-    "quantity": 2,
-    "quantity_sold": 1,
-    "price": 14,
-    "description": "All it takes is the swipe of a finger. We connect with friends. We buy the latest gadgets and gear. We find out what’s happening in the world. But with that same simple swipe, we cast an increasingly expansive shadow. With each connection, we leave a digital trail that tracks our every move and milestone, our every like and dislike. And it’s not just people. Today, all major cities are networked. Urban infrastructures are monitored and controlled by complex operating systems.",
     "received_by": "admin",
     "comments": ""
   },
