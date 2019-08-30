@@ -29,7 +29,7 @@ const createProfile = async ({ uid }: UserRecord) => {
       userId: authedUserRecord.uid,
       joined: admin.firestore.FieldValue.serverTimestamp(),
       email: authedUserRecord.email,
-      displayName: authedUserRecord.displayName,
+      displayName: getOr('', 'displayName', authedUserRecord),
       firstName,
       lastName,
       // Potentially come in depending on sign in provider
