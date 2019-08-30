@@ -28,8 +28,8 @@
     "yup": "^0.27.0"
   },
   "scripts": {
-    "dev": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "dev": "SKIP_PREFLIGHT_CHECK=true react-app-rewired start",
+    "build": "SKIP_PREFLIGHT_CHECK=true react-app-rewired build",
     "test": "echo 'No tests, coming soon!'",
     "eject": "react-scripts eject",
     "clean": "run-p clean:*",

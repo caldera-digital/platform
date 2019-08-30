@@ -9,6 +9,12 @@ git clone https://github.com/caldera-digital/platform.git
 
 cd platform
 
+npm install typescript@3.5.3 -g
+
+# Only if you want to serve functions locally
+npm install firebase-tools@7.2.4 -g
+
+# Installs deps and builds all packages and projects
 yarn bootstrap
 
 yarn <PROJECT-YOU-WANT-TO-RUN>:dev
@@ -54,7 +60,7 @@ If you need to add a global variable, insert it into the `.eslintrc` file. Somet
 
 ### Workspaces
 
-There is a workspace available for this project located in [`.vscode/caldera-platform.code-workspace`](./.vscode/caldera-platform.code-workspace). It is helpful to run this so you can receive topical search results that ignore built files or test coverage directories. It also changes your title bar color so you can easily find this project compared to other coding windows you have open.
+There is a workspace available for each project located in [`.vscode/caldera-platform.code-workspace`](./.vscode/caldera-platform.code-workspace). It is helpful to run this so you can receive topical search results that ignore built files or test coverage directories. It also changes your title bar color so you can easily find this project compared to other coding windows you have open.
 
 ## Adding Firebase Secrets
 
