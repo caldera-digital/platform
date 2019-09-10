@@ -70,8 +70,6 @@ export const CheckoutFormComponent: FC<P> = ({ user, stripe, history }) => {
   useEffect(() => {
     if (!paymentFirebaseID || !isProcessingPayment) return
 
-    console.log('in here', purchases, paymentFirebaseID)
-
     const completedPurchase = getPurchaseByFirebaseID(
       purchases,
       paymentFirebaseID,
