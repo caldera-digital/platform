@@ -36,4 +36,6 @@ export type User = {
   lastName: string
   photoURL: string
   phoneNumber: string
+  stripeCharges: any[]
+  stripeCustomerID: string
 }

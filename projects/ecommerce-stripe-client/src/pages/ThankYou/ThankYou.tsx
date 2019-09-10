@@ -1,3 +1,4 @@
+import { round, sortBy } from 'lodash'
 import React, { FC } from 'react'
 import { RouteComponentProps } from 'react-router-dom'
 
@@ -7,18 +8,33 @@ import { getPurchaseByFirebaseID } from '../../utils/utilityService'
 
 type P = PrivateRouteReturnComponentProps & RouteComponentProps
 
+// Need test! Add a helper like this to the Stripe elements library?
+const prettyStripeAmount = (amount: number) => {
+  return round(amount / 100, 2).toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  })
+}
+
 export const ThankYouPage: FC<P> = ({
-  user: { purchases, firstName },
+  user: { purchases, firstName, stripeCharges, stripeCustomerID },
+
   match: {
     // @ts-ignore
     params: { orderID },
   },
 }) => {
   const purchase = getPurchaseByFirebaseID(purchases, orderID)
+  // Make sure it's sorted by most recent charge
+  const chargesHistory = sortBy(stripeCharges, 'created').reverse()
+  const mostRecentCharge = chargesHistory[0] // Will always have at least one charge to get to this page
+
   return (
     <PageWrapper>
       <h1>Thank You, {firstName}!</h1>
-      <p>Your order number is: {purchase.id}</p>
+      <p>Your order number is: {mostRecentCharge.id}</p>
+      <p>Customer number: {stripeCustomerID}</p>
+      <p>Total amount charged: {prettyStripeAmount(mostRecentCharge.amount)}</p>
 
       <h2>Your Items</h2>
       <ProductList products={purchase.items} />
