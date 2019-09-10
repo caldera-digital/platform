@@ -26,8 +26,10 @@ export const ThankYouPage: FC<P> = ({
 }) => {
   const purchase = getPurchaseByFirebaseID(purchases, orderID)
   // Make sure it's sorted by most recent charge
-  const chargesHistory = sortBy(stripeCharges, 'created').reverse()
-  const mostRecentCharge = chargesHistory[0] // Will always have at least one charge to get to this page
+  const [mostRecentCharge, ...previousCharges] = sortBy(
+    stripeCharges,
+    'created',
+  ).reverse()
 
   return (
     <PageWrapper>
@@ -38,6 +40,18 @@ export const ThankYouPage: FC<P> = ({
 
       <h2>Your Items</h2>
       <ProductList products={purchase.items} />
+
+      {previousCharges && previousCharges.length > 0 && (
+        <>
+          <h2>Charges History</h2>
+          {previousCharges.map(charge => (
+            <p>
+              {new Date(charge.created * 1000).toLocaleDateString('en-US')}{' '}
+              {charge.id} {prettyStripeAmount(charge.amount)}
+            </p>
+          ))}
+        </>
+      )}
     </PageWrapper>
   )
 }
