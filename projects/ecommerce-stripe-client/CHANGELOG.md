@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.5"></a>
+## [0.2.5](https://github.com/caldera-digital/platform/compare/@caldera-digital/ecommerce-stripe-client@0.2.4...@caldera-digital/ecommerce-stripe-client@0.2.5) (2019-10-19)
+
+**Note:** Version bump only for package @caldera-digital/ecommerce-stripe-client
+
+
+
+
+
 <a name="0.2.4"></a>
 ## [0.2.4](https://github.com/caldera-digital/platform/compare/@caldera-digital/ecommerce-stripe-client@0.2.3...@caldera-digital/ecommerce-stripe-client@0.2.4) (2019-10-19)
 

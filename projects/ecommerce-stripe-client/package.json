@@ -1,12 +1,12 @@
 {
   "name": "@caldera-digital/ecommerce-stripe-client",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "@caldera-digital/ecommerce-stripe-shared": "^0.2.4",
-    "@caldera-digital/nav": "^1.0.6",
+    "@caldera-digital/nav": "^1.0.7",
     "@caldera-digital/theme": "^1.0.6",
     "antd": "^3.22.2",
     "customize-cra": "^0.5.0",
