@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.6"></a>
+## [1.0.6](https://github.com/caldera-digital/platform/compare/@caldera-digital/nav@1.0.5...@caldera-digital/nav@1.0.6) (2019-10-19)
+
+
+### :sparkles: Features
+
+* add classname to nav ([671fd2a](https://github.com/caldera-digital/platform/commit/671fd2a))
+
+
+
+
+
 <a name="1.0.5"></a>
 ## [1.0.5](https://github.com/caldera-digital/platform/compare/@caldera-digital/nav@1.0.4...@caldera-digital/nav@1.0.5) (2019-08-29)
 

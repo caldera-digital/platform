@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.4"></a>
+## [0.2.4](https://github.com/caldera-digital/platform/compare/@caldera-digital/ecommerce-stripe-client@0.2.3...@caldera-digital/ecommerce-stripe-client@0.2.4) (2019-10-19)
+
+
+### :bug: Bug Fixes
+
+* fix loader, add docs, clean data ([760697c](https://github.com/caldera-digital/platform/commit/760697c))
+
+
+### :sparkles: Features
+
+* add Stripe customer,  payment amount, and Stripe charge id ([7e0eebc](https://github.com/caldera-digital/platform/commit/7e0eebc))
+* cart, home page, validations, ready for stripe ([220ddc6](https://github.com/caldera-digital/platform/commit/220ddc6))
+* payments working! Thank you page, backend flow, cleanup ([3e8d8a8](https://github.com/caldera-digital/platform/commit/3e8d8a8))
+* start on stripe, login page, cleanup, initdb ([ad69311](https://github.com/caldera-digital/platform/commit/ad69311))
+
+
+### :ticket: Chores
+
+* tweak for the build ([8a02990](https://github.com/caldera-digital/platform/commit/8a02990))
+
+
+
+
+
 <a name="0.2.3"></a>
 ## [0.2.3](https://github.com/caldera-digital/platform/compare/@caldera-digital/ecommerce-stripe-client@0.2.1...@caldera-digital/ecommerce-stripe-client@0.2.3) (2019-08-29)
 

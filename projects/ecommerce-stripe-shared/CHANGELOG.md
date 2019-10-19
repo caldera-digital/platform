@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.4"></a>
+## [0.2.4](https://github.com/caldera-digital/platform/compare/@caldera-digital/ecommerce-stripe-shared@0.2.3...@caldera-digital/ecommerce-stripe-shared@0.2.4) (2019-10-19)
+
+
+### :bug: Bug Fixes
+
+* fix loader, add docs, clean data ([760697c](https://github.com/caldera-digital/platform/commit/760697c))
+
+
+### :sparkles: Features
+
+* cart, home page, validations, ready for stripe ([220ddc6](https://github.com/caldera-digital/platform/commit/220ddc6))
+
+
+
+
+
 <a name="0.2.3"></a>
 ## [0.2.3](https://github.com/caldera-digital/platform/compare/@caldera-digital/ecommerce-stripe-shared@0.2.1...@caldera-digital/ecommerce-stripe-shared@0.2.3) (2019-08-29)
 

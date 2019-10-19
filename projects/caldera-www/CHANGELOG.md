@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.4"></a>
+## [0.2.4](https://github.com/gatsbyjs/gatsby-starter-blog/compare/@caldera-digital/caldera-www@0.2.3...@caldera-digital/caldera-www@0.2.4) (2019-10-19)
+
+**Note:** Version bump only for package @caldera-digital/caldera-www
+
+
+
+
+
 <a name="0.2.3"></a>
 ## [0.2.3](https://github.com/gatsbyjs/gatsby-starter-blog/compare/@caldera-digital/caldera-www@0.2.1...@caldera-digital/caldera-www@0.2.3) (2019-08-29)
 
