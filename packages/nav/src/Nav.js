@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import { media } from '@caldera-digital/theme'
 import { Hamburger } from './Hamburger'
@@ -117,6 +117,10 @@ export const NavComponent = ({
   hamburgerColor,
 }) => {
   const [hamburgerOpen, setHamburgerOpen] = React.useState(hamburgerOpenProp)
+
+  useEffect(() => {
+    setHamburgerOpen(hamburgerOpenProp)
+  }, [hamburgerOpenProp])
 
   return (
     <NavContainer className={className} style={containerStyle}>
