@@ -111,22 +111,24 @@ export const NavComponent = ({
   containerStyle = {},
   navOptionsStyle = {},
   renderLeftSection = () => null,
+  hamburgerOpen: hamburgerOpenProp = false,
+  onHamburgerClicked,
   hamburgerColor,
 }) => {
-  const [hamburgerOpen, setHamburgerOpen] = React.useState(false)
+  const [hamburgerOpen, setHamburgerOpen] = React.useState(hamburgerOpenProp)
+
   return (
-    <NavContainer
-      className={`nav-container ${
-        hamburgerOpen ? 'hamburger-active' : ''
-      } ${className}`}
-      style={containerStyle}
-    >
+    <NavContainer className={className} style={containerStyle}>
       {renderLeftSection()}
 
       <NavOptionsContainer style={navOptionsStyle}>
         <Hamburger
           open={hamburgerOpen}
-          onClick={() => setHamburgerOpen(!hamburgerOpen)}
+          onClick={() =>
+            onHamburgerClicked
+              ? onHamburgerClicked(hamburgerOpen)
+              : setHamburgerOpen(!hamburgerOpen)
+          }
           hamburgerColor={hamburgerColor}
         />
         <RoutesContainer open={hamburgerOpen}>
