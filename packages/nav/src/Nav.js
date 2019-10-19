@@ -110,6 +110,7 @@ export const NavComponent = ({
   className = '',
   containerStyle = {},
   navOptionsStyle = {},
+  hamburgerStyle = {},
   renderLeftSection = () => null,
   hamburgerOpen: hamburgerOpenProp = false,
   onHamburgerClicked,
@@ -130,6 +131,7 @@ export const NavComponent = ({
               : setHamburgerOpen(!hamburgerOpen)
           }
           hamburgerColor={hamburgerColor}
+          style={hamburgerStyle}
         />
         <RoutesContainer open={hamburgerOpen}>
           {routes.map(
