@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.9"></a>
+## [1.0.9](https://github.com/caldera-digital/platform/compare/@caldera-digital/nav@1.0.8...@caldera-digital/nav@1.0.9) (2019-10-19)
+
+
+### :bug: Bug Fixes
+
+* fix state bug hamburger ([8e42448](https://github.com/caldera-digital/platform/commit/8e42448))
+
+
+
+
+
 <a name="1.0.8"></a>
 ## [1.0.8](https://github.com/caldera-digital/platform/compare/@caldera-digital/nav@1.0.7...@caldera-digital/nav@1.0.8) (2019-10-19)
 

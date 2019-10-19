@@ -1,7 +1,7 @@
 {
   "name": "@caldera-digital/caldera-www",
   "description": "Website for Caldera.",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "author": "Marcus Wood <marcus@calderadigital.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
@@ -12,7 +12,7 @@
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.10.17",
     "@caldera-digital/core": "^1.0.1",
-    "@caldera-digital/nav": "^1.0.8",
+    "@caldera-digital/nav": "^1.0.9",
     "@caldera-digital/theme": "^1.0.6",
     "@narative/gatsby-theme-novela": "^0.0.3",
     "babel-plugin-styled-components": "^1.10.0",
