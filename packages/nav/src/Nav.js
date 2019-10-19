@@ -115,7 +115,12 @@ export const NavComponent = ({
 }) => {
   const [hamburgerOpen, setHamburgerOpen] = React.useState(false)
   return (
-    <NavContainer className={className} style={containerStyle}>
+    <NavContainer
+      className={`nav-container ${
+        hamburgerOpen ? 'hamburger-active' : ''
+      } ${className}`}
+      style={containerStyle}
+    >
       {renderLeftSection()}
 
       <NavOptionsContainer style={navOptionsStyle}>
