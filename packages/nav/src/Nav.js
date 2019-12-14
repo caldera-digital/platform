@@ -110,7 +110,10 @@ export const NavComponent = ({
   className = '',
   containerStyle = {},
   navOptionsStyle = {},
+  navOptionsClassName = '',
   hamburgerStyle = {},
+  routesContainerStyle = {},
+  routesContainerClassName = '',
   renderLeftSection = () => null,
   hamburgerOpen: hamburgerOpenProp = false,
   onHamburgerClicked,
@@ -126,7 +129,10 @@ export const NavComponent = ({
     <NavContainer className={className} style={containerStyle}>
       {renderLeftSection()}
 
-      <NavOptionsContainer style={navOptionsStyle}>
+      <NavOptionsContainer
+        style={navOptionsStyle}
+        className={navOptionsClassName}
+      >
         <Hamburger
           open={hamburgerOpen}
           onClick={() =>
@@ -137,7 +143,11 @@ export const NavComponent = ({
           hamburgerColor={hamburgerColor}
           style={hamburgerStyle}
         />
-        <RoutesContainer open={hamburgerOpen}>
+        <RoutesContainer
+          open={hamburgerOpen}
+          style={routesContainerStyle}
+          className={routesContainerClassName}
+        >
           {routes.map(
             ({
               route,
