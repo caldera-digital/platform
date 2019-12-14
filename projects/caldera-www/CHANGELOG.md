@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.8"></a>
+## [0.2.8](https://github.com/gatsbyjs/gatsby-starter-blog/compare/@caldera-digital/caldera-www@0.2.7...@caldera-digital/caldera-www@0.2.8) (2019-12-14)
+
+
+### :ticket: Chores
+
+* fix robots ([a3e9e3e](https://github.com/gatsbyjs/gatsby-starter-blog/commit/a3e9e3e))
+
+
+
+
+
 <a name="0.2.7"></a>
 ## [0.2.7](https://github.com/gatsbyjs/gatsby-starter-blog/compare/@caldera-digital/caldera-www@0.2.6...@caldera-digital/caldera-www@0.2.7) (2019-10-19)
 
