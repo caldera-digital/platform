@@ -148,37 +148,39 @@ export const NavComponent = ({
           style={routesContainerStyle}
           className={routesContainerClassName}
         >
-          {routes.map(
-            ({
+          {routes.map(item => {
+            const {
               route,
               text,
               as = 'a',
+              render,
               selected = false,
               renderLinkContent,
               onClick = () => null,
               className = '',
               ...rest
-            }) => {
-              // The controls what the link renders as so it works with Reach, React Router, and normal
-              const RouteLink = createRouteLink(as)
+            } = item
 
-              return (
-                <RouteLink
-                  to={route}
-                  key={route}
-                  className={`${className} ${selected ? 'selected' : ''}`}
-                  onClick={() => {
-                    setHamburgerOpen(false)
+            if (render) render(item)
+            // The controls what the link renders as so it works with Reach, React Router, and normal
+            const RouteLink = createRouteLink(as)
 
-                    onClick({ route, text, ...rest })
-                  }}
-                  {...rest}
-                >
-                  {renderLinkContent ? renderLinkContent() : text}
-                </RouteLink>
-              )
-            },
-          )}
+            return (
+              <RouteLink
+                to={route}
+                key={route}
+                className={`${className} ${selected ? 'selected' : ''}`}
+                onClick={() => {
+                  setHamburgerOpen(false)
+
+                  onClick({ route, text, ...rest })
+                }}
+                {...rest}
+              >
+                {renderLinkContent ? renderLinkContent() : text}
+              </RouteLink>
+            )
+          })}
         </RoutesContainer>
       </NavOptionsContainer>
     </NavContainer>

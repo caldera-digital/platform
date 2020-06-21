@@ -35,11 +35,10 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: '@narative/gatsby-theme-novela',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        contentPosts: 'content/posts',
-        contentAuthors: 'content/authors',
-        basePath: '/blog',
+        path: `${__dirname}/src`,
+        name: 'src',
       },
     },
     {
@@ -77,6 +76,8 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-netlify',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-disqus',
       options: {

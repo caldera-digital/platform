@@ -69,15 +69,6 @@ export const createRoutes = (location = {}) => [
     },
   },
   {
-    route: '/our-work',
-    text: 'Our Work',
-    as: Link,
-    style: routeStyles,
-    get selected() {
-      return this.route === location.pathname
-    },
-  },
-  {
     route: '/join-our-team',
     text: 'Join Our Team',
     as: Link,
@@ -89,15 +80,6 @@ export const createRoutes = (location = {}) => [
   {
     route: '/contact-us',
     text: 'Contact Us',
-    as: Link,
-    style: routeStyles,
-    get selected() {
-      return this.route === location.pathname
-    },
-  },
-  {
-    route: '/blog',
-    text: 'Blog',
     as: Link,
     style: routeStyles,
     get selected() {

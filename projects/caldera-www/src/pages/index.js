@@ -1,10 +1,8 @@
 import React from 'react'
 import { Layout, SEO, Hero, GroovyPhone } from '../components'
-import { OurWork } from '../components/Homepage/OurWork'
 import { OurServices } from '../components/Homepage/OurServices'
 import { Welcome } from '../components/Homepage/Welcome'
 import { WhoWeveWorkedWith } from '../components/Homepage/WhoWeveWorkedWith'
-import { LatestFromOurBlog } from '../components/Homepage/LatestFromOurBlog'
 import { CallToAction } from '../components/Homepage/CallToAction'
 import styled, { keyframes } from 'styled-components'
 import { media } from '@caldera-digital/theme'
@@ -95,8 +93,6 @@ const HomePage = ({ location }) => {
       <Welcome />
       <WhoWeveWorkedWith />
       <OurServices />
-      <OurWork />
-      <LatestFromOurBlog />
       <CallToAction />
     </Layout>
   )

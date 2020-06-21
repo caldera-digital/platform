@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { Container, media } from '@caldera-digital/theme'
 import Logo from '../assets/svgs/caldera-logo.svg'
@@ -8,36 +8,6 @@ import { Button, LinkButton } from './Button'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import { Input } from './Form'
 import { emailIsValid } from '../utils/formUtils'
-
-export const latestBlogsQuery = graphql`
-  {
-    allArticle(limit: 3, sort: { fields: date, order: DESC }) {
-      edges {
-        node {
-          id
-          date(formatString: "MMMM Do, YYYY")
-          title
-          timeToRead
-          excerpt
-          slug
-          hero {
-            narrow: childImageSharp {
-              fluid(maxWidth: 457, quality: 90) {
-                base64
-                aspectRatio
-                src
-                srcSet
-                srcWebp
-                srcSetWebp
-                sizes
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
 
 const CopyrightContainer = styled.span`
   font-size: 0.8rem;
@@ -226,9 +196,6 @@ const Copyright = () => (
 export const Footer = ({ showFooterCTA = true }) => {
   const [email, setEmail] = useState('')
   const [showSuccess, setShowSuccess] = useState(false)
-  const {
-    allArticle: { edges },
-  } = useStaticQuery(latestBlogsQuery)
 
   return (
     <>
@@ -256,13 +223,6 @@ export const Footer = ({ showFooterCTA = true }) => {
               </Link>
             ))}
           </LinksContainer>
-          <BlogsContainer>
-            {edges.map(({ node: blog }) => (
-              <Link to={blog.slug} key={blog.slug}>
-                {blog.title}
-              </Link>
-            ))}
-          </BlogsContainer>
           <EmailContainer>
             <p>Subscribe to our Newsletter!</p>
             <form

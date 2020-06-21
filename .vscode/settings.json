@@ -1,7 +1,6 @@
 {
   "editor.formatOnSave": true,
   "editor.codeActionsOnSaveTimeout": 4000,
-  "prettier.eslintIntegration": true,
   "cSpell.words": [
     "BITBUCKET",
     "Netlify",
